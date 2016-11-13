@@ -30,7 +30,7 @@ body {
   width: 100px;
 }
 .__placeholder {
-  height:50px;
+  height:40px;
   width:100%;
 }
 .__login_field {
@@ -63,9 +63,9 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
   width:100%;
-  height: 40px;
+  height: 30px;
   position: fixed;
-  background-color: transparent;
+  background-color: black;
   text-align: center;
   color: white;
 }
@@ -81,7 +81,6 @@ body {
   position: absolute;
   font-weight: bold;
   right:20px;
-  padding-top: 10px;
 }
 
 .__banner {
@@ -170,8 +169,8 @@ body {
   opacity: 1;
 }
 
-.__current_user{
-  color:white;
+.__header > .__current_user {
+  font-size: 15px;
   position: absolute;
   right:20px;
   top: 5px;

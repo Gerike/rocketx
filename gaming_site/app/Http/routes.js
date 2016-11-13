@@ -15,10 +15,11 @@
 | Route.resource('user', 'UserController')
 */
 
-const Route = use('Route')
+const Route = use('Route');
 
-Route.post('/login', 'UserController.login')
+Route.post('/login', 'UserController.login');
 Route.on('/').render('welcome');
-Route.post('/register', 'UserController.register')
-Route.get('/register', 'UserController.register')
+Route.post('/register', 'UserController.register');
+Route.get('/register', 'UserController.register');
+Route.get('/play', 'GameController.startGame');
 

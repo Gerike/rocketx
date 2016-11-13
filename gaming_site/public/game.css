@@ -1,0 +1,10 @@
+.game_field{
+  margin-top:50px;
+  width: 100%;
+  text-align: center;
+}
+canvas {
+  width: 80%;
+  height: 60%;
+  border: 1px solid white;
+}
