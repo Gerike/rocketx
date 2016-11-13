@@ -1,10 +1,35 @@
 {% extends 'master' %}
 
 {% block content %}
-  <div class="__banner">
-    <div class="banner__inner">
-      <img src="/assets/logo.svg">
-      <h2>Practical <span>Reliable</span> Productive</h2>
-    </div>
+ <link rel="stylesheet" type="text/css" href="welcome.css">
+ <div class="welcome_page_container">
+  <div class="welcome_box">
+    <h1>Welcome to RocketX, a new and innovative game homepage</h1>
+    <h2>We hope that you will enjoy yourself here</h2>
   </div>
+  <div class="registernow_box">
+      <h1>Not registered yet?</h1>
+      <h2>Most of the features becomes available after you signed up for FREE</h2>
+  </div>
+  <div class="toplist_box">
+    <h1>TOPLISTS</h1>
+     <div>
+        <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores('Daily')">Daily</a> |
+        <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores('Monthly')">Monthly</a> |
+        <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores('Ever')">Ever</a>
+     </div>
+     <div id="main_page_toplist">
+     <p><span class="toplist_name_first">PLAYER1</span><span class="toplist_score_first">1000</span></p>
+     <p><span class="toplist_name_second">PLAYER2</span><span class="toplist_score_second">900</span></p>
+     <p><span class="toplist_name">PLAYER3</span><span>800</span class="toplist_score"></p>
+     <p><span class="toplist_name">PLAYER4</span><span>700</span class="toplist_score"></p>
+     <p><span class="toplist_name">PLAYER5</span><span>600</span class="toplist_score"></p>
+     <p><span class="toplist_name">PLAYER6</span><span>500</span class="toplist_score"></p>
+     </div>
+  </div>
+  <div class="forum_box">
+     <h1>Make your voice heard today</h1>
+     <h2>Share your opinions and recommendations with us at our forum</h2>
+    </div>
+   </div>
 {% endblock %}

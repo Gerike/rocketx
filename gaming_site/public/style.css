@@ -6,12 +6,68 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   font-weight: lighter;
-  background: #ffffff;
+  background-image: url("/assets/background.jpg");
 }
 
 * {
   padding: 0;
   margin: 0;
+}
+
+.__placeholder {
+  height:50px;
+  width:100%;
+}
+.__login_field {
+   background-color: black;
+   padding: 5px;
+   border: none;
+   border-bottom: 2px solid blue;
+   color: white;
+ }
+
+.__login_field:hover {
+  border-bottom: 2px solid darkblue;
+}
+
+.__login_field:focus {
+  border-bottom: 2px solid yellow;
+}
+
+.__login_button {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  padding: 5px;
+}
+.__login_button:hover {
+  border: 1px solid white;
+}
+
+.__header {
+  height:50px;
+  width:100%;
+  position: fixed;
+  background-color: black;
+  color: white;
+}
+.__header > .logo {
+  font-size: 15px;
+  position: absolute;
+  font-weight: bold;
+  padding-left:20px;
+  padding-top: 10px;
+}
+
+.__header > .login {
+  font-size: 15px;
+  position: absolute;
+  font-weight: bold;
+  right:20px;
+  padding-top: 10px;
+}
+.__right {
+  float:right;
 }
 
 .__banner {
