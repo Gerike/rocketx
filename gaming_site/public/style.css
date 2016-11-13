@@ -45,8 +45,10 @@ body {
 }
 
 .__header {
-  height:50px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   width:100%;
+  height: 40px;
   position: fixed;
   background-color: black;
   color: white;
@@ -59,7 +61,7 @@ body {
   padding-top: 10px;
 }
 
-.__header > .login {
+.__header > .__login {
   font-size: 15px;
   position: absolute;
   font-weight: bold;
@@ -155,4 +157,20 @@ body {
 
 .__footer li a:hover {
   opacity: 1;
+}
+
+.__current_user{
+  color:white;
+  position: absolute;
+  right:20px;
+}
+
+.__current_user_label{
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.__current_user_name{
+  font-size: 25px;
+  font-weight: bold;
 }

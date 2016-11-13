@@ -17,13 +17,20 @@
     <div class="__wrapper">
       <div class="__header">
       <span class="logo">RocketX - #ROCKETX</span>
-      <div class="login">
-      <form>
-        <input class="__login_field" type="text" name="username" placeholder="Username">
+        {% if request.currentUser %}
+        <div class="__current_user">
+          <span class="__current_user_label">Welcome:</span><span class="__current_user_name">{{request.currentUser.username}}</span>
+        </div>
+        {% else %}
+      <div class="__login">
+      <form action="/login" method="post">
+        {{ csrfField }}
+        <input class="__login_field" type="text" name="email" placeholder="Email">
         <input class="__login_field" type="password" name="password" placeholder="Password">
         <input class="__login_button" type="submit" value="Login">
       </form>
       </div>
+        {% endif %}
       </div>
       <div class="__placeholder"></div>
       {% block content %}{% endblock %}

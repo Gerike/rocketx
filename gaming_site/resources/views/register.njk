@@ -1,0 +1,21 @@
+{% extends 'master' %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="register.css">
+<div class="content">
+  <form class="register_form" method="post">
+    {{ csrfField }}
+    <h1>Registration</h1>
+    {% if errors %}
+    <div class="errors">
+      {% for error in errors %}
+      <span class="error">* {{error}}</span><br>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="field_container"><span class="register_label">Username:</span><br><input type="text" class="register_field" name="username" placeholder="Username"></div><br>
+    <div class="field_container"><span class="register_label">Email address:</span><br><input type="text" class="register_field" name="email" placeholder="Email address"></div><br>
+    <div class="field_container"><span class="register_label">Password:</span><br><input type="password" class="register_field" name="password" placeholder="Password"></div><br>
+    <input type="submit" class="register_button" value="Register">
+  </form>
+</div>
+{% endblock %}
