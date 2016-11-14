@@ -1,0 +1,3 @@
+# Ignoring everything inside Webstorm IDE local settings
+.idea
+

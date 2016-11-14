@@ -2,13 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7430562b-d69d-4d00-84af-9e7a266b0c96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.env.example" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/ace" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Commands/Greet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/GameController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/UserController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Middleware/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/kernel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Listeners/Http.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/Hooks/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/Token.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/User.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/events.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/extend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/http.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/kernel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/auth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/bodyParser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/cors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/database.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/event.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/session.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/shield.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/development.sqlite" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/factory.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479040942605_create_users_table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479040942607_create_tokens_table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479044294400_create_users_table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479044294402_create_tokens_table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/seeds/Database.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/providers/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/base_laser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/github.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/ship.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/twitter.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/framework.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/register.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/resource_loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/welcome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/errors/index.njk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/game.njk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/master.njk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/register.njk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/welcome.njk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/storage/.gitkeep" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gaming_site/public/game.js" afterPath="$PROJECT_DIR$/gaming_site/public/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" afterPath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gaming_site/resources/views/game.njk" afterPath="$PROJECT_DIR$/gaming_site/resources/views/game.njk" />
     </list>
     <ignored path="jatekfejlesztes_bead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,91 +92,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerShip.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-              <folding>
-                <element signature="n#!!doc;n#PlayerShip#0" expanded="false" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="85">
+                <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.njk" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/game.njk">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseCannon.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc;n#BaseCannon#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseAmmo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="57" />
-              <folding>
-                <element signature="n#!!doc;n#BaseAmmo#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Projectile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="framework.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/framework.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="41" column="85" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpaceShip.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="-247">
+              <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -143,25 +140,30 @@
         <option value="$PROJECT_DIR$/gaming_site/README.md" />
         <option value="$PROJECT_DIR$/gaming_site/app/Http/Controllers/UserController.js" />
         <option value="$PROJECT_DIR$/gaming_site/resources/views/register.njk" />
-        <option value="$PROJECT_DIR$/gaming_site/public/register.css" />
-        <option value="$PROJECT_DIR$/gaming_site/public/welcome.css" />
         <option value="$PROJECT_DIR$/gaming_site/resources/views/welcome.njk" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game.css" />
         <option value="$PROJECT_DIR$/gaming_site/public/game_classes/SpaceShip.js" />
         <option value="$PROJECT_DIR$/gaming_site/public/game_classes/PlayerShip.js" />
-        <option value="$PROJECT_DIR$/gaming_site/public/style.css" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" />
-        <option value="$PROJECT_DIR$/gaming_site/public/framework.js" />
         <option value="$PROJECT_DIR$/gaming_site/app/Http/Controllers/GameController.js" />
         <option value="$PROJECT_DIR$/gaming_site/resources/views/master.njk" />
         <option value="$PROJECT_DIR$/gaming_site/app/Http/routes.js" />
         <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/basicCannon.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game_loader.js" />
         <option value="$PROJECT_DIR$/gaming_site/resources/views/game.njk" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" />
-        <option value="$PROJECT_DIR$/gaming_site/public/game.js" />
         <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/welcome.css" />
+        <option value="$PROJECT_DIR$/gaming_site/public/style.css" />
+        <option value="$PROJECT_DIR$/gaming_site/public/register.css" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game.css" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/resource_loader.js" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/framework.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/framework.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" />
+        <option value="$PROJECT_DIR$/gaming_site/public/game.js" />
+        <option value="$PROJECT_DIR$/RocketX/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -170,9 +172,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/gaming_site/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -205,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -235,240 +233,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game_classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weapons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game_classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ships" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game_classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game_classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ammos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jatekfejlesztes_bead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaming_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="RocketX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,6 +254,9 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Geri\Documents\GitHub\jatekfejlesztes_bead" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Geri\Documents\GitHub\jatekfejlesztes_bead\gaming_site\public\game_classes\Ships" />
       <recent name="C:\Users\Geri\Documents\GitHub\jatekfejlesztes_bead\gaming_site\public\assets" />
@@ -570,12 +344,13 @@
       <workItem from="1479024552558" duration="6101000" />
       <workItem from="1479032413929" duration="25000000" />
       <workItem from="1479070342847" duration="9953000" />
-      <workItem from="1479114723106" duration="3520000" />
+      <workItem from="1479114723106" duration="21764000" />
+      <workItem from="1479161413717" duration="231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50253000" />
+    <option name="totallyTimeSpent" value="68728000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,22 +365,22 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2141264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17918216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25611746" sideWeight="0.5055762" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20880914" sideWeight="0.4944238" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -616,8 +391,8 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43066883" sideWeight="0.4944238" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2817844" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20880914" sideWeight="0.4944238" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17918216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -660,398 +435,86 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gaming_site/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="26">
-            <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/.env">
+    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/errors/index.njk" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/background.jpg" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/ace" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/README.md" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479040942607_create_tokens_table.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/factory.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/config/auth.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/Token.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/User.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/config/shield.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/kernel.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/package.json" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/bootstrap/app.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/seeds/Database.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-lucid/src/Database/index.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479040942605_create_users_table.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479044294400_create_users_table.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/database/development.sqlite" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Serializers/Database/index.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Schemes/BaseScheme.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Schemes/Session/index.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/welcome.njk" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/register.njk" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/Controllers/UserController.js" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_2. ora.zip/jatek.js2" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/hos.js" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/jatek.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/Controllers/GameController.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/routes.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/master.njk" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/github.svg" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/favicon.png" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="1274" column="0" selection-start-line="1274" selection-start-column="0" selection-end-line="1274" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/config/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Commands/Greet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/errors/index.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/background.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/ace">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479040942607_create_tokens_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/factory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/config/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/Token.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/config/shield.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1202">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/kernel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/bootstrap/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-913">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/seeds/Database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-lucid/src/Database/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-913">
-          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479040942605_create_users_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479044294400_create_users_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/development.sqlite">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4091" selection-start-line="9" selection-start-column="4091" selection-end-line="9" selection-end-column="4095" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Serializers/Database/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="239" column="17" selection-start-line="239" selection-start-column="17" selection-end-line="239" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Schemes/BaseScheme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="77" column="53" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/node_modules/adonis-auth/src/Schemes/Session/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="115" column="33" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/welcome.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/welcome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="108" column="14" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/register.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/register.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/Controllers/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="175" column="8" selection-start-line="175" selection-start-column="8" selection-end-line="175" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_2. ora.zip/jatek.js2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="79" column="94" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/hos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="5" selection-start-line="35" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/jatek.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/game.njk" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/welcome.css" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/style.css" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/register.css" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/framework.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="19" selection-start-line="25" selection-start-column="25" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="233">
+          <caret line="68" column="71" selection-start-line="62" selection-start-column="8" selection-end-line="68" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/Controllers/GameController.js">
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/ship.png" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/base_laser.png" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/resource_loader.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/framework.js" />
+    <entry file="file://$PROJECT_DIR$/gaming_site/public/game.js" />
+    <entry file="file://$PROJECT_DIR$/RocketX/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        <state relative-caret-position="-247">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/master.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/github.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/favicon.png">
-      <provider selected="true" editor-type-id="images">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/game.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/framework.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="41" column="85" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc;n#BaseCannon#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="n#!!doc;n#BaseAmmo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc;n#PlayerShip#0" expanded="false" />
-          </folding>
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="85">
+            <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
