@@ -2,10 +2,11 @@
  * Created by Geri on 2016. 11. 13..
  */
 class PlayerShip extends SpaceShip {
-  constructor(x, y, img, weapons, extras) {
-    super(x, y, img)
+  constructor(x, y, img, weapons, extras, speed) {
+    super(x, y, img, speed)
     this.weapons = weapons;
     this.extras = extras;
+    this.speed = speed;
   }
 
   draw(ctx) {
@@ -19,13 +20,13 @@ class PlayerShip extends SpaceShip {
 
   frame() {
     if (framework.isDown(37))
-      this.x -= 2;
+      this.x -= this.speed;
     if (framework.isDown(39))
-      this.x += 2;
+      this.x += this.speed;
     if (framework.isDown(38))
-      this.y -= 2;
+      this.y -= this.speed;
     if (framework.isDown(40))
-      this.y += 2;
+      this.y += this.speed;
     if (framework.isDown(32))
       this.shoot();
   }

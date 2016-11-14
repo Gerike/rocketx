@@ -17,7 +17,7 @@ function prepareGameField() {
 
 
 function startGame() {
-  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 0.2)], []));
+  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 0.2, resources['ship'].width, resources['ship'].height)], [], 4));
   gameThread = setInterval(() => {
     frame();
     render();
