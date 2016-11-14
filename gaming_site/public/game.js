@@ -32,7 +32,7 @@ function getImageData(img) {
   off_canvas.height = img.height;
   let off_ctx = off_canvas.getContext('2d');
   off_ctx.drawImage(img, 0, 0);
-  return off_ctx.getImageData(0, 0, img.width, img.height).data;
+  return off_ctx.getImageData(0, 0, img.width, img.height);
 }
 
 function createMasks(entities) {
@@ -46,15 +46,12 @@ function createMasks(entities) {
 function detectCollision() {
   let masksData = createMasks(entities);
   for (let i = 0; i < entities.length; i++) {
-    for (let j = 0; j < entities.length; j++) {
-      if (j !== i) {
-        if(framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y))
-          console.log('HIT');
-      }
+    for (let j = i+1; j < entities.length; j++) {
+      if(framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y))
+        console.log('HIT');
     }
   }
 }
-
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
