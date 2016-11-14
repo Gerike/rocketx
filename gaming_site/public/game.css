@@ -1,8 +1,9 @@
-.game_field{
-  margin-top:50px;
+.game_field {
+  margin-top: 50px;
   width: 100%;
   text-align: center;
 }
+
 canvas {
   width: 80%;
   height: 60%;

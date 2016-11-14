@@ -40,15 +40,12 @@ function loadResources(ctx, counter) {
     temp_img.src = resources_location[counter];
   }
   else
-    prepareGame();
+    console.log('Game ready'); //startGame(); Maybe wait space?
 }
 
-function prepareGame() {
-  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 1)], []));
-  //Game ready to play => startGame();
-}
 
 function startLoad(ctx) {
+  prepareGameField() //Need this to set the canvas resolution to write on it. Maybe extract the loading bar drawing into another file?
   setUpLoadingScreen(ctx);
   loadResources(ctx, 0);
 }

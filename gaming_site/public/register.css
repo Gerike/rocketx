@@ -1,10 +1,11 @@
 .content {
   text-align: center;
 }
+
 .content > .register_form > h1 {
   padding-top: 20px;
   color: white;
-  font-size:50px;
+  font-size: 50px;
   font-weight: bold;
   padding-bottom: 50px;
 }
@@ -24,29 +25,33 @@
   font-weight: bold;
   margin-top: 20px;
 }
-.register_field{
+
+.register_field {
   border: 2px solid black;
   padding: 10px;
   border-bottom: 3px solid deepskyblue;
 }
 
-.register_field:focus{
+.register_field:focus {
   border-bottom: 3px solid greenyellow;
 }
+
 .field_container {
   padding-bottom: 10px;
 }
-.register_button{
-   background-color: transparent;
-   border: solid 2px white;
-   color: white;
-   padding: 10px;
-   width: 120px;
- }
 
-.register_button:hover{
+.register_button {
+  background-color: transparent;
+  border: solid 2px white;
+  color: white;
+  padding: 10px;
+  width: 120px;
+}
+
+.register_button:hover {
   border: solid 2px deepskyblue;
 }
+
 .error {
   color: red;
 }

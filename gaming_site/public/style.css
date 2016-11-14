@@ -14,32 +14,36 @@ body {
   margin: 0;
 }
 
-.__play_link{
+.__play_link {
   color: white;
 }
-.__new_game{
+
+.__new_game {
   border: 1px solid white;
   margin: auto;
   padding: 5px;
   width: 100px;
 }
-.__new_game:hover{
+
+.__new_game:hover {
   border: 1px solid yellow;
   margin: auto;
   padding: 5px;
   width: 100px;
 }
+
 .__placeholder {
-  height:40px;
-  width:100%;
+  height: 40px;
+  width: 100%;
 }
+
 .__login_field {
-   background-color: black;
-   padding: 5px;
-   border: none;
-   border-bottom: 2px solid blue;
-   color: white;
- }
+  background-color: black;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid blue;
+  color: white;
+}
 
 .__login_field:hover {
   border-bottom: 2px solid darkblue;
@@ -55,6 +59,7 @@ body {
   color: white;
   padding: 5px;
 }
+
 .__login_button:hover {
   border: 1px solid white;
 }
@@ -62,17 +67,18 @@ body {
 .__header {
   padding-bottom: 10px;
   padding-top: 10px;
-  width:100%;
+  width: 100%;
   height: 30px;
   position: fixed;
   background-color: black;
   text-align: center;
   color: white;
 }
+
 .__header > .logo {
   font-size: 15px;
   position: absolute;
-  left:10px;
+  left: 10px;
   font-weight: bold;
 }
 
@@ -80,7 +86,7 @@ body {
   font-size: 15px;
   position: absolute;
   font-weight: bold;
-  right:20px;
+  right: 20px;
 }
 
 .__banner {
@@ -172,16 +178,16 @@ body {
 .__header > .__current_user {
   font-size: 15px;
   position: absolute;
-  right:20px;
+  right: 20px;
   top: 5px;
 }
 
-.__current_user_label{
+.__current_user_label {
   padding-right: 10px;
   font-size: 20px;
 }
 
-.__current_user_name{
+.__current_user_name {
   font-size: 25px;
   font-weight: bold;
 }

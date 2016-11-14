@@ -3,16 +3,17 @@
  */
 
 class BaseCannon {
-  constructor(ammo, firerate){
+  constructor(ammo, firerate) {
     this.ammo = ammo;
     this.firerate = firerate;
     this.ready = true;
   }
-  shoot(x,y, direction){
-    if (this.ready === true){
+
+  shoot(x, y, direction) {
+    if (this.ready === true) {
       this.ready = false;
-      setTimeout(() => this.ready = true, this.firerate*1000);
-      this.ammo.createProjectile(x,y, direction);
+      setTimeout(() => this.ready = true, this.firerate * 1000);
+      this.ammo.createProjectile(x, y, direction);
     }
   }
 }

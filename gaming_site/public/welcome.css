@@ -1,64 +1,68 @@
 .welcome_box > h1 {
-  font-size:45px;
+  font-size: 45px;
   padding-top: 30px;
   padding-left: 20px;
 }
 
 .welcome_box > h2 {
-  font-size:25px;
+  font-size: 25px;
   padding-top: 10px;
   padding-left: 40px;
 }
 
-.welcome_page_container{
-  color:white;
-}
-.welcome_box {
-  width:100%;
-  height:200px;
-  text-align: left;
-}
-.registernow_box:hover{
-  border:1px solid white;
-}
-.registernow_box{
-    padding: 10px;
-    width:48%;
-    float:right;
-    margin-bottom:50px;
-    border:1px solid transparent;
+.welcome_page_container {
+  color: white;
 }
 
-.registernow_box > h1{
+.welcome_box {
+  width: 100%;
+  height: 200px;
+  text-align: left;
+}
+
+.registernow_box:hover {
+  border: 1px solid white;
+}
+
+.registernow_box {
+  padding: 10px;
+  width: 48%;
+  float: right;
+  margin-bottom: 50px;
+  border: 1px solid transparent;
+}
+
+.registernow_box > h1 {
   font-size: 35px;
 }
 
-.registernow_box > h2{
+.registernow_box > h2 {
   font-size: 15px;
 }
 
-.forum_box{
-  width:48%;
-  float:right;
-  border:1px solid transparent;
+.forum_box {
+  width: 48%;
+  float: right;
+  border: 1px solid transparent;
   padding: 10px;
 }
 
-.forum_box > h1{
+.forum_box > h1 {
   font-size: 35px;
 }
 
-.forum_box > h2{
+.forum_box > h2 {
   font-size: 15px;
 }
-.forum_box:hover{
-  border:1px solid white;
+
+.forum_box:hover {
+  border: 1px solid white;
 }
 
-.toplist_box{
-  float:left;
+.toplist_box {
+  float: left;
   margin-left: 50px;
-  width:35%;
+  width: 35%;
   text-align: center;
 }
 
@@ -74,13 +78,14 @@
 }
 
 .toplist_tablink:hover {
-  border:1px solid white;
+  border: 1px solid white;
 }
 
-.toplist_name{
+.toplist_name {
   font-size: 20px;
   padding: 10px 10px;
 }
+
 .toplist_name_first {
   padding: 10px 10px;
   font-size: 40px;
@@ -91,10 +96,11 @@
   font-size: 30px;
 }
 
-.toplist_score{
+.toplist_score {
   font-size: 15px;
   padding: 10px 10px;
 }
+
 .toplist_score_first {
   padding: 10px 10px;
   font-size: 35px;
@@ -106,7 +112,7 @@
 }
 
 .toplist_box > h1 {
-  font-size:35px;
+  font-size: 35px;
 }
 
 #main_page_toplist {
