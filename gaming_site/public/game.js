@@ -2,45 +2,39 @@
  * Created by Geri on 2016. 11. 13..
  */
 
-var canvas = document.getElementById('game_canvas');
-ctx = canvas.getContext('2d');
+
 
 canvas.width  = 800;
 canvas.height = 400;
 
-var resources = ['/assets/ship.png', '/assets/favicon.png', '/assets/background.jpg'];
+
+
+var gameThread;
+
+
 startLoad(ctx);
 
 
-function startLoad(ctx){
-  setUpLoadingScreen(ctx);
-  loadResources(resources);
-  resource_loader = setInterval(() => {
-    drawLoaderBar(ctx,Object.keys(resource_images).length , resources.length);
-    if (Object.keys(resource_images).length === resources.length) {
-      setTimeout(() => ctx.clearRect(0, 0, canvas.width, canvas.height), 500);
-      clearInterval(resource_loader);
-    }
-  }, 500);
-
-}
-function drawLoaderBar(ctx, progress, all){
-  ctx.fillRect(canvas.width / 2 - 100, canvas.height / 2 - 20, 200 / all * progress, 40);
-  ctx.strokeStyle = "white";
-  ctx.stroke();
+function startGame(){
+    gameThread = setInterval(() => {
+      frame(); render();
+    }, 16)
 }
 
-function setUpLoadingScreen(ctx){
-  ctx.font="40px Georgia";
-  ctx.fillStyle = 'white';
-  ctx.fillText("Loading in progress",canvas.width/2 - 180, canvas.height/2 - 50);
-  ctx.rect(canvas.width/2 - 100, canvas.height/2 - 20, 200, 40);
-  ctx.strokeStyle="white";
-  ctx.stroke();
+function detectCollision(){
+  for (let i = 0; i < entities.length; i++){
+      for (let j = 0; j < entities.length; j++){
+        if (j !== i){
+          if (isPixelCollision(entities[i].img, entities[i].x, entities[i].y, entities[j].img, entities[j].x, entities[j].y))
+            console.log(entities[i], entities[j]);
+        }
+      }
+  }
 }
 
-var playerShipCannon = new BaseCannon(new BaseAmmo(1,resource_images['favicon.png'],2), 1);
-var entities = [new PlayerShip(0, 0, resource_images['ship.png'], [playerShipCannon], [])]
+
+
+
 
 function render(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -54,8 +48,4 @@ function frame(){
       entities[i].frame()
 }
 
-setInterval(function () {
-  frame()
-  render()
-},16)
 

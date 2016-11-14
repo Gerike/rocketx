@@ -8,9 +8,7 @@ class Projectile{
     this.speed = speed;
   }
   draw(ctx){
-    //ctx.drawImage(this.img, this.x, this.y);
-    ctx.fillStyle="#FF0000";
-    ctx.fillRect(this.x, this.y, 20,10);
+    ctx.drawImage(this.img, this.x, this.y);
   }
   frame(){
     switch(this.direction){
