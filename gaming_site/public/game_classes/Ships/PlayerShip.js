@@ -11,7 +11,8 @@ class PlayerShip extends SpaceShip{
     ctx.drawImage(this.img, this.x, this.y);
   }
   shoot(){
-
+    for(let i = 0; i < this.weapons.length; i++)
+      this.weapons[i].shoot(this.x, this.y, 90);
   }
   frame(){
     if(framework.isDown(37))
@@ -22,6 +23,8 @@ class PlayerShip extends SpaceShip{
       this.y-=2;
     if(framework.isDown(40))
       this.y+=2;
+    if(framework.isDown(32))
+      this.shoot();
   }
 }
 

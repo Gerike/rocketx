@@ -39,8 +39,8 @@ function setUpLoadingScreen(ctx){
   ctx.stroke();
 }
 
-
-var entities = [new PlayerShip(0, 0, resource_images['ship.png'], [], [])]
+var playerShipCannon = new BaseCannon(new BaseAmmo(1,resource_images['favicon.png'],2), 1);
+var entities = [new PlayerShip(0, 0, resource_images['ship.png'], [playerShipCannon], [])]
 
 function render(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -54,5 +54,8 @@ function frame(){
       entities[i].frame()
 }
 
-
+setInterval(function () {
+  frame()
+  render()
+},16)
 
