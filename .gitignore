@@ -1,3 +1,4 @@
 # Ignoring everything inside Webstorm IDE local settings
-.idea
+.idea/
 
+.idea/workspace.xml
