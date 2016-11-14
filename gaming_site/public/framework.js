@@ -20,6 +20,19 @@ framework.isDown = function (key) {
   return pressedKeys[key];
 };
 
+framework.outOfCanvas = function (entity, canvas_width, canvas_height) {
+  if ((entity.x < -50) || (entity.x > canvas_width + 100) || (entity.y < -50) || (entity.y > canvas_height + 100))
+    return true;
+  return false;
+};
+
+framework.sanityDeleteEntities = function (entities, canvas_width, canvas_height) {
+  for (let i = 0; i < entities.length; i++) {
+    if (framework.outOfCanvas(entities[i], canvas_width, canvas_height)) {
+      console.log('Removed: ', entities.splice(i, 1));
+    }
+  }
+};
 
 framework.isPixelCollision = function (first, x, y, other, x2, y2) {
   x = Math.round(x);
@@ -43,7 +56,6 @@ framework.isPixelCollision = function (first, x, y, other, x2, y2) {
 
   var xDiff = xMax - xMin,
     yDiff = yMax - yMin;
-
   var pixels = first.data,
     pixels2 = other.data;
 

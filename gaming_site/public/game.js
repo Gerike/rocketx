@@ -5,6 +5,7 @@ const canvasWidth = 800;
 const canvasHeight = 400;
 
 var gameThread;
+var sanityDeleteThread;
 
 startLoad(ctx);
 framework.setUpEventHandlers();
@@ -16,19 +17,39 @@ function prepareGameField() {
 
 
 function startGame() {
-  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 1)], []));
+  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 0.2)], []));
   gameThread = setInterval(() => {
     frame();
     render();
-  }, 16)
+    detectCollision()
+  }, 16);
+  sanityDeleteThread = setInterval(() => framework.sanityDeleteEntities(entities, canvasWidth, canvasHeight), 5000);
+}
+
+function getImageData(img) {
+  let off_canvas = document.createElement('canvas');
+  off_canvas.width = img.width;
+  off_canvas.height = img.height;
+  let off_ctx = off_canvas.getContext('2d');
+  off_ctx.drawImage(img, 0, 0);
+  return off_ctx.getImageData(0, 0, img.width, img.height).data;
+}
+
+function createMasks(entities) {
+  let masksData = Array(entities.length); //Pushing into arrays is bad?
+  for (let i = 0; i < entities.length; i++) {
+    masksData[i] = getImageData(entities[i].img)
+  }
+  return masksData;
 }
 
 function detectCollision() {
+  let masksData = createMasks(entities);
   for (let i = 0; i < entities.length; i++) {
     for (let j = 0; j < entities.length; j++) {
       if (j !== i) {
-        if (isPixelCollision(entities[i].img, entities[i].x, entities[i].y, entities[j].img, entities[j].x, entities[j].y))
-          console.log(entities[i], entities[j]);
+        if(framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y))
+          console.log('HIT');
       }
     }
   }
