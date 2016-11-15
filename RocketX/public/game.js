@@ -45,12 +45,15 @@ function createMasks(entities) {
 
 function detectCollision() {
   let masksData = createMasks(entities);
+  let collidedObjects = []
   for (let i = 0; i < entities.length; i++) {
     for (let j = i + 1; j < entities.length; j++) {
       if (framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y)) {
+        collidedObjects.push([entities[i], entities[j]]);
       }
     }
   }
+  framework.handleCollisions(collidedObjects);
 }
 
 function render() {

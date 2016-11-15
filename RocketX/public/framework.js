@@ -16,6 +16,10 @@ framework.setUpEventHandlers = function () {
   };
 };
 
+framework.requestDestroy = function (object){
+  console.log('Removed entity: ', entities.splice(entities.indexOf(object), 1) )
+}
+
 framework.isDown = function (key) {
   return pressedKeys[key];
 };
@@ -29,11 +33,20 @@ framework.outOfCanvas = function (entity, canvas_width, canvas_height) {
 framework.sanityDeleteEntities = function (entities, canvas_width, canvas_height) {
   for (let i = 0; i < entities.length; i++) {
     if (framework.outOfCanvas(entities[i], canvas_width, canvas_height)) {
-      console.log('Removed: ', entities.splice(i, 1));
+      framework.requestDestroy(entities[i]);
     }
   }
 };
 
+framework.handleCollisions = function (array_of_collisions) {
+  for (let i = 0; i <array_of_collisions.length; i++)
+    framework.collisionHandler(array_of_collisions[i][0], array_of_collisions[i][1]);
+}
+
+framework.collisionHandler = function (object1, object2) {
+  object1.collided(object2);
+  object2.collided(object1);
+}
 framework.isPixelCollision = function (first, x, y, other, x2, y2) {
   x = Math.round(x);
   y = Math.round(y);

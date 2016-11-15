@@ -28,4 +28,8 @@ class Projectile {
         break;
     }
   }
+
+  collided(object){
+    framework.requestDestroy(this);
+  }
 }

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7430562b-d69d-4d00-84af-9e7a266b0c96" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/framework.js" afterPath="$PROJECT_DIR$/RocketX/public/framework.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/game.js" afterPath="$PROJECT_DIR$/RocketX/public/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/game_classes/Ammos/Projectile.js" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Ammos/Projectile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" />
     </list>
     <ignored path="jatekfejlesztes_bead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +56,8 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RocketX/public/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="55" column="28" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -63,8 +66,8 @@
       <file leaf-file-name="BaseEnemyShip.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="306">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc;n#BaseEnemyShip#0" expanded="false" />
               </folding>
@@ -72,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerShip.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerShip.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+            <state relative-caret-position="68">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -87,6 +90,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="framework.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/framework.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projectile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ammos/Projectile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -139,11 +162,13 @@
         <option value="$PROJECT_DIR$/RocketX/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js" />
-        <option value="$PROJECT_DIR$/RocketX/public/game.js" />
-        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" />
         <option value="$PROJECT_DIR$/RocketX/resources/views/game.njk" />
         <option value="$PROJECT_DIR$/RocketX/public/game_classes/Factories/ShipFactory.js" />
         <option value="$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Ammos/Projectile.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/game.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/framework.js" />
       </list>
     </option>
   </component>
@@ -296,6 +321,10 @@
               <option name="myItemId" value="game_classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Weapons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -346,6 +375,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Factories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ammos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,12 +602,10 @@
       <workItem from="1479070342847" duration="9953000" />
       <workItem from="1479114723106" duration="21764000" />
       <workItem from="1479161413717" duration="1689000" />
-      <workItem from="1479201458271" duration="2170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72356000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,8 +690,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/Token.js" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/User.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/config/shield.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/app/Http/kernel.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/package.json" />
@@ -693,6 +766,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ammos/Projectile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/resources/views/game.njk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc;n#BaseEnemyShip#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -713,36 +820,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc;n#BaseEnemyShip#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RocketX/resources/views/game.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RocketX/public/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js">
+    <entry file="file://$PROJECT_DIR$/RocketX/public/framework.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+        <state relative-caret-position="187">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding />
         </state>
       </provider>
