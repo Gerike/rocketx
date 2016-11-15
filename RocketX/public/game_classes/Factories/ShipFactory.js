@@ -7,7 +7,7 @@ class ShipFactory {
     return new PlayerShip(x, y, resources['ship'], [WeaponFactory.createBaseCannon(resources['ship'])], [], 4);
   }
   static createBaseEnemyShip(x,y){
-    return new BaseEnemyShip(x, y, resources['ship'], [], [], 2, new StraightLinePath(x, y, 270));
+    return new BaseEnemyShip(x, y, resources['ship'], [], [], 2, new LinearPath(x, y, 270));
   }
 }
 

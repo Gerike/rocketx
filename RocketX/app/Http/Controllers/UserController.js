@@ -16,7 +16,7 @@ class UserController {
       response.unauthorized('Invalid credentails');
     }
   }
-  *register (request, response){
+  * register (request, response){
     if (request.method() === "POST") {
       const email = request.input('email');
       const password = request.input('password');
