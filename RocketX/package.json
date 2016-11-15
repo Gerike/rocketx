@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x \"node \" server.js",
-    "start": "node",
+    "start": "node server.js",
     "lint": "standard"
   },
   "author": "",
