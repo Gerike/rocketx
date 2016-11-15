@@ -1,12 +1,17 @@
 {% extends 'master' %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="game.css">
-<div class="game_field"><canvas id="game_canvas"></canvas></div>
+<div class="game_field">
+  <canvas id="game_canvas"></canvas>
+</div>
 <script src="/game_classes/Ammos/Projectile.js"></script>
 <script src="/game_classes/Ammos/BaseAmmo.js"></script>
 <script src="/game_classes/Weapons/BaseCannon.js"></script>
 <script src="/game_classes/Ships/SpaceShip.js"></script>
 <script src="/game_classes/Ships/PlayerShip.js"></script>
+<script src="/game_classes/Ships/BaseEnemyShip.js"></script>
+<script src="/game_classes/Factories/ShipFactory.js"></script>
+<script src="/game_classes/Factories/WeaponFactory.js"></script>
 <script src="resource_loader.js"></script>
 <script src="framework.js"></script>
 <script src="game.js"></script>

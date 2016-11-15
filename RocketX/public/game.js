@@ -17,7 +17,7 @@ function prepareGameField() {
 
 
 function startGame() {
-  entities.push(new PlayerShip(0, 0, resources['ship'], [new BaseCannon(new BaseAmmo(1, resources['base_laser'], 2), 1, resources['ship'].width, resources['ship'].height)], [], 4));
+  entities.push(ShipFactory.createBasePlayerShip(0, 0));
   gameThread = setInterval(() => {
     frame();
     render();
@@ -46,8 +46,9 @@ function createMasks(entities) {
 function detectCollision() {
   let masksData = createMasks(entities);
   for (let i = 0; i < entities.length; i++) {
-    for (let j = i+1; j < entities.length; j++) {
-      if(framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y)){}
+    for (let j = i + 1; j < entities.length; j++) {
+      if (framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y)) {
+      }
     }
   }
 }

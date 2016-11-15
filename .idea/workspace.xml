@@ -2,74 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7430562b-d69d-4d00-84af-9e7a266b0c96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.env.example" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/ace" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Commands/Greet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/GameController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Controllers/UserController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/Middleware/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/kernel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Http/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Listeners/Http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/Hooks/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/Token.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/app/Model/User.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/extend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/bootstrap/kernel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/auth.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/bodyParser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/cors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/database.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/session.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/config/shield.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/development.sqlite" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/factory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479040942605_create_users_table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479040942607_create_tokens_table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479044294400_create_users_table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/migrations/1479044294402_create_tokens_table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/database/seeds/Database.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/providers/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/base_laser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/github.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/ship.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/assets/twitter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/framework.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/BaseAmmo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/game_classes/Weapons/BaseCannon.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/register.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/resource_loader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/public/welcome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/errors/index.njk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/game.njk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/master.njk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/register.njk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/resources/views/welcome.njk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/server.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gaming_site/storage/.gitkeep" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Factories/ShipFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/public/game.js" afterPath="$PROJECT_DIR$/RocketX/public/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RocketX/resources/views/game.njk" afterPath="$PROJECT_DIR$/RocketX/resources/views/game.njk" />
     </list>
     <ignored path="jatekfejlesztes_bead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,27 +30,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
-            <state />
-          </provider>
-          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="85">
-                <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="ShipFactory.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Factories/ShipFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RocketX/package.json">
+      <file leaf-file-name="WeaponFactory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+            <state relative-caret-position="119">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseEnemyShip.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding>
+                <element signature="n#!!doc;n#BaseEnemyShip#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerShip.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.njk" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RocketX/resources/views/game.njk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -164,6 +142,11 @@
         <option value="$PROJECT_DIR$/gaming_site/public/game.js" />
         <option value="$PROJECT_DIR$/RocketX/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/game.js" />
+        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js" />
+        <option value="$PROJECT_DIR$/RocketX/resources/views/game.njk" />
+        <option value="$PROJECT_DIR$/RocketX/public/game_classes/Factories/ShipFactory.js" />
       </list>
     </option>
   </component>
@@ -173,11 +156,30 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/RocketX/node_modules" />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -204,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,14 +238,195 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ships" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Factories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jatekfejlesztes_bead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_284a859b0e6deba86edc624fef1e4db2aa8241a9/cmd/git.exe" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="editor.config.accepted" value="true" />
@@ -345,12 +527,13 @@
       <workItem from="1479032413929" duration="25000000" />
       <workItem from="1479070342847" duration="9953000" />
       <workItem from="1479114723106" duration="21764000" />
-      <workItem from="1479161413717" duration="231000" />
+      <workItem from="1479161413717" duration="1689000" />
+      <workItem from="1479201458271" duration="1330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68728000" />
+    <option name="totallyTimeSpent" value="71516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,22 +548,22 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17918216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17931548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25611746" sideWeight="0.5055762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20880914" sideWeight="0.4944238" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20949264" sideWeight="0.4944238" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -435,13 +618,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gaming_site/resources/views/errors/index.njk" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/public/assets/background.jpg" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/ace" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/README.md" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/migrations/1479040942607_create_tokens_table.js" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/database/factory.js" />
-    <entry file="file://$PROJECT_DIR$/gaming_site/config/auth.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/Token.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/app/Model/User.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/config/shield.js" />
@@ -479,13 +655,7 @@
     <entry file="file://$PROJECT_DIR$/gaming_site/public/style.css" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/register.css" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/game.css" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/framework.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="68" column="71" selection-start-line="62" selection-start-column="8" selection-end-line="68" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_4. ora 2016.zip/framework.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ammos/Projectile.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/PlayerShip.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/game_classes/Ships/SpaceShip.js" />
@@ -496,18 +666,7 @@
     <entry file="file://$PROJECT_DIR$/gaming_site/public/resource_loader.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/framework.js" />
     <entry file="file://$PROJECT_DIR$/gaming_site/public/game.js" />
-    <entry file="file://$PROJECT_DIR$/RocketX/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="85">
@@ -517,6 +676,94 @@
           <second_editor />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/app/Http/Controllers/GameController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/PlayerShip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Factories/WeaponFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/resources/views/game.njk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Ships/BaseEnemyShip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc;n#BaseEnemyShip#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RocketX/public/game_classes/Factories/ShipFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
