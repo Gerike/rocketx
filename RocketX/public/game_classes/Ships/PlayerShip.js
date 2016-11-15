@@ -20,13 +20,13 @@ class PlayerShip extends SpaceShip {
 
   frame() {
     if (framework.isDown(37))
-      this.x -= this.speed;
+      if (this.x - this.speed < 0) this.x = 0; else this.x -= this.speed;
     if (framework.isDown(39))
-      this.x += this.speed;
+      if (this.x + this.speed + this.img.width > canvasWidth ) this.x = canvasWidth - this.img.width; else this.x += this.speed;
     if (framework.isDown(38))
-      this.y -= this.speed;
+      if (this.y - this.speed < 0) this.y = 0; else this.y -= this.speed;
     if (framework.isDown(40))
-      this.y += this.speed;
+      if (this.y + this.speed + this.img.height > canvasHeight ) this.y = canvasHeight - this.img.height; else this.y += this.speed;
     if (framework.isDown(32))
       this.shoot();
   }
