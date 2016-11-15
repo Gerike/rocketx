@@ -4,7 +4,7 @@ class Projectile {
     this.img = img;
     this.x = x;
     this.y = y;
-    this.direction = direction;
+    this.path = new LinearPath(x, y, direction)
     this.speed = speed;
   }
 
@@ -13,23 +13,12 @@ class Projectile {
   }
 
   frame() {
-    switch (this.direction) {
-      case 0:
-        this.y += this.speed;
-        break;
-      case 90:
-        this.x += this.speed;
-        break;
-      case 180:
-        this.y -= this.speed;
-        break;
-      case 270:
-        this.x -= this.speed;
-        break;
-    }
+    let next_waypoint = this.path.getWaypoint().next().value;
+    this.x = next_waypoint.x;
+    this.y = next_waypoint.y;
   }
 
-  collided(object){
+  collided(object) {
     framework.requestDestroy(this);
   }
 }

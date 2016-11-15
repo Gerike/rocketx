@@ -1,6 +1,7 @@
 /**
  * Created by Geri on 2016. 11. 13..
  */
+'use strict'
 
 var framework = {};
 var pressedKeys = {};
@@ -16,8 +17,8 @@ framework.setUpEventHandlers = function () {
   };
 };
 
-framework.requestDestroy = function (object){
-  console.log('Removed entity: ', entities.splice(entities.indexOf(object), 1) )
+framework.requestDestroy = function (object) {
+  console.log('Removed entity: ', entities.splice(entities.indexOf(object), 1))
 }
 
 framework.isDown = function (key) {
@@ -39,7 +40,7 @@ framework.sanityDeleteEntities = function (entities, canvas_width, canvas_height
 };
 
 framework.handleCollisions = function (array_of_collisions) {
-  for (let i = 0; i <array_of_collisions.length; i++)
+  for (let i = 0; i < array_of_collisions.length; i++)
     framework.collisionHandler(array_of_collisions[i][0], array_of_collisions[i][1]);
 }
 
@@ -106,3 +107,45 @@ framework.isPixelCollision = function (first, x, y, other, x2, y2) {
 
   return false;
 };
+
+framework.getImageData = function (img) {
+  let off_canvas = document.createElement('canvas');
+  off_canvas.width = img.width;
+  off_canvas.height = img.height;
+  let off_ctx = off_canvas.getContext('2d');
+  off_ctx.drawImage(img, 0, 0);
+  return off_ctx.getImageData(0, 0, img.width, img.height);
+}
+
+framework.createMasks = function (entities) {
+  let masksData = Array(entities.length); //Pushing into arrays is bad?
+  for (let i = 0; i < entities.length; i++) {
+    masksData[i] = framework.getImageData(entities[i].img)
+  }
+  return masksData;
+}
+
+framework.detectCollision = function (entities) {
+  let masksData = framework.createMasks(entities);
+  let collidedObjects = []
+  for (let i = 0; i < entities.length; i++) {
+    for (let j = i + 1; j < entities.length; j++) {
+      if (framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y)) {
+        collidedObjects.push([entities[i], entities[j]]);
+      }
+    }
+  }
+  framework.handleCollisions(collidedObjects);
+}
+
+framework.render = function (ctx, canvas) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < entities.length; i++)
+    entities[i].draw(ctx);
+}
+
+framework.frame = function(){
+  for (let i = 0; i < entities.length; i++)
+    if (entities[i].frame)
+      entities[i].frame();
+}
