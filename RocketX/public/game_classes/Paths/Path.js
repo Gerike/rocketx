@@ -3,8 +3,9 @@
  */
 'use strict'
 class Path {
-  constructor(startX, startY){
+  constructor(startX, startY, speed){
     this.x = startX;
     this.y = startY;
+    this.speed = speed;
   }
 }

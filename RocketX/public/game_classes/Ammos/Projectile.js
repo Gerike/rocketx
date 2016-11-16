@@ -4,8 +4,7 @@ class Projectile {
     this.img = img;
     this.x = x;
     this.y = y;
-    this.path = new LinearPath(x, y, direction)
-    this.speed = speed;
+    this.path = new LinearPath(x, y, direction, speed)
   }
 
   draw(ctx) {
