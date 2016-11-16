@@ -23,7 +23,7 @@ class BaseCannon {
           projectile_y = y + 3;
           break;
         case 90:
-          projectile_x = x + this.ship_width + 10;
+          projectile_x = x + this.ship_width + 3;
           projectile_y = y + this.ship_height / 2;
           break;
         case 180:

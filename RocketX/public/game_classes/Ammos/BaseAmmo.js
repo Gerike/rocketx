@@ -9,6 +9,6 @@ class BaseAmmo {
   }
 
   createProjectile(x, y, direction) {
-    entities.push(new Projectile(this.damage, this.img, x, y, direction, this.speed));
+    framework.registerEntity(new Projectile(this.damage, this.img, x, y, direction, this.speed));
   }
 }

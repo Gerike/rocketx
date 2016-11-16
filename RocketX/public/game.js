@@ -17,7 +17,7 @@ function prepareGameField() {
 
 
 function startGame() {
-  entities.push(ShipFactory.createBasePlayerShip(0, 0));
+  framework.registerEntity(ShipFactory.createBasePlayerShip(0, 0));
   gameThread = setInterval(() => {
     framework.frame();
     framework.render(ctx, canvas);

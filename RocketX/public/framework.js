@@ -17,6 +17,9 @@ framework.setUpEventHandlers = function () {
   };
 };
 
+framework.registerEntity = function (object) {
+  entities.push(object);
+}
 framework.requestDestroy = function (object) {
   console.log('Removed entity: ', entities.splice(entities.indexOf(object), 1))
 }
