@@ -4,8 +4,8 @@
 'use strict'
 class Path {
   constructor(startX, startY, speed){
-    this.x = startX;
-    this.y = startY;
+    this.startX = startX;
+    this.startY = startY;
     this.speed = speed;
   }
 }

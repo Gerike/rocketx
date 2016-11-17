@@ -8,27 +8,31 @@ class WavePath extends Path {
     this.direction = direction;
     this.gradient = gradient;
     this.maxElongation = maxElongation;
-    this.atfogo = this.maxElongation  / Math.sin(this.gradient * Math.PI / 180);
-    this.currentPath = new LinearPath(this.x, this.y, this.direction + this.gradient, this.speed, this.atfogo);
-  }
-  * getWaypoint(){
-      this.cp = this.currentPath.getWaypoint().next();
-      while(!this.cp.done){
-        this.x = this.cp.value.x;
-        this.y = this.cp.value.y;
-        yield {
-          x: this.x,
-          y: this.y
-        }
-        this.cp = this.currentPath.getWaypoint().next()
-      }
-  }
+    this.waveLength = this.maxElongation  / Math.sin(this.gradient * Math.PI / 180);
 
-  *test () {
-    let x = 0;
+  }
+  * _nextDirection(){
     while(true){
-      x += 1;
-      yield x;
+      yield this.direction - this.gradient;
+      yield this.direction + this.gradient;
+    }
+  }
+  * getWaypoints(){
+    let nextDirection = this._nextDirection();
+    let currentPath = new LinearPath(this.startX, this.startY, nextDirection.next().value, this.speed, this.waveLength).getWaypoints();
+    let currentPos = currentPath.next();
+    while(!currentPos.done){
+      yield currentPos.value;
+      currentPos = currentPath.next();
+    }
+    while(true){
+      currentPath = new LinearPath(currentPos.value.x, currentPos.value.y, nextDirection.next().value, this.speed, this.waveLength*2).getWaypoints();
+      currentPos = currentPath.next();
+      while(!currentPos.done){
+        yield currentPos.value;
+        currentPos = currentPath.next();
+      }
     }
   }
 }
+

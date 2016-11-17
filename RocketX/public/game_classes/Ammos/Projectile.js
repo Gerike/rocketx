@@ -4,7 +4,7 @@ class Projectile {
     this.img = img;
     this.x = x;
     this.y = y;
-    this.path = new LinearPath(x, y, direction, speed)
+    this.path = new LinearPath(x, y, direction, speed).getWaypoints()
   }
 
   draw(ctx) {
@@ -12,7 +12,7 @@ class Projectile {
   }
 
   frame() {
-    let next_waypoint = this.path.getWaypoint().next().value;
+    let next_waypoint = this.path.next().value;
     this.x = next_waypoint.x;
     this.y = next_waypoint.y;
   }
