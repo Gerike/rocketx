@@ -92,10 +92,10 @@ framework.isPixelCollision = function (first, x, y, other, x2, y2) {
     incX = (~~incX === incX) ? incX : (incX + 1 | 0);
     incY = (~~incY === incY) ? incY : (incY + 1 | 0);
 
-    for (let offsetY = 0; offsetY < incY; offsetY++) {
-      for (let offsetX = 0; offsetX < incX; offsetX++) {
-        for (let pixelY = yMin + offsetY; pixelY < yMax; pixelY += incY) {
-          for (let pixelX = xMin + offsetX; pixelX < xMax; pixelX += incX) {
+    for (var offsetY = 0; offsetY < incY; offsetY++) {
+      for (var offsetX = 0; offsetX < incX; offsetX++) {
+        for (var pixelY = yMin + offsetY; pixelY < yMax; pixelY += incY) {
+          for (var pixelX = xMin + offsetX; pixelX < xMax; pixelX += incX) {
             if (
               ( pixels [((pixelX - x ) + (pixelY - y ) * w ) * 4 + 3] !== 0 ) &&
               ( pixels2[((pixelX - x2) + (pixelY - y2) * w2) * 4 + 3] !== 0 )
