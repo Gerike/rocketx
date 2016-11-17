@@ -15,26 +15,8 @@ class BaseCannon {
     if (this.ready === true) {
       this.ready = false;
       setTimeout(() => this.ready = true, this.firerate * 1000);
-      let projectile_x;
-      let projectile_y;
-      switch (direction) {
-        case 0:
-          projectile_x = x + this.ship_width / 2;
-          projectile_y = y + 3;
-          break;
-        case 90:
-          projectile_x = x + this.ship_width + 3;
-          projectile_y = y + this.ship_height / 2;
-          break;
-        case 180:
-          projectile_x = x + this.ship_width / 2;
-          projectile_y = y - this.ship_height - 3;
-          break;
-        case 270:
-          projectile_x = x - 10;
-          projectile_y = y + this.ship_height / 2;
-          break;
-      }
+      let projectile_x = x + this.ship_width/2 + Math.sin(direction * Math.PI / 180) * this.ship_width/2 - 5;
+      let projectile_y = y + this.ship_height/2 + Math.cos(direction * Math.PI / 180) * this.ship_height/2 * - 1;
       this.ammo.createProjectile(projectile_x, projectile_y, direction);
     }
   }
