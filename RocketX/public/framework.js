@@ -3,41 +3,46 @@
  */
 'use strict'
 
-var framework = {};
-var pressedKeys = {};
+var framework = {
+  masksData : [],
+  entities : [],
+  pressedKeys : {},
+};
 
 framework.setUpEventHandlers = function () {
   document.onkeydown = function (e) {
     e.preventDefault();
-    pressedKeys[e.which] = true;
+    framework.pressedKeys[e.which] = true;
   };
   document.onkeyup = function (e) {
     e.preventDefault();
-    pressedKeys[e.which] = false;
+    framework.pressedKeys[e.which] = false;
   };
 };
 
 framework.registerEntity = function (object) {
-  entities.push(object);
-}
+  framework.entities.push(object);
+  framework.masksData.push(framework.createMasks(object));
+};
 framework.requestDestroy = function (object) {
-  console.log('Removed entity: ', entities.splice(entities.indexOf(object), 1))
-}
+  console.log('Removed entity: ', framework.entities.splice(framework.entities.indexOf(object), 1));
+  framework.masksData.splice(framework.entities.indexOf(object), 1);
+};
 
 framework.isDown = function (key) {
-  return pressedKeys[key];
+  return framework.pressedKeys[key];
 };
 
 framework.outOfCanvas = function (entity, canvas_width, canvas_height) {
-  if ((entity.x < -50) || (entity.x > canvas_width + 100) || (entity.y < -50) || (entity.y > canvas_height + 100))
+  if ((entity.x < 0) || (entity.x > canvas_width + entity.img.width) || (entity.y < 0) || (entity.y > canvas_height + entity.img.height))
     return true;
   return false;
 };
 
-framework.sanityDeleteEntities = function (entities, canvas_width, canvas_height) {
-  for (let i = 0; i < entities.length; i++) {
-    if (framework.outOfCanvas(entities[i], canvas_width, canvas_height)) {
-      framework.requestDestroy(entities[i]);
+framework.sanityDeleteEntities = function (canvas_width, canvas_height) {
+  for (let i = 0; i < framework.entities.length; i++) {
+    if (framework.outOfCanvas(framework.entities[i], canvas_width, canvas_height)) {
+      framework.requestDestroy(framework.entities[i]);
     }
   }
 };
@@ -45,12 +50,12 @@ framework.sanityDeleteEntities = function (entities, canvas_width, canvas_height
 framework.handleCollisions = function (array_of_collisions) {
   for (let i = 0; i < array_of_collisions.length; i++)
     framework.collisionHandler(array_of_collisions[i][0], array_of_collisions[i][1]);
-}
+};
 
 framework.collisionHandler = function (object1, object2) {
   object1.collided(object2);
   object2.collided(object1);
-}
+};
 framework.isPixelCollision = function (first, x, y, other, x2, y2) {
   x = Math.round(x);
   y = Math.round(y);
@@ -118,37 +123,36 @@ framework.getImageData = function (img) {
   let off_ctx = off_canvas.getContext('2d');
   off_ctx.drawImage(img, 0, 0);
   return off_ctx.getImageData(0, 0, img.width, img.height);
-}
+};
 
-framework.createMasks = function (entities) {
-  let masksData = Array(entities.length); //Pushing into arrays is bad?
-  for (let i = 0; i < entities.length; i++) {
-    masksData[i] = framework.getImageData(entities[i].img)
+framework.createMasks = function () {
+  let masksData = Array(framework.entities.length);
+  for (let i = 0; i < framework.entities.length; i++) {
+    masksData[i] = framework.getImageData(framework.entities[i].img)
   }
   return masksData;
-}
+};
 
-framework.detectCollision = function (entities) {
-  let masksData = framework.createMasks(entities);
+framework.detectCollision = function () {
   let collidedObjects = []
-  for (let i = 0; i < entities.length; i++) {
-    for (let j = i + 1; j < entities.length; j++) {
-      if (framework.isPixelCollision(masksData[i], entities[i].x, entities[i].y, masksData[j], entities[j].x, entities[j].y)) {
-        collidedObjects.push([entities[i], entities[j]]);
-      }
+  for (let i = 0; i < framework.entities.length; i++) {
+    for (let j = i + 1; j < framework.entities.length; j++) {
+      if (framework.entities[i].constructor.name !== framework.entities[j].constructor.name)
+        if (framework.isPixelCollision(framework.masksData[i], framework.entities[i].x, framework.entities[i].y, framework.masksData[j], framework.entities[j].x, framework.entities[j].y))
+          collidedObjects.push([framework.entities[i], framework.entities[j]]);
     }
   }
   framework.handleCollisions(collidedObjects);
-}
+};
 
 framework.render = function (ctx, canvas) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < entities.length; i++)
-    entities[i].draw(ctx);
-}
+  for (let i = 0; i < framework.entities.length; i++)
+    framework.entities[i].draw(ctx);
+};
 
 framework.frame = function(){
-  for (let i = 0; i < entities.length; i++)
-    if (entities[i].frame)
-      entities[i].frame();
-}
+  for (let i = 0; i < framework.entities.length; i++)
+    if (framework.entities[i].frame)
+      framework.entities[i].frame();
+};

@@ -21,9 +21,9 @@ function startGame() {
   gameThread = setInterval(() => {
     framework.frame();
     framework.render(ctx, canvas);
-    framework.detectCollision(entities)
+    framework.detectCollision()
   }, 16);
-  sanityDeleteThread = setInterval(() => framework.sanityDeleteEntities(entities, canvasWidth, canvasHeight), 5000);
+  sanityDeleteThread = setInterval(() => framework.sanityDeleteEntities(canvasWidth, canvasHeight), 5000);
 }
 
 
