@@ -17,6 +17,7 @@ function prepareGameField() {
 
 
 function startGame() {
+  framework.createMasks(resources);
   framework.registerEntity(ShipFactory.createBasePlayerShip(0, 0));
   gameThread = setInterval(() => {
     framework.frame();

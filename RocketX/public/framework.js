@@ -4,7 +4,7 @@
 'use strict'
 
 var framework = {
-  masksData : [],
+  masksData : {},
   entities : [],
   pressedKeys : {},
 };
@@ -22,11 +22,9 @@ framework.setUpEventHandlers = function () {
 
 framework.registerEntity = function (object) {
   framework.entities.push(object);
-  framework.masksData.push(framework.createMasks(object));
 };
 framework.requestDestroy = function (object) {
   console.log('Removed entity: ', framework.entities.splice(framework.entities.indexOf(object), 1));
-  framework.masksData.splice(framework.entities.indexOf(object), 1);
 };
 
 framework.isDown = function (key) {
@@ -125,20 +123,22 @@ framework.getImageData = function (img) {
   return off_ctx.getImageData(0, 0, img.width, img.height);
 };
 
-framework.createMasks = function () {
-  let masksData = Array(framework.entities.length);
-  for (let i = 0; i < framework.entities.length; i++) {
-    masksData[i] = framework.getImageData(framework.entities[i].img)
-  }
-  return masksData;
+framework.createMasks = function (images) {
+  framework.masksData = {}
+  for (var key in images)
+    framework.masksData[images[key].src] = framework.getImageData(images[key])
 };
+
+framework.getMask = function (image) {
+  return framework.masksData[image.src]
+}
 
 framework.detectCollision = function () {
   let collidedObjects = []
-  for (let i = 0; i < framework.entities.length; i++) {
-    for (let j = i + 1; j < framework.entities.length; j++) {
+  for (var i = 0; i < framework.entities.length; i++) {
+    for (var j = i + 1; j < framework.entities.length; j++) {
       if (framework.entities[i].constructor.name !== framework.entities[j].constructor.name)
-        if (framework.isPixelCollision(framework.masksData[i], framework.entities[i].x, framework.entities[i].y, framework.masksData[j], framework.entities[j].x, framework.entities[j].y))
+        if (framework.isPixelCollision(framework.getMask(framework.entities[i].img), framework.entities[i].x, framework.entities[i].y, framework.getMask(framework.entities[j].img), framework.entities[j].x, framework.entities[j].y))
           collidedObjects.push([framework.entities[i], framework.entities[j]]);
     }
   }
