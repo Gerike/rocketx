@@ -14,7 +14,7 @@ class BaseCannon {
   shoot(x, y, direction) {
     if (this.ready === true) {
       this.ready = false;
-      setTimeout(() => this.ready = true, this.firerate * 1000);
+      setTimeout(() => this.ready = true, this.firerate * 300);
       let projectile_x = x + this.ship_width/2 + Math.sin(direction * Math.PI / 180) * this.ship_width/2 - 5;
       let projectile_y = y + this.ship_height/2 + Math.cos(direction * Math.PI / 180) * this.ship_height/2 * - 1;
       this.ammo.createProjectile(projectile_x, projectile_y, direction);

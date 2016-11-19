@@ -24,7 +24,7 @@ framework.registerEntity = function (object) {
   framework.entities.push(object);
 };
 framework.requestDestroy = function (object) {
-  console.log('Removed entity: ', framework.entities.splice(framework.entities.indexOf(object), 1));
+  framework.entities.splice(framework.entities.indexOf(object), 1);
 };
 
 framework.isDown = function (key) {

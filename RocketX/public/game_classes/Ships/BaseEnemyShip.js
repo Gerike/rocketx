@@ -29,6 +29,7 @@ class BaseEnemyShip extends SpaceShip {
   shoot(){}
 
   collided (object){
+    destroyedShips += 1;
     framework.requestDestroy(this);
   }
 }

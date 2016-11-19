@@ -1,11 +1,14 @@
 /**
  * Created by Geri on 2016. 11. 13..
  */
+'use strict';
+
+var destroyedShips = 0;
+
 const canvasWidth = 800;
 const canvasHeight = 400;
 
 var gameThread;
-var sanityDeleteThread;
 
 startLoad(ctx);
 framework.setUpEventHandlers();
@@ -24,11 +27,30 @@ function step() {
   window.requestAnimationFrame(step);
 }
 
+function addShips(i, y, path){
+
+  var addingShips = setInterval(() => {
+    if (path === 1) var path = new LinearPath(800, y, 270, 2);
+    else {
+      if (y - 100 < 0) y = y + 100;
+      else if (y + 100 > 400) y = y - 100;
+      var path = new WavePath(800,y, 270, 3, 100, 45);
+    }
+    framework.registerEntity(ShipFactory.createBaseEnemyShip(800,y, path))
+  }, 500)
+  setTimeout(() => clearInterval(addingShips), 300*i);
+}
 
 function startGame() {
   framework.createMasks(resources);
   framework.registerEntity(ShipFactory.createBasePlayerShip(0, 0));
   gameThread = window.requestAnimationFrame(step);
+  setInterval(() => {
+    var i = Math.round(Math.random() * 10 + 5);
+    var y = Math.round(Math.random() * 400 );
+    var path = Math.round(Math.random() * 2);
+    addShips(i,y,path)
+  },2000)
 }
 
 
