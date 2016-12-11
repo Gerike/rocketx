@@ -153,19 +153,24 @@ framework.render = function (ctx, canvas) {
     framework.entities[i].draw(ctx);
 };
 
-framework.frame = function(){
-  framework._frameIndex += 1;
-
+framework.executeEvents = function(){
   for(let i = 0; i < framework.frameEvents.length; i++){
     if (framework.isFramePassed(framework.frameEvents[i]._frameIndex))
       framework.frameEvents[i].execute();
   }
+};
 
-  framework.deleteExecutedEvents();
-
+framework.executeEntityFrames = function(){
   for (let i = 0; i < framework.entities.length; i++)
     if (framework.entities[i].frame)
       framework.entities[i].frame();
+};
+
+framework.frame = function(){
+  framework._frameIndex += 1;
+  framework.executeEvents();
+  framework.deleteExecutedEvents();
+  framework.executeEntityFrames();
 };
 
 framework.isFramePassed = function(frame){
