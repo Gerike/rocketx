@@ -7,6 +7,7 @@ var framework = {
   masksData : {},
   entities : [],
   pressedKeys : {},
+  frame_index : 0,
 };
 
 framework.setUpEventHandlers = function () {
@@ -152,7 +153,16 @@ framework.render = function (ctx, canvas) {
 };
 
 framework.frame = function(){
+  framework.frame_index += 1;
   for (let i = 0; i < framework.entities.length; i++)
     if (framework.entities[i].frame)
       framework.entities[i].frame();
 };
+
+framework.isFramePassed = function(frame){
+  return (frame <= framework.frame_index);
+}
+
+framework.getCurrentFrameIndex = function() {
+  return framework.frame_index;
+}

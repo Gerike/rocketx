@@ -3,9 +3,7 @@ class TripleCannon extends BaseCannon{
     super(ammo, firerate, ship_width, ship_height);
   }
   shoot(x, y, direction) {
-    if (this.ready === true) {
-      this.ready = false;
-      setTimeout(() => this.ready = true, this.firerate * 100);
+    if (this.isReady()) {
       let dirs = Array(3);
       dirs[0] = direction - 20;
       dirs[1] = direction;
@@ -15,6 +13,7 @@ class TripleCannon extends BaseCannon{
         let projectile_y = y + this.ship_height / 2 + Math.cos(dirs[i] * Math.PI / 180) * this.ship_height / 2 * -1;
         this.ammo.createProjectile(projectile_x, projectile_y, dirs[i]);
       }
+      this.makeCooldown();
     }
   }
 }
