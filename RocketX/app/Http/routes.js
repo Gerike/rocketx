@@ -22,4 +22,5 @@ Route.on('/').render('welcome');
 Route.post('/register', 'UserController.register');
 Route.get('/register', 'UserController.register');
 Route.get('/play', 'GameController.startGame');
+Route.get('/messages', 'UserController.showMessages')
 

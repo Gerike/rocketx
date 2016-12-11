@@ -46,6 +46,11 @@ class UserController {
     }
 
   }
+
+  * showMessages (request, response){
+    console.log(request.authUser.attributes.username)
+    yield response.sendView('messages')
+  }
 }
 
 module.exports = UserController;
