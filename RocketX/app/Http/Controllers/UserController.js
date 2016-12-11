@@ -1,6 +1,8 @@
 'use strict'
 const Database = use('Database')
 const Hash = use('Hash')
+const Message = use('App/Model/Message')
+const User = use('App/Model/User')
 
 class UserController {
 
@@ -47,9 +49,39 @@ class UserController {
 
   }
 
+  * newMessage (request, response){
+      yield response.sendView('new_message')
+  }
+
   * showMessages (request, response){
-    console.log(request.authUser.attributes.username)
     yield response.sendView('messages')
+  }
+  * getMessageHeaders(request, response){
+    console.log(request.currentUser.id)
+    var messages = []
+      if (request.post()['type'] ==='in')
+        messages = yield Message.query().where('recipient_id', request.currentUser.id).fetch();
+      else
+        messages = yield Message.query().where('sender_id', request.currentUser.id).fetch();
+      var resp = []
+      for(let message of messages){
+        resp.push({
+          'title': message.title,
+          'id': message.id,
+          'sender': (yield User.find(message.sender_id)).attributes['username'],
+          'recipient': (yield User.find(message.recipient_id)).attributes['username'],
+          'sent': message.created_at
+        })
+      }
+      return response.send(JSON.stringify(resp))
+
+  }
+  *getMessage(request, response){
+      const message_id = request.post()['id'];
+      const message = yield Message.findOrFail(message_id);
+      if ((message.sender_id === request.currentUser.id) || (message.recipient_id === request.currentUser.id)){
+        return response.send(message.content)
+      }
   }
 }
 

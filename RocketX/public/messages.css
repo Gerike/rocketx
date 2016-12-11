@@ -1,0 +1,43 @@
+body {
+  color: white;
+  text-align: center;
+}
+table {
+  margin: auto;
+  text-align: center;
+}
+th {
+  border-bottom: 1px solid white;
+}
+td {
+  padding-top: 30px;
+}
+.sent{
+  width: 100px;
+}
+.title{
+  width: 300px;
+}
+.sender {
+  width: 150px;
+}
+
+.recipient {
+  width: 150px;
+}
+
+.message_row:hover {
+  color: green;
+}
+
+#message{
+  position: fixed;
+  margin-left: 20%;
+  border: 3px solid white;
+  width: 60%;
+  height: 300px;
+  color: white;
+  background-color: black;
+  z-index: 11;
+  display: none;
+}
