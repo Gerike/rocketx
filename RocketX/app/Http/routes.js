@@ -24,6 +24,7 @@ Route.get('/register', 'UserController.register');
 Route.get('/play', 'GameController.startGame');
 Route.get('/messages', 'UserController.showMessages');
 Route.get('/messages/new', 'UserController.newMessage');
+Route.post('/messages/new', 'UserController.createMessage')
 Route.post('message', 'UserController.getMessage');
 Route.post('messages', 'UserController.getMessageHeaders');
 

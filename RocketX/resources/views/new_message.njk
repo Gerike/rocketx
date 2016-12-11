@@ -1,7 +1,8 @@
 {% extends 'master' %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/new_message.css">
-<form id="message">
+<form id="message" method="post">
+  {{ csrfField }}
   <h1>New Message</h1>
   <table id="message_table">
     <tr>

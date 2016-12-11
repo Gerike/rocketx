@@ -57,7 +57,6 @@ class UserController {
     yield response.sendView('messages')
   }
   * getMessageHeaders(request, response){
-    console.log(request.currentUser.id)
     var messages = []
       if (request.post()['type'] ==='in')
         messages = yield Message.query().where('recipient_id', request.currentUser.id).fetch();
@@ -82,6 +81,16 @@ class UserController {
       if ((message.sender_id === request.currentUser.id) || (message.recipient_id === request.currentUser.id)){
         return response.send(message.content)
       }
+  }
+
+  *createMessage(request, response){
+    const message = new Message();
+    message.content = request.post()['content'];
+    message.recipient_id = (yield User.findBy('username', request.post()['recipient'])).attributes['id'];
+    message.sender_id = request.currentUser.id;
+    message.title = request.post()['title'];
+    yield message.save();
+    response.redirect('/')
   }
 }
 
