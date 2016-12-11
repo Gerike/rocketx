@@ -23,6 +23,7 @@ class WavePath extends Path {
     let currentPos = currentPath.next();
     while(!currentPos.done){
       yield currentPos.value;
+      currentPath.speed = this.speed;
       currentPos = currentPath.next();
     }
     while(true){
@@ -30,6 +31,7 @@ class WavePath extends Path {
       currentPos = currentPath.next();
       while(!currentPos.done){
         yield currentPos.value;
+        currentPath.speed = this.speed;
         currentPos = currentPath.next();
       }
     }

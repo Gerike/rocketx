@@ -45,12 +45,6 @@ function startGame() {
   framework.createMasks(resources);
   framework.registerEntity(ShipFactory.createBasePlayerShip(0, 0));
   gameThread = window.requestAnimationFrame(step);
-  setInterval(() => {
-    var i = Math.round(Math.random() * 10 + 5);
-    var y = Math.round(Math.random() * 400 );
-    var path = Math.round(Math.random() * 2);
-    addShips(i,y,path)
-  },2000)
 }
 
 

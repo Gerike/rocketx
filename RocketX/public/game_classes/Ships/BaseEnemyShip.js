@@ -6,7 +6,8 @@ class BaseEnemyShip extends SpaceShip {
     super(x, y, img);
     this.weapons = weapons;
     this.extras = extras;
-    if (path) this.path = path.getWaypoints()
+    this.path = path
+    if (this.path) this.waypoints = this.path.getWaypoints()
   }
 
   draw(ctx) {
@@ -16,7 +17,7 @@ class BaseEnemyShip extends SpaceShip {
   frame(){
     if (this.path !== null)
     {
-      let next_waypoint = this.path.next();
+      let next_waypoint = this.waypoints.next();
       if (!next_waypoint.done) {
         this.x = next_waypoint.value.x;
         this.y = next_waypoint.value.y;

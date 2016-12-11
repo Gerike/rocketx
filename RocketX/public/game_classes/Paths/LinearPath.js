@@ -31,12 +31,4 @@ class LinearPath extends Path{
       return currentPos;
   }
 
-  adjustSpeed(speed, frame = 0){
-    if (frame){
-      framework.delegateFrameEvent(() => {this._revertSpeed()}, frame);
-    }
-    else {
-      this._adjustSpeed(speed);
-    }
-  }
 }
