@@ -1,10 +1,11 @@
 class Projectile {
-  constructor(damage, img, x, y, direction, speed) {
+  constructor(damage, img, x, y, direction, speed, effect) {
     this.damage = damage;
     this.img = img;
     this.x = x;
     this.y = y;
     this.path = new LinearPath(x, y, direction, speed).getWaypoints()
+    this.effect = effect;
   }
 
   draw(ctx) {
@@ -19,5 +20,9 @@ class Projectile {
 
   collided(object) {
     framework.requestDestroy(this);
+  }
+
+  executeEffect(object){
+    this.effect(object);
   }
 }

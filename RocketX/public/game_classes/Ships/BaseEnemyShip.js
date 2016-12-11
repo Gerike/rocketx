@@ -2,11 +2,11 @@
  * Created by Geri on 2016. 11. 15..
  */
 class BaseEnemyShip extends SpaceShip {
-  constructor(x, y, img, weapons, extras, speed, path=null) {
-    super(x, y, img);
+  constructor(x, y, hp, img, weapons, extras, speed, path=null) {
+    super(x, y, hp, img);
     this.weapons = weapons;
     this.extras = extras;
-    this.path = path
+    this.path = path;
     if (this.path) this.waypoints = this.path.getWaypoints()
   }
 
@@ -30,7 +30,8 @@ class BaseEnemyShip extends SpaceShip {
   shoot(){}
 
   collided (object){
-    destroyedShips += 1;
-    framework.requestDestroy(this);
+    object.executeEffect(this);
+    if (this.hp <= 0)
+      framework.requestDestroy(this);
   }
 }

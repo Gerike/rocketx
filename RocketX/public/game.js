@@ -13,6 +13,8 @@ var gameThread;
 startLoad(ctx);
 framework.setUpEventHandlers();
 
+var pause = false;
+
 function prepareGameField() {
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
@@ -20,11 +22,14 @@ function prepareGameField() {
 
 
 function step() {
-  framework.frame();
-  framework.sanityDeleteEntities(canvasWidth, canvasHeight)
-  framework.render(ctx, canvas);
-  framework.detectCollision();
+  if(!pause) {
+    framework.frame();
+    framework.sanityDeleteEntities(canvasWidth, canvasHeight)
+    framework.render(ctx, canvas);
+    framework.detectCollision();
+  }
   window.requestAnimationFrame(step);
+
 }
 
 function addShips(i, y, path){
@@ -37,7 +42,7 @@ function addShips(i, y, path){
       var path = new WavePath(800,y, 270, 3, 100, 45);
     }
     framework.registerEntity(ShipFactory.createBaseEnemyShip(800,y, path))
-  }, 500)
+  }, 500);
   setTimeout(() => clearInterval(addingShips), 300*i);
 }
 
@@ -47,6 +52,10 @@ function startGame() {
   gameThread = window.requestAnimationFrame(step);
 }
 
+function stop(){
+  pause = true;
+}
 
-
-
+function cont(){
+  pause = false;
+}

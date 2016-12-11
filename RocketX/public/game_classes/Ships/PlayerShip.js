@@ -2,8 +2,8 @@
  * Created by Geri on 2016. 11. 13..
  */
 class PlayerShip extends SpaceShip {
-  constructor(x, y, img, weapons, extras, speed) {
-    super(x, y, img, speed)
+  constructor(x, y, hp, img, weapons, extras, speed) {
+    super(x, y, hp, img, speed)
     this.weapons = weapons;
     this.extras = extras;
     this.speed = speed;
