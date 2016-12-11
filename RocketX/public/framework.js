@@ -4,10 +4,11 @@
 'use strict'
 
 var framework = {
+  frameEvents : [],
   masksData : {},
   entities : [],
   pressedKeys : {},
-  frame_index : 0,
+  _frameIndex : 0,
 };
 
 framework.setUpEventHandlers = function () {
@@ -153,16 +154,35 @@ framework.render = function (ctx, canvas) {
 };
 
 framework.frame = function(){
-  framework.frame_index += 1;
+  framework._frameIndex += 1;
+
+  for(let i = 0; i < framework.frameEvents.length; i++){
+    if (framework.isFramePassed(framework.frameEvents[i]._frameIndex))
+      framework.frameEvents[i].execute();
+  }
+
+  framework.deleteExecutedEvents();
+
   for (let i = 0; i < framework.entities.length; i++)
     if (framework.entities[i].frame)
       framework.entities[i].frame();
 };
 
 framework.isFramePassed = function(frame){
-  return (frame <= framework.frame_index);
-}
+  return (frame <= framework._frameIndex);
+};
 
 framework.getCurrentFrameIndex = function() {
-  return framework.frame_index;
-}
+  return framework._frameIndex;
+};
+
+framework.delegateFrameEvent = function (callback, frame){
+  framework.frameEvents.push({
+    _frameIndex : framework._frameIndex + frame,
+    execute: callback
+  });
+};
+
+framework.deleteExecutedEvents = function(){
+  framework.frameEvents = framework.frameEvents.filter((event) => event._frameIndex > framework._frameIndex)
+};

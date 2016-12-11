@@ -4,7 +4,7 @@
 
 class BaseCannon {
   constructor(ammo, firerate, ship_width, ship_height) {
-    this.ready_frame = 0;
+    this.ready = true;
     this.ammo = ammo;
     this.firerate = firerate;
     this.ship_width = ship_width;
@@ -12,7 +12,7 @@ class BaseCannon {
   }
 
   shoot(x, y, direction) {
-    if (this.isReady()) {
+    if (this.ready) {
       let projectile_x = x + this.ship_width/2 + Math.sin(direction * Math.PI / 180) * this.ship_width/2 - 5;
       let projectile_y = y + this.ship_height/2 + Math.cos(direction * Math.PI / 180) * this.ship_height/2 * - 1;
       this.ammo.createProjectile(projectile_x, projectile_y, direction);
@@ -20,11 +20,8 @@ class BaseCannon {
     }
   }
 
-  isReady(){
-    return framework.isFramePassed(this.ready_frame);
-  }
-
   makeCooldown(){
-    this.ready_frame = framework.getCurrentFrameIndex() + this.firerate;
+    this.ready = false;
+    framework.delegateFrameEvent(() => {this.ready = true}, this.firerate);
   }
 }

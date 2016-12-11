@@ -8,4 +8,13 @@ class Path {
     this.startY = startY;
     this.speed = speed;
   }
+
+  _adjustSpeed(speed){
+    this._previous_speed = this.speed;
+    this.speed = speed;
+  }
+
+  _revertSpeed(){
+    this.speed = this._previous_speed;
+  }
 }
