@@ -3,11 +3,11 @@
  */
 'use strict'
 class WeaponFactory {
-  static createBaseCannon(ship_img) {
-    return new BaseCannon(AmmoFactory.createFreezingAmmo(), 30, ship_img.width, ship_img.height);
+  static createBaseCannon(ammo_type, firerate, ship_img) {
+    return new BaseCannon(ammo_type, firerate, ship_img.width, ship_img.height);
   }
-  static createTripleCannon(ship_img) {
-    return new TripleCannon(AmmoFactory.createBaseAmmo(), 30, ship_img.width, ship_img.height);
+  static createTripleCannon(ammo_type, firerate, ship_img) {
+    return new TripleCannon(ammo_type, firerate, ship_img.width, ship_img.height);
   }
 }
 

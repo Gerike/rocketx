@@ -3,7 +3,7 @@
  */
 class PlayerShip extends SpaceShip {
   constructor(x, y, hp, img, weapons, extras, speed) {
-    super(x, y, hp, img, speed)
+    super(x, y, hp, img, speed);
     this.weapons = weapons;
     this.extras = extras;
     this.speed = speed;

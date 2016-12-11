@@ -3,11 +3,11 @@
  */
 'use strict'
 class ShipFactory {
-  static createBasePlayerShip(x, y) {
-    return new PlayerShip(x, y, 10, resources['ship_2'], [WeaponFactory.createBaseCannon(resources['ship_2'])], [], 4);
+  static createBasePlayerShip(x, y, hp, ship_img, weapons, extras, speed) {
+    return new PlayerShip(x, y, hp, ship_img, weapons, extras, speed);
   }
-  static createBaseEnemyShip(x,y, path){
-    return new BaseEnemyShip(x, y, 10, resources['ship_3'], [], [], 2, path);
+  static createBaseEnemyShip(x,y, hp, ship_img, weapons, extras, speed, path){
+    return new BaseEnemyShip(x, y, hp, ship_img, weapons, extras, speed, path);
   }
 }
 
