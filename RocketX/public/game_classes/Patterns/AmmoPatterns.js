@@ -10,4 +10,8 @@ class AmmoPatterns{
   static createFreezingAmmo(){
     return AmmoFactory.createFreezingAmmo(5, resources['laser_3'], 5);
   }
+
+  static createLaserAmmo(){
+    return AmmoFactory.createLaserAmmo(50, resources['laser_4']);
+  }
 }

@@ -5,7 +5,7 @@
 
 const canvas = document.getElementById('game_canvas');
 const ctx = canvas.getContext('2d');
-const resources_location = ['/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png'];
+const resources_location = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png'];
 
 var entities = [];
 var resources = {};
@@ -40,7 +40,7 @@ function loadResources(ctx, counter) {
     temp_img.src = resources_location[counter];
   }
   else
-    console.log('Game ready'); //startGame(); Maybe wait space?
+    console.log('Game ready');
 }
 
 

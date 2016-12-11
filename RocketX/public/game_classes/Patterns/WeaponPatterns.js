@@ -11,4 +11,7 @@ class WeaponPatterns{
   static createFreezeCannon() {
     return WeaponFactory.createBaseCannon(AmmoPatterns.createFreezingAmmo(), 30, resources['ship_2']);
   }
+  static createLaserCannon(){
+    return WeaponFactory.createBaseCannon(AmmoPatterns.createLaserAmmo(), 30, resources['ship_2']);
+  }
 }
