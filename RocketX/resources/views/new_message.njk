@@ -1,0 +1,22 @@
+{% extends 'master' %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/new_message.css">
+<form id="message">
+  <h1>New Message</h1>
+  <table id="message_table">
+    <tr>
+      <td>Recipient: </td>
+      <td><input type="text" name="recipient" placeholder="Recipient"></td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><input type="text" name="title" placeholder="Title"></td>
+    </tr>
+    <tr>
+      <td>Message:</td>
+      <td><textarea name="content"></textarea></td>
+    </tr>
+  </table>
+  <input type="submit" value="Send">
+</form>
+{% endblock %}
