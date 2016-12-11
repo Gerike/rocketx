@@ -5,7 +5,7 @@
 
 const canvas = document.getElementById('game_canvas');
 const ctx = canvas.getContext('2d');
-const resources_location = ['/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png'];
+const resources_location = ['/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png'];
 
 var entities = [];
 var resources = {};

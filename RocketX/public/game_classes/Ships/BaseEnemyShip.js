@@ -34,4 +34,12 @@ class BaseEnemyShip extends SpaceShip {
     if (this.hp <= 0)
       framework.requestDestroy(this);
   }
+
+  setSpeed(speed){
+    this.path.adjustSpeed(speed);
+  }
+
+  setTemporarySpeed(speed, frame){
+    this.path.adjustSpeed(speed, frame)
+  }
 }

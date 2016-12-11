@@ -4,10 +4,10 @@
 'use strict'
 class WeaponFactory {
   static createBaseCannon(ship_img) {
-    return new BaseCannon(new BaseAmmo(10, resources['laser_2'], 5), 30, ship_img.width, ship_img.height);
+    return new BaseCannon(AmmoFactory.createFreezingAmmo(), 30, ship_img.width, ship_img.height);
   }
   static createTripleCannon(ship_img) {
-    return new TripleCannon(new BaseAmmo(10, resources['laser_2'], 5), 30, ship_img.width, ship_img.height);
+    return new TripleCannon(AmmoFactory.createBaseAmmo(), 30, ship_img.width, ship_img.height);
   }
 }
 
