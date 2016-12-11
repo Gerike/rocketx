@@ -10,4 +10,7 @@ class LaserAmmo extends BaseAmmo{
       entity.modifyHp(-this.damage);
     }
   }
+  createProjectile(x, y, direction) {
+    framework.registerEntity(new Beam(this.damage, x, y, this.img, this.effect()));
+  }
 }
