@@ -1,14 +1,15 @@
 /**
  * Created by Geri on 2016. 11. 13..
  */
-'use strict'
+'use strict';
 
-var framework = {
+let framework = {
   frameEvents : [],
-  masksData : {},
+  masksData : {'static': {}, 'dynamic': {}},
   entities : [],
   pressedKeys : {},
   _frameIndex : 0,
+  _registeredEntities : 0
 };
 
 framework.setUpEventHandlers = function () {
@@ -22,11 +23,25 @@ framework.setUpEventHandlers = function () {
   };
 };
 
-framework.registerEntity = function (object) {
-  framework.entities.push(object);
+framework.addUniqueKey = function(entity){ //TODO: MAYBE USE WRAPPER?
+  entity._entityID = framework._registeredEntities;
+  framework._registeredEntities++;
 };
-framework.requestDestroy = function (object) {
-  framework.entities.splice(framework.entities.indexOf(object), 1);
+
+framework.createDynamicMask = function(entity){
+  framework.masksData['dynamic'][entity._entityID] = framework.getImageData(entity.img);
+};
+
+framework.registerEntity = function (entity) {
+  framework.addUniqueKey(entity);
+  framework.entities.push(entity);
+  if (entity.hasUniqueMask)
+    framework.createDynamicMask(entity)
+};
+
+framework.requestDestroy = function (entity) {
+  delete framework.masksData[entity._entityID];
+  framework.entities.splice(framework.entities.indexOf(entity), 1);
 };
 
 framework.isDown = function (key) {
@@ -56,21 +71,22 @@ framework.collisionHandler = function (object1, object2) {
   object1.collided(object2);
   object2.collided(object1);
 };
-framework.isPixelCollision = function (first, x, y, other, x2, y2) {
-  x = Math.round(x);
-  y = Math.round(y);
-  x2 = Math.round(x2);
-  y2 = Math.round(y2);
 
-  let w = first.width,
-    h = first.height,
-    w2 = other.width,
-    h2 = other.height;
+framework.isPixelCollision = function (entity_1_image_data, entity_1_x, entity_1_y, entity_2_image_data, entity_2_x, entity_2_y) {
+  entity_1_x = Math.round(entity_1_x);
+  entity_1_y = Math.round(entity_1_y);
+  entity_2_x = Math.round(entity_2_x);
+  entity_2_y = Math.round(entity_2_y);
 
-  let xMin = Math.max(x, x2),
-    yMin = Math.max(y, y2),
-    xMax = Math.min(x + w, x2 + w2),
-    yMax = Math.min(y + h, y2 + h2);
+  let w = entity_1_image_data.width,
+    h = entity_1_image_data.height,
+    w2 = entity_2_image_data.width,
+    h2 = entity_2_image_data.height;
+
+  let xMin = Math.max(entity_1_x, entity_2_x),
+    yMin = Math.max(entity_1_y, entity_2_y),
+    xMax = Math.min(entity_1_x + w, entity_2_x + w2),
+    yMax = Math.min(entity_1_y + h, entity_2_y + h2);
 
   if (xMin >= xMax || yMin >= yMax) {
     return false;
@@ -78,14 +94,14 @@ framework.isPixelCollision = function (first, x, y, other, x2, y2) {
 
   let xDiff = xMax - xMin,
     yDiff = yMax - yMin;
-  let pixels = first.data,
-    pixels2 = other.data;
+  let pixels = entity_1_image_data.data,
+    pixels2 = entity_2_image_data.data;
   if (xDiff < 4 && yDiff < 4) {
     for (let pixelX = xMin; pixelX < xMax; pixelX++) {
       for (let pixelY = yMin; pixelY < yMax; pixelY++) {
         if (
-          ( pixels [((pixelX - x ) + (pixelY - y ) * w ) * 4 + 3] !== 0 ) &&
-          ( pixels2[((pixelX - x2) + (pixelY - y2) * w2) * 4 + 3] !== 0 )
+          ( pixels [((pixelX - entity_1_x ) + (pixelY - entity_1_y ) * w ) * 4 + 3] !== 0 ) &&
+          ( pixels2[((pixelX - entity_2_x) + (pixelY - entity_2_y) * w2) * 4 + 3] !== 0 )
         ) {
           return true;
         }
@@ -102,8 +118,8 @@ framework.isPixelCollision = function (first, x, y, other, x2, y2) {
         for (var pixelY = yMin + offsetY; pixelY < yMax; pixelY += incY) {
           for (var pixelX = xMin + offsetX; pixelX < xMax; pixelX += incX) {
             if (
-              ( pixels [((pixelX - x ) + (pixelY - y ) * w ) * 4 + 3] !== 0 ) &&
-              ( pixels2[((pixelX - x2) + (pixelY - y2) * w2) * 4 + 3] !== 0 )
+              ( pixels [((pixelX - entity_1_x ) + (pixelY - entity_1_y ) * w ) * 4 + 3] !== 0 ) &&
+              ( pixels2[((pixelX - entity_2_x) + (pixelY - entity_2_y) * w2) * 4 + 3] !== 0 )
             ) {
               return true;
             }
@@ -125,22 +141,49 @@ framework.getImageData = function (img) {
   return off_ctx.getImageData(0, 0, img.width, img.height);
 };
 
-framework.createMasks = function (images) {
-  framework.masksData = {}
-  for (var key in images)
-    framework.masksData[images[key].src] = framework.getImageData(images[key])
+framework.createMask = function(entity){
+  let off_canvas = document.createElement('canvas');
+  off_canvas.width = entity.img.width;
+  off_canvas.height = entity.img.height;
+
+  let off_ctx = off_canvas.getContext('2d');
+
+  if (entity.hasUniqueMask)
+    entity.draw(off_ctx, 0, 0)
+  else
+    off_ctx.drawImage(entity.img, 0, 0);
+  return off_ctx.getImageData(0, 0, entity.img.width, entity.img.height);
 };
 
-framework.getMask = function (image) {
-  return framework.masksData[image.src]
-}
+framework.createStaticMasks = function (images) {
+  for (const key in images)
+    framework.masksData['static'][images[key].src] = framework.getImageData(images[key]);
+};
+
+framework.getMask = function (entity, force_static = false) {
+  if ((entity.hasUniqueMask) && (!force_static))
+    return framework.masksData['dynamic'][entity._entityID];
+  return framework.masksData['static'][entity.img.src];
+};
+
+framework.refreshUniqueMasks = function(entity) { //TODO: Maybe some event like approach? The entity alert if its mask change
+  for (const entity of framework.entities){
+    if (entity.hasUniqueMask)
+      framework.refreshMask(entity)
+  }
+};
+
+framework.refreshMask = function(entity){
+  framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity)
+};
 
 framework.detectCollision = function () {
-  let collidedObjects = []
+  let collidedObjects = [];
+  framework.refreshUniqueMasks();
   for (var i = 0; i < framework.entities.length; i++) {
     for (var j = i + 1; j < framework.entities.length; j++) {
       if (framework.entities[i].constructor.name !== framework.entities[j].constructor.name)
-        if (framework.isPixelCollision(framework.getMask(framework.entities[i].img), framework.entities[i].x, framework.entities[i].y, framework.getMask(framework.entities[j].img), framework.entities[j].x, framework.entities[j].y))
+        if (framework.isPixelCollision(framework.getMask(framework.entities[i]), framework.entities[i].x, framework.entities[i].y, framework.getMask(framework.entities[j]), framework.entities[j].x, framework.entities[j].y))
           collidedObjects.push([framework.entities[i], framework.entities[j]]);
     }
   }
@@ -194,17 +237,19 @@ framework.deleteExecutedEvents = function(){
 
 framework.getNearestEntity = function (fromEntity) {
   //TODO: DO IT
-}
+};
 
 framework.getFirstCollideEntity = function (fromEntity) {
   let minX = fromEntity.img.width;
    for (var i = 0; i < framework.entities.length; i++){
      if (framework.entities[i].constructor.name !== fromEntity.constructor.name){
-       if (framework.isPixelCollision(framework.getMask(framework.entities[i].img), framework.entities[i].x, framework.entities[i].y, framework.getMask(fromEntity.img), fromEntity.x, fromEntity.y))
+       if (framework.isPixelCollision(framework.getMask(framework.entities[i]), framework.entities[i].x, framework.entities[i].y, framework.getMask(fromEntity, true), fromEntity.x, fromEntity.y))
          if (minX > framework.entities[i].x - fromEntity.x)
            minX = framework.entities[i].x - fromEntity.x
      }
    }
-   return minX
+   if (minX !== fromEntity.img.width)
+    return minX + 3;
+  return fromEntity.img.width;
+};
 
-}
