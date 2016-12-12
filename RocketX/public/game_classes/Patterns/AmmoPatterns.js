@@ -12,6 +12,6 @@ class AmmoPatterns{
   }
 
   static createLaserAmmo(){
-    return AmmoFactory.createLaserAmmo(0.1, resources['laser_4']);
+    return AmmoFactory.createLaserAmmo(1, resources['laser_4'], 60);
   }
 }

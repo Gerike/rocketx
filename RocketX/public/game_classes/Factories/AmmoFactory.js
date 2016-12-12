@@ -7,7 +7,7 @@ class AmmoFactory {
     return new FreezingAmmo(damage, img, speed)
   }
 
-  static createLaserAmmo(damage, img){
-    return new LaserAmmo(damage, img)
+  static createLaserAmmo(damage, img, uptime){
+    return new LaserAmmo(damage, img, uptime)
   }
 }
