@@ -1,9 +1,8 @@
-class Beam {
+class Beam extends Entity {
   constructor(damage, x, y, img, effect, uptime) { //TODO: COLLISION HANDLING ISNT WORKING CUZ IT CHECK THE IMG WIDTH NOT THE ACTUAL WIDTH OF THE DRAWN IMAGE => IT HITS EVERYTHING IN THE LASER'S PATH REGARDLESS THE LASER ONLY GOES FOR THE FIRST COLLISION
+    super(x,y);
     this.damage = damage;
     this.img = img;
-    this.x = x;
-    this.y = y;
     this.effect = effect;
     this.hasDynamicMask = true;
     this.width = this.img.width;

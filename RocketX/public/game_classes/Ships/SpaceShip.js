@@ -1,7 +1,6 @@
-class SpaceShip {
+class SpaceShip extends Entity{
   constructor(x, y, hp, img) {
-    this.x = x;
-    this.y = y;
+    super(x,y);
     this.hp = hp;
     this.img = img;
   }

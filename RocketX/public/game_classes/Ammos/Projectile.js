@@ -1,9 +1,8 @@
-class Projectile {
+class Projectile extends Entity{
   constructor(damage, img, x, y, direction, speed, effect) {
+    super(x,y);
     this.damage = damage;
     this.img = img;
-    this.x = x;
-    this.y = y;
     this.path = new LinearPath(x, y, direction, speed).getWaypoints()
     this.effect = effect;
   }
