@@ -26,7 +26,7 @@ framework.maskHandler = {
     let off_ctx = off_canvas.getContext('2d');
 
     if (entity.hasDynamicMask)
-      entity.draw(off_ctx, 0, 0)
+      entity.draw(off_ctx, 0, 0);
     else
       off_ctx.drawImage(entity.img, 0, 0);
     return off_ctx.getImageData(0, 0, entity.img.width, entity.img.height);
@@ -50,7 +50,7 @@ framework.maskHandler = {
     framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity)
 },
   createDynamicMask : function(entity){
-    framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity);
+    framework.masksData['dynamic'][entity._entityID] = framework.getImageData(entity.img);
 },
 };
 
