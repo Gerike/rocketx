@@ -1,11 +1,28 @@
 AMMO_TYPES = {
-  BASE : BaseAmmo,
-  FREEZING : FreezingAmmo,
-  LASER : LaserAmmo,
+  BASE: BaseAmmo,
+  FREEZING: FreezingAmmo,
+  LASER: LaserAmmo,
 };
 
 AMMOS = {
-  BASE_AMMO : [AMMO_TYPES.BASE, 10, 'laser_2', 5],
-  BASE_FREEZE_AMMO : [AMMO_TYPES. FREEZING, 5,'laser_3', 5],
-  BASE_LASER_AMMO : [AMMO_TYPES.LASER, 1, 'laser_4', 60],
+  BASE_AMMO: {
+    type: AMMO_TYPES.BASE,
+    damage: 10,
+    img: 'laser_2',
+    firerate: 5
+  },
+
+  FREEZING_AMMO: {
+    type: AMMO_TYPES.FREEZING,
+    damage: 5,
+    img: 'laser_3',
+    firerate: 5
+  },
+
+  BASE_LASER_AMMO: {
+    type: AMMO_TYPES.LASER,
+    damage: 1,
+    img: 'laser_4',
+    uptime: 60
+  },
 };
