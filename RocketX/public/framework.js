@@ -191,3 +191,20 @@ framework.delegateFrameEvent = function (callback, frame){
 framework.deleteExecutedEvents = function(){
   framework.frameEvents = framework.frameEvents.filter((event) => event._frameIndex > framework._frameIndex)
 };
+
+framework.getNearestEntity = function (fromEntity) {
+  //TODO: DO IT
+}
+
+framework.getFirstCollideEntity = function (fromEntity) {
+  let minX = fromEntity.img.width;
+   for (var i = 0; i < framework.entities.length; i++){
+     if (framework.entities[i].constructor.name !== fromEntity.constructor.name){
+       if (framework.isPixelCollision(framework.getMask(framework.entities[i].img), framework.entities[i].x, framework.entities[i].y, framework.getMask(fromEntity.img), fromEntity.x, fromEntity.y))
+         if (minX > framework.entities[i].x - fromEntity.x)
+           minX = framework.entities[i].x - fromEntity.x
+     }
+   }
+   return minX
+
+}

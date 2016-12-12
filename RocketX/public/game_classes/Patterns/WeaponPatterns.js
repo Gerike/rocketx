@@ -12,6 +12,6 @@ class WeaponPatterns{
     return WeaponFactory.createBaseCannon(AmmoPatterns.createFreezingAmmo(), 30, resources['ship_2']);
   }
   static createLaserCannon(){
-    return WeaponFactory.createBeamCannon(AmmoPatterns.createLaserAmmo(), 300, resources['ship_2']);
+    return WeaponFactory.createBeamCannon(AmmoPatterns.createLaserAmmo(), 100, resources['ship_2']);
   }
 }
