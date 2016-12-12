@@ -1,9 +1,10 @@
-class ShipPatterns{
+SHIP_TYPES = {
+  BASE_ENEMY_SHIP : BaseEnemyShip,
+  PLAYER_SHIP : PlayerShip,
+};
 
-  static createBasePlayerShip(x, y) {
-    return ShipFactory.createBasePlayerShip(x, y, 100, resources['ship_2'], [WeaponPatterns.createLaserCannon()], [], 5);
-  }
-  static createBaseEnemyShip(x, y){
-    return ShipFactory.createBaseEnemyShip(x, y, 10, resources['ship_3'], [], [], 2, new LinearPath(x, y, 270, 1));
-  }
-}
+SHIPS = {
+  BASE_PLAYER_SHIP : [SHIP_TYPES.PLAYER_SHIP, 100, 'ship_2', [], [], 5],
+  BASE_ENEMY_SHIP : [SHIP_TYPES.BASE_ENEMY_SHIP, 10, 'ship_3', [], [], 2],
+};
+

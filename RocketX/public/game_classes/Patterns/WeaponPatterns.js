@@ -1,17 +1,11 @@
-/**
- * Created by Win10 on 2016. 12. 11..
- */
-class WeaponPatterns{
-  static createBaseCannon() {
-    return WeaponFactory.createBaseCannon(AmmoPatterns.createBaseAmmo(), 30, resources['ship_2']);
-  }
-  static createTripleCannon() {
-    return WeaponFactory.createTripleCannon(AmmoPatterns.createBaseAmmo(), 30, resources['ship_2']);
-  }
-  static createFreezeCannon() {
-    return WeaponFactory.createBaseCannon(AmmoPatterns.createFreezingAmmo(), 30, resources['ship_2']);
-  }
-  static createLaserCannon(){
-    return WeaponFactory.createBeamCannon(AmmoPatterns.createLaserAmmo(), 100, resources['ship_2']);
-  }
-}
+WEAPON_TYPES = {
+  BASE_CANNON : BaseCannon,
+  TRIPLE_CANNON : TripleCannon,
+  BEAM_CANNON : BeamCannon,
+};
+
+WEAPONS = {
+  BASE_CANNON : [WEAPON_TYPES.BASE_CANNON, 30, 'ship_2'],
+  BASE_TRIPLE_CANNON : [WEAPON_TYPES.TRIPLE_CANNON, 30, 'ship_2'],
+  BASE_BEAM_CANNON : [WEAPON_TYPES.BEAM_CANNON, 100, 'ship_2'],
+};

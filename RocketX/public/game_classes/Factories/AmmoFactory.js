@@ -1,13 +1,5 @@
 class AmmoFactory {
-  static createBaseAmmo(damage, img, speed){
-    return new BaseAmmo(damage, img, speed)
-  }
-
-  static createFreezingAmmo(damage, img, speed){
-    return new FreezingAmmo(damage, img, speed)
-  }
-
-  static createLaserAmmo(damage, img, uptime){
-    return new LaserAmmo(damage, img, uptime)
+  static createAmmo(pattern){
+    return new pattern[0](pattern[1], resources[pattern[2]], pattern[3]);
   }
 }

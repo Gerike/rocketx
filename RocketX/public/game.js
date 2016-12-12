@@ -48,7 +48,7 @@ function addShips(i, y, path){
 
 function startGame() {
   framework.createStaticMasks(resources);
-  framework.registerEntity(ShipPatterns.createBasePlayerShip(0, 0));
+  framework.registerEntity(ShipFactory.createShip(0, 0, SHIPS.BASE_PLAYER_SHIP, [WEAPONS.BASE_BEAM_CANNON], [AMMOS.BASE_LASER_AMMO]));
   gameThread = window.requestAnimationFrame(step);
 }
 
