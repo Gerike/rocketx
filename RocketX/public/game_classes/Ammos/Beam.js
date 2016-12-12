@@ -5,7 +5,7 @@ class Beam {
     this.x = x;
     this.y = y;
     this.effect = effect;
-    this.hasUniqueMask = true;
+    this.hasDynamicMask = true;
     this.width = this.img.width;
     this.uptime = uptime;
     framework.delegateFrameEvent(() => {framework.requestDestroy(this)}, this.uptime);

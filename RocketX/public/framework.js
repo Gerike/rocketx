@@ -25,7 +25,7 @@ framework.maskHandler = {
 
     let off_ctx = off_canvas.getContext('2d');
 
-    if (entity.hasUniqueMask)
+    if (entity.hasDynamicMask)
       entity.draw(off_ctx, 0, 0)
     else
       off_ctx.drawImage(entity.img, 0, 0);
@@ -36,21 +36,21 @@ framework.maskHandler = {
       framework.masksData['static'][images[key].src] = framework.getImageData(images[key]);
 },
   getMask : function (entity, force_static = false) {
-    if ((entity.hasUniqueMask) && (!force_static))
+    if ((entity.hasDynamicMask) && (!force_static))
       return framework.masksData['dynamic'][entity._entityID];
     return framework.masksData['static'][entity.img.src];
   },
-  refreshUniqueMasks : function(entity) { //TODO: Maybe some event like approach? The entity alert if its mask change
+  refreshDynamicMasks : function() { //TODO: Maybe some event like approach? The entity alert if its mask change
     for (const entity of framework.entities){
-      if (entity.hasUniqueMask)
-        framework.refreshMask(entity)
+      if (entity.hasDynamicMask)
+        framework.refreshDynamicMask(entity)
     }
   },
-  refreshMask : function(entity){
+  refreshDynamicMask : function(entity){
     framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity)
 },
   createDynamicMask : function(entity){
-    framework.masksData['dynamic'][entity._entityID] = framework.getImageData(entity.img);
+    framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity);
 },
 };
 
@@ -65,7 +65,7 @@ framework.collisionHandler = {
 },
   detectCollision : function () {
     let collidedObjects = [];
-    framework.refreshUniqueMasks();
+    framework.refreshDynamicMasks();
     for (var i = 0; i < framework.entities.length; i++) {
       for (var j = i + 1; j < framework.entities.length; j++) {
         if (framework.entities[i].constructor.name !== framework.entities[j].constructor.name)
@@ -168,7 +168,7 @@ framework.entityHandler = {
   registerEntity : function (entity) {
     framework.addUniqueKey(entity);
     framework.entities.push(entity);
-    if (entity.hasUniqueMask)
+    if (entity.hasDynamicMask)
       framework.createDynamicMask(entity)
   },
   outOfCanvas : function (entity, canvas_width, canvas_height) {
@@ -245,8 +245,8 @@ framework.getImageData = framework.maskHandler.getImageData;
 framework.createMask = framework.maskHandler.createMask;
 framework.createStaticMasks = framework.maskHandler.createStaticMasks;
 framework.getMask = framework.maskHandler.getMask;
-framework.refreshUniqueMasks = framework.maskHandler.refreshUniqueMasks;
-framework.refreshMask = framework.maskHandler.refreshMask;
+framework.refreshDynamicMasks = framework.maskHandler.refreshDynamicMasks;
+framework.refreshDynamicMask = framework.maskHandler.refreshDynamicMask;
 framework.createDynamicMask = framework.maskHandler.createDynamicMask;
 
 framework.handleCollisions = framework.collisionHandler.handleCollisions;
