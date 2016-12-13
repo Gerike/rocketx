@@ -1,17 +1,30 @@
-/**
- * Created by Win10 on 2016. 12. 11..
- */
-class AmmoPatterns{
+patterns.ammos = {}
 
-  static createBaseAmmo(){
-    return AmmoFactory.createBaseAmmo(10, resources['laser_2'], 5);
-  }
+patterns.ammos.types = {
+  BASE: BaseAmmo,
+  FREEZING: FreezingAmmo,
+  LASER: LaserAmmo,
+};
 
-  static createFreezingAmmo(){
-    return AmmoFactory.createFreezingAmmo(5, resources['laser_3'], 5);
-  }
+patterns.ammos = {
+  BASE_AMMO: {
+    type: patterns.ammos.types.BASE,
+    damage: 10,
+    img: 'laser_2',
+    firerate: 5
+  },
 
-  static createLaserAmmo(){
-    return AmmoFactory.createLaserAmmo(1, resources['laser_4'], 60);
-  }
-}
+  FREEZING_AMMO: {
+    type: patterns.ammos.types.FREEZING,
+    damage: 5,
+    img: 'laser_3',
+    firerate: 5
+  },
+
+  BASE_LASER_AMMO: {
+    type: patterns.ammos.types.LASER,
+    damage: 1,
+    img: 'laser_4',
+    uptime: 60
+  },
+};

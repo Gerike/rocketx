@@ -1,13 +1,12 @@
 class AmmoFactory {
-  static createBaseAmmo(damage, img, speed){
-    return new BaseAmmo(damage, img, speed)
-  }
-
-  static createFreezingAmmo(damage, img, speed){
-    return new FreezingAmmo(damage, img, speed)
-  }
-
-  static createLaserAmmo(damage, img, uptime){
-    return new LaserAmmo(damage, img, uptime)
+  static createAmmo(ammo_pattern) {
+    let ammo = new ammo_pattern['type'];
+    for (const key in ammo_pattern) {
+      if ((key !== 'type') && (key !== 'img'))
+        ammo[key] = ammo_pattern[key];
+      else if (key === 'img')
+        ammo[key] = resources[ammo_pattern[key]];
+    }
+    return ammo;
   }
 }

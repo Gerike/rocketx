@@ -1,17 +1,17 @@
-/**
- * Created by Geri on 2016. 11. 15..
- */
-'use strict'
 class WeaponFactory {
-  static createBaseCannon(ammo_type, firerate, ship_img) {
-    return new BaseCannon(ammo_type, firerate, ship_img.width, ship_img.height);
-  }
-  static createTripleCannon(ammo_type, firerate, ship_img) {
-    return new TripleCannon(ammo_type, firerate, ship_img.width, ship_img.height);
-  }
-
-  static createBeamCannon(ammo_type, firerate, ship_img){
-    return new BeamCannon(ammo_type, firerate, ship_img.width, ship_img.height);
+  static createWeapon(weapon_pattern, ammo_pattern) {
+    let weapon = new weapon_pattern['type'];
+    for (const key in weapon_pattern) {
+      if ((key !== 'type') && (key !== 'ship_img'))
+        weapon[key] = weapon_pattern[key];
+      else if (key === 'ship_img') {
+        weapon['ship_width'] = resources[weapon_pattern[key]].width;
+        weapon['ship_height'] = resources[weapon_pattern[key]].height;
+      }
+    }
+    if (ammo_pattern)
+      weapon.ammo = AmmoFactory.createAmmo(ammo_pattern);
+    return weapon;
   }
 }
 
