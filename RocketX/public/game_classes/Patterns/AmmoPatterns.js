@@ -1,26 +1,28 @@
-AMMO_TYPES = {
+patterns.ammos = {}
+
+patterns.ammos.types = {
   BASE: BaseAmmo,
   FREEZING: FreezingAmmo,
   LASER: LaserAmmo,
 };
 
-AMMOS = {
+patterns.ammos = {
   BASE_AMMO: {
-    type: AMMO_TYPES.BASE,
+    type: patterns.ammos.types.BASE,
     damage: 10,
     img: 'laser_2',
     firerate: 5
   },
 
   FREEZING_AMMO: {
-    type: AMMO_TYPES.FREEZING,
+    type: patterns.ammos.types.FREEZING,
     damage: 5,
     img: 'laser_3',
     firerate: 5
   },
 
   BASE_LASER_AMMO: {
-    type: AMMO_TYPES.LASER,
+    type: patterns.ammos.types.LASER,
     damage: 1,
     img: 'laser_4',
     uptime: 60

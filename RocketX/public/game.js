@@ -22,7 +22,7 @@ function prepareGameField() {
 
 
 function step() {
-  if(!pause) {
+  if (!pause) {
     framework.frame();
     framework.sanityDeleteEntities(canvasWidth, canvasHeight)
     framework.render(ctx, canvas);
@@ -32,30 +32,30 @@ function step() {
 
 }
 
-function addShips(i, y, path){
+function addShips(i, y, path) {
 
   var addingShips = setInterval(() => {
     if (path === 1) var path = new LinearPath(800, y, 270, 2);
     else {
       if (y - 100 < 0) y = y + 100;
       else if (y + 100 > 400) y = y - 100;
-      var path = new WavePath(800,y, 270, 3, 100, 45);
+      var path = new WavePath(800, y, 270, 3, 100, 45);
     }
-    framework.registerEntity(ShipFactory.createBaseEnemyShip(800,y, path))
+    framework.registerEntity(ShipFactory.createBaseEnemyShip(800, y, path))
   }, 500);
-  setTimeout(() => clearInterval(addingShips), 300*i);
+  setTimeout(() => clearInterval(addingShips), 300 * i);
 }
 
 function startGame() {
   framework.createStaticMasks(resources);
-  framework.registerEntity(ShipFactory.createShip(0, 0, SHIPS.BASE_PLAYER_SHIP, [WEAPONS.BASE_BEAM_CANNON], [AMMOS.BASE_LASER_AMMO]));
+  framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_BEAM_CANNON], [patterns.ammos.BASE_LASER_AMMO]));
   gameThread = window.requestAnimationFrame(step);
 }
 
-function stop(){
+function stop() {
   pause = true;
 }
 
-function cont(){
+function cont() {
   pause = false;
 }

@@ -1,7 +1,7 @@
 class ShipFactory {
   static createShip(x, y, ship_pattern, weapon_patterns, ammo_patterns) {
     let ship = new ship_pattern['type'];
-    
+
     ship.weapons = [];
     ship.x = x;
     ship.y = y;
