@@ -1,6 +1,3 @@
-/**
- * Created by Win10 on 2016. 12. 11..
- */
 class FreezingAmmo extends BaseAmmo{
   constructor(damage, img, speed){
     super(damage, img, speed);

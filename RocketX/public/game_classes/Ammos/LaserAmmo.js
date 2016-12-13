@@ -1,9 +1,6 @@
-/**
- * Created by Win10 on 2016. 12. 11..
- */
-class LaserAmmo extends BaseAmmo{
+class LaserAmmo extends Ammo{
   constructor(damage, img, uptime){
-    super(damage, img, 0);
+    super(damage, img);
     this.uptime = uptime;
   }
   effect(){

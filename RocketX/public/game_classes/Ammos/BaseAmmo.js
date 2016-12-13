@@ -1,10 +1,6 @@
-/**
- * Created by Geri on 2016. 11. 14..
- */
-class BaseAmmo {
+class BaseAmmo extends Ammo {
   constructor(damage, img, speed) {
-    this.damage = damage;
-    this.img = img;
+    super(damage, img);
     this.speed = speed;
   }
 
