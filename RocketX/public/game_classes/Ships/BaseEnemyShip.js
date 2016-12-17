@@ -4,8 +4,6 @@
 class BaseEnemyShip extends SpaceShip {
   constructor(x, y, hp, img, weapons, extras, speed, path=null) {
     super(x, y, hp, img);
-    this.weapons = weapons;
-    this.extras = extras;
     this.path = path;
     if (this.path) this.waypoints = this.path.getWaypoints()
   }

@@ -1,4 +1,4 @@
-patterns.ammos = {}
+patterns.ammos = {};
 
 patterns.ammos.types = {
   BASE: BaseAmmo,
@@ -11,14 +11,16 @@ patterns.ammos = {
     type: patterns.ammos.types.BASE,
     damage: 10,
     img: 'laser_2',
-    firerate: 5
+    firerate: 5,
+    speed: 6,
   },
 
   FREEZING_AMMO: {
     type: patterns.ammos.types.FREEZING,
     damage: 5,
     img: 'laser_3',
-    firerate: 5
+    firerate: 5,
+    speed: 6,
   },
 
   BASE_LASER_AMMO: {

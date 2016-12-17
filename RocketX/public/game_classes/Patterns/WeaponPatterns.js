@@ -1,8 +1,8 @@
-patterns.weapons = {}
+patterns.weapons = {};
 
 patterns.weapons.types = {
   BASE_CANNON: BaseCannon,
-  TRIPLE_CANNON: TripleCannon,
+  NCannon: NCannon,
   BEAM_CANNON: BeamCannon,
 };
 
@@ -10,16 +10,14 @@ patterns.weapons = {
   BASE_CANNON: {
     type: patterns.weapons.types.BASE_CANNON,
     firerate: 30,
-    ship_img: 'ship_2'
   },
-  BASE_TRIPLE_CANNON: {
-    type: patterns.weapons.types.TRIPLE_CANNON,
+  TRIPLE_CANNON: {
+    type: patterns.weapons.types.NCannon,
     firerate: 30,
-    ship_img: 'ship_2'
+    projectile_count: 3,
   },
-  BASE_BEAM_CANNON: {
+  BEAM_CANNON: {
     type: patterns.weapons.types.BEAM_CANNON,
     firerate: 30,
-    ship_img: 'ship_2'
   },
 };

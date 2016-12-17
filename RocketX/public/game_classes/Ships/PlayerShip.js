@@ -1,21 +1,14 @@
 /**
  * Created by Geri on 2016. 11. 13..
  */
-class PlayerShip extends SpaceShip {
+class PlayerShip extends ArmedShip {
   constructor(x, y, hp, img, weapons, extras, speed) {
-    super(x, y, hp, img, speed);
-    this.weapons = weapons;
-    this.extras = extras;
+    super(x, y, hp, img, weapons, extras);
     this.speed = speed;
   }
 
   draw(ctx) {
     ctx.drawImage(this.img, this.x, this.y);
-  }
-
-  shoot() {
-    for (let i = 0; i < this.weapons.length; i++)
-      this.weapons[i].shoot(this.x, this.y, 90);
   }
 
   frame() {

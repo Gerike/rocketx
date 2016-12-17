@@ -1,5 +1,5 @@
 class Beam extends Entity {
-  constructor(damage, x, y, img, effect, uptime) { //TODO: COLLISION HANDLING ISNT WORKING CUZ IT CHECK THE IMG WIDTH NOT THE ACTUAL WIDTH OF THE DRAWN IMAGE => IT HITS EVERYTHING IN THE LASER'S PATH REGARDLESS THE LASER ONLY GOES FOR THE FIRST COLLISION
+  constructor(damage, x, y, img, effect, uptime, linked_entity) {
     super(x,y);
     this.damage = damage;
     this.img = img;
@@ -7,6 +7,7 @@ class Beam extends Entity {
     this.hasDynamicMask = true;
     this.width = this.img.width;
     this.uptime = uptime;
+    this.linkedEntity = linked_entity;
     framework.delegateFrameEvent(() => {framework.requestDestroy(this)}, this.uptime);
   }
 
@@ -16,8 +17,8 @@ class Beam extends Entity {
 
   frame() {
     this.width = framework.getFirstCollideEntity(this);
-    this.x = framework.entities[0].x + 45; //TODO: REWORK PLS
-    this.y = framework.entities[0].y + 10;
+    this.x = this.linkedEntity.x + 45;
+    this.y = this.linkedEntity.y + 10;
   }
 
   collided(object) {

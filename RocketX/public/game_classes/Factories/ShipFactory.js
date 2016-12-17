@@ -15,7 +15,7 @@ class ShipFactory {
 
     if (weapon_patterns)
       for (let i = 0; i < weapon_patterns.length; i++)
-        ship.weapons.push(WeaponFactory.createWeapon(weapon_patterns[i], ammo_patterns[i]));
+        ship.addWeapon(WeaponFactory.createWeapon(weapon_patterns[i], ammo_patterns[i]));
     return ship;
   }
 }

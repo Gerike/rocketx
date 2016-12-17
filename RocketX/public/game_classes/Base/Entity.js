@@ -7,6 +7,13 @@ class Entity {
     this.y = y;
   }
 
+  getPosition(){
+    return {
+      x: this.x,
+      y: this.y,
+    }
+  }
+
   frame (){}
   draw(ctx){}
   collided(object){}

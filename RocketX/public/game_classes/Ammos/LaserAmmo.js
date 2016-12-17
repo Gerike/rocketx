@@ -8,7 +8,7 @@ class LaserAmmo extends Ammo{
       entity.modifyHp(-this.damage);
     }
   }
-  createProjectile(x, y, direction) {
-    framework.registerEntity(new Beam(this.damage, x, y, this.img, this.effect(), this.uptime));
+  createProjectile(x, y, direction, linked_to) {
+    framework.registerEntity(new Beam(this.damage, x, y, this.img, this.effect(), this.uptime, linked_to));
   }
 }
