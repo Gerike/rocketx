@@ -2,7 +2,7 @@
  * Created by Geri on 2016. 11. 15..
  */
 class BaseEnemyShip extends SpaceShip {
-  constructor(x, y, hp, img, weapons, extras, speed, path=null) {
+  constructor(x, y, hp, img, path=null) {
     super(x, y, hp, img);
     this.path = path;
     if (this.path) this.waypoints = this.path.getWaypoints()
