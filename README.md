@@ -56,18 +56,18 @@ A program legfőbb célja, egy webes alkalmazás létrehozása ahol a felhaszná
 #####2.3 Osztálymodell
 **Adatbázisterv**
 
-![](docs/images/datamodel.PNG)
+![](docs/images/datamodel.png)
 
 #####2.4 Felhasználói felület terve
 
 **Főoldal**
-![](docs/images/index.PNG)
+![](docs/images/index.png)
 
 **Regisztráció**
-![](docs/images/registration.PNG)
+![](docs/images/registration.png)
 
 **Játék oldala**
-![](docs/images/gameindex.PNG)
+![](docs/images/gameindex.png)
 
 **Üzenetek**
-![](docs/images/messages.PNG)
+![](docs/images/messages.png)
