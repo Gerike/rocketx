@@ -27,4 +27,5 @@ Route.get('/messages/new', 'UserController.newMessage');
 Route.post('/messages/new', 'UserController.createMessage')
 Route.post('message', 'UserController.getMessage');
 Route.post('messages', 'UserController.getMessageHeaders');
+Route.get('/rest/scores/:count', 'ToplistController.getTopScores');
 
