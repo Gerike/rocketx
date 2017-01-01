@@ -8,9 +8,9 @@ class ToplistTableSchema extends Schema {
     this.create('toplist', (table) => {
       table.increments();
       table.timestamps();
-      table.integer('user_id');
+      table.integer('user_id', 11).unsigned();
+      table.foreign('user_id').references('users.id');
       table.integer('points');
-      table.foreign('user_id').references('user.id')
     })
   }
 

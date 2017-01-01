@@ -34,7 +34,11 @@ class UserController {
         errors.push('Username already in use')
       }
       if (errors.length === 0) {
-        const user = yield Database.insert({username: username, email: email, password: yield Hash.make(password)}).into('users');
+        const user = new User();
+        user.username = username;
+        user.email = email;
+        user.password = yield Hash.make(password);
+        yield user.save();
         const login = yield request.auth.attempt(email, password);
         response.redirect('/');
       }
