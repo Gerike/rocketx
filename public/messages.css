@@ -33,11 +33,59 @@ td {
 #message{
   position: fixed;
   margin-left: 20%;
-  border: 3px solid white;
+  border: 2px solid deepskyblue;
   width: 60%;
   height: 300px;
   color: white;
   background-color: black;
   z-index: 11;
   display: none;
+}
+
+.message_chooser{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  padding: 5px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.message_chooser:hover{
+  color: white;
+  background-color: deepskyblue;
+}
+
+.new_message_link{
+  color:white;
+  text-decoration: none;
+}
+
+.new_message_link:hover{
+  color:deepskyblue;
+  text-decoration: none;
+}
+
+.close_button {
+  float: right;
+  border: none;
+  border-left: 1px solid deepskyblue;
+  border-bottom: 1px solid deepskyblue;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  padding: 10px;
+
+}
+
+.close_button:hover {
+  background-color: deepskyblue;
+}
+
+#message_content{
+  width: 50%;
+  margin: auto;
+  padding: 30px;
 }
