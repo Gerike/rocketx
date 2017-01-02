@@ -16,7 +16,7 @@
       <div class="__header">
       <span onclick="window.location='/'" class="logo">RocketX - #ROCKETX</span>
         {% if request.currentUser %}
-        <div class="__new_game"><a class="__play_link" href="/play">PLAY</a></div>
+        <div onclick="location.href='/play'" class="__new_game">PLAY</div>
         <div class="__current_user">
           <span class="__current_user_label">Welcome:</span><span class="__current_user_name">{{request.currentUser.username}}</span>
         </div>
