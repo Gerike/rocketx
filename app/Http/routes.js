@@ -21,12 +21,12 @@ Route.post('/login', 'UserController.login');
 Route.on('/').render('welcome');
 Route.post('/register', 'UserController.register');
 Route.get('/register', 'UserController.register');
-Route.get('/play', 'GameController.startGame');
-Route.get('/messages', 'UserController.showMessages');
-Route.get('/messages/new', 'UserController.newMessage');
-Route.post('/messages/new', 'UserController.createMessage')
-Route.post('message', 'UserController.getMessage');
-Route.post('messages', 'UserController.getMessageHeaders');
+Route.get('/play', 'GameController.startGame').middleware('auth');
+Route.get('/messages', 'UserController.showMessages').middleware('auth');
+Route.get('/messages/new', 'UserController.newMessage').middleware('auth');
+Route.post('/messages/new', 'UserController.createMessage').middleware('auth');
+Route.post('message', 'UserController.getMessage').middleware('auth');
+Route.post('messages', 'UserController.getMessageHeaders').middleware('auth');
 Route.get('/rest/scores/:count', 'ToplistController.getTopScores');
-Route.get('/logout', 'UserController.logout');
+Route.get('/logout', 'UserController.logout').middleware('auth');
 
