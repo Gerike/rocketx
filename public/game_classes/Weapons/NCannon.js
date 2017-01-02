@@ -5,24 +5,22 @@ class NCannon extends BaseCannon{
     this._shooting_angle = 30;
 
   }
-  _shoot() {
+  _shoot(direction) {
       let projectile_angle_diff = this._shooting_angle / this.projectile_count;
-
       let left = this.projectile_count;
-      this._shoot(this.direction);
+      super._shoot(direction);
       left--;
-
-      let temp_direction  = this.direction;
+      let temp_direction  = direction;
       for (let i = 0; i < (this.projectile_count -1) / 2; i++) {
         temp_direction += projectile_angle_diff;
-        this._shoot(temp_direction);
+        super._shoot(temp_direction);
         left--;
       }
 
-      temp_direction  = this.direction;
+      temp_direction  = direction;
       for (let i = 0; i < left; i++) {
         temp_direction -= projectile_angle_diff;
-        this._shoot(temp_direction);
+        super._shoot(temp_direction);
       }
   }
 }

@@ -17,7 +17,7 @@ class Cannon {
 
   shoot() {
     if (this.ready) {
-      this._shoot();
+      this._shoot(this.direction);
       this.makeCooldown();
     }
   }
