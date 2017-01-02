@@ -21,7 +21,8 @@
 }
 
 .registernow_box:hover {
-  border: 1px solid white;
+  cursor: pointer;
+  color: deepskyblue;
 }
 
 .registernow_box {
@@ -56,7 +57,8 @@
 }
 
 .forum_box:hover {
-  border: 1px solid white;
+  cursor: pointer;
+  color: deepskyblue;
 }
 
 .toplist_box {
@@ -78,7 +80,8 @@
 }
 
 .toplist_tablink:hover {
-  border: 1px solid white;
+  border: 1px solid deepskyblue;
+  color: deepskyblue;
 }
 
 .toplist_name {
