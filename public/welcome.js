@@ -4,7 +4,7 @@
 'use strict';
 const TOP_SCORE_ROW = 6;
 
-function loadHighScores(count){
+function loadHighScores(count, time){
   $.ajax({
       url: '/rest/scores/' + count,
       method: 'GET'
@@ -23,3 +23,7 @@ function loadHighScores(count){
     }
   );
 }
+
+$(document).ready( () => {
+  loadHighScores(6, 'Daily')
+});
