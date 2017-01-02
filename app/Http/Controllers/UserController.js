@@ -6,6 +6,10 @@ const User = use('App/Model/User')
 
 class UserController {
 
+  * logout (request, response){
+      yield request.auth.logout();
+      response.redirect('/');
+  }
   * login (request, response) {
     const email = request.input('email');
     const password = request.input('password');
