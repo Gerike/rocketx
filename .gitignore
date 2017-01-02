@@ -7,13 +7,10 @@ config/express-admin/custom.json
 config/express-admin/users.json
 config/express-admin/settings.json
 custom.json
-database/development.sqlite
 settings.json
 users.json
-database/development.sqlite
 Y
 config.json
-database/development.sqlite
 
 # Node modules
 node_modules
