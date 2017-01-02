@@ -29,11 +29,12 @@
 .register_field {
   border: 2px solid black;
   padding: 10px;
-  border-bottom: 3px solid deepskyblue;
+  border-bottom: 3px solid darkblue;
 }
 
 .register_field:focus {
-  border-bottom: 3px solid greenyellow;
+  outline: none;
+  border-bottom: 3px solid deepskyblue;
 }
 
 .field_container {
@@ -50,6 +51,7 @@
 
 .register_button:hover {
   border: solid 2px deepskyblue;
+  color: deepskyblue;
 }
 
 .error {

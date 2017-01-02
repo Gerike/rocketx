@@ -80,7 +80,8 @@ body {
 }
 
 .__login_field:focus {
-  border-bottom: 2px solid yellow;
+  outline: none;
+  border-bottom: 2px solid deepskyblue;
 }
 
 .__login_button {
@@ -91,7 +92,8 @@ body {
 }
 
 .__login_button:hover {
-  border: 1px solid white;
+  border: 1px solid deepskyblue;
+  color: deepskyblue;
 }
 
 .__header {
