@@ -1,6 +1,8 @@
 # RocketX - Alkalmazások fejlesztése / Játékfejlesztés beadandó 2016 ELTE - Dokumentáció
 Készítette: Kovács Gergő Richárd - RAHMBF
 
+Az alkalmazás megtalálható: http://rocketx.herokuapp.com/
+
 ###1. Követelményanalízis
 ####1.1 Célkítűzés, projektindító dokumentum
 A program legfőbb célja, egy webes alkalmazás létrehozása ahol a felhasználóknak regisztráció után lehetőségük nyílik egy 2D-s űrhajós shooterrel játszani, elkészíteni a saját űrhajójukat, és versenyezni a többi játékossal.
