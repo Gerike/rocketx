@@ -11,7 +11,6 @@ const canvasHeight = 400;
 var gameThread;
 
 startLoad(ctx);
-framework.setUpEventHandlers();
 
 var pause = false;
 
@@ -47,6 +46,7 @@ function addShips(i, y, path) {
 }
 
 function startGame() {
+  framework.setUpEventHandlers();
   framework.createStaticMasks(resources);
   framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON], [patterns.ammos.BASE_AMMO]));
   gameThread = window.requestAnimationFrame(step);

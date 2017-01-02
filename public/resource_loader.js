@@ -39,8 +39,14 @@ function loadResources(ctx, counter) {
     };
     temp_img.src = resources_location[counter];
   }
-  else
-    console.log('Game ready');
+  else {
+    ctx.font = "20px Georgia";
+    ctx.fillText("Press any key to start...", canvas.width / 2 - 100, canvas.height - 50);
+    document.onkeydown = function (e) {
+      e.preventDefault();
+      startGame();
+    };
+  }
 }
 
 

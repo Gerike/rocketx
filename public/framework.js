@@ -212,6 +212,7 @@ framework.entityHandler = {
 
 framework.eventHandler = {
   setUpEventHandlers : function () {
+    $(document).off("keydown");
     document.onkeydown = function (e) {
       e.preventDefault();
       framework.pressedKeys[e.which] = true;
