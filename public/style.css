@@ -14,6 +14,37 @@ body {
   margin: 0;
 }
 
+.__usermenu_dropdown{
+  display: none;
+  position: absolute;
+  background-color: black;
+  border: 1px solid deepskyblue;
+  min-width: 160px;
+}
+
+.__usermenu_dropdown a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.__usermenu_dropdown a:hover {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color:deepskyblue;
+}
+
+.__current_user:hover {
+  color: deepskyblue;
+}
+
+.__current_user:hover .__usermenu_dropdown {
+  display: block;
+}
+
 .__new_game {
   border: 1px solid white;
   margin: auto;
@@ -79,6 +110,11 @@ body {
   position: absolute;
   left: 10px;
   font-weight: bold;
+}
+
+.__header > .logo:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 
 .__header > .__login {

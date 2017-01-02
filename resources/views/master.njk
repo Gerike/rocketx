@@ -19,6 +19,11 @@
         <div onclick="location.href='/play'" class="__new_game">PLAY</div>
         <div class="__current_user">
           <span class="__current_user_label">Welcome:</span><span class="__current_user_name">{{request.currentUser.username}}</span>
+          <div id="__usermenu" class="__usermenu_dropdown">
+            <a href="#">My Profile</a>
+            <a href="/messages">Messages</a>
+            <a href="/logout">Logout</a>
+          </div>
         </div>
         {% else %}
       <div class="__login">
