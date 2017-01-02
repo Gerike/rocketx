@@ -6,6 +6,11 @@ const User = use('App/Model/User')
 
 class UserController {
 
+   validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   * logout (request, response){
       yield request.auth.logout();
       response.redirect('/');
@@ -37,6 +42,8 @@ class UserController {
       if ((yield Database.from('users').where('username', username)).length > 0) {
         errors.push('Username already in use')
       }
+      if (!this.validateEmail(email))
+        errors.push('Email must be valid');
       if (errors.length === 0) {
         const user = new User();
         user.username = username;
