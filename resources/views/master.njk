@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>RocketX</title>
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="master.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="master.js"></script>
 </head>
 <body>
 
@@ -27,12 +28,13 @@
         </div>
         {% else %}
       <div class="__login">
-      <form action="/login" method="post">
+      <form id="__login_form" action="/login" method="post">
         {{ csrfField }}
-        <input class="__login_field" type="text" name="email" placeholder="Email">
-        <input class="__login_field" type="password" name="password" placeholder="Password">
-        <input class="__login_button" type="submit" value="Login">
+        <input id="__login_email_field" class="__login_field" type="text" name="email" placeholder="Email">
+        <input id="__login_password_field" class="__login_field" type="password" name="password" placeholder="Password">
+        <input id="__login_button" class="__login_button" type="submit" value="Login">
       </form>
+        <div id="__login_error" class="__login_popup top"></div>
       </div>
         {% endif %}
       </div>

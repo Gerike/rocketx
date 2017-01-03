@@ -23,8 +23,7 @@ class UserController {
       response.redirect('/');
     }
     catch (e) {
-      console.log(e)
-      response.unauthorized('Invalid credentails');
+      response.status(401).send('Invalid creditentals');
     }
   }
   * register (request, response){
