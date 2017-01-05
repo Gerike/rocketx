@@ -59,3 +59,18 @@ function stop() {
 function cont() {
   pause = false;
 }
+
+function startTutorial() { //TODO: extract screen writer into a different class with its own methods
+  let special_message_canvas = document.getElementById('special_messages');
+
+  special_message_canvas.width = canvasWidth;
+  special_message_canvas.height = canvasHeight;
+
+  let special_message_context = special_message_canvas.getContext('2d');
+  special_message_context.textAlign = 'center';
+  special_message_context.fillStyle = 'white';
+  special_message_context.font = '60px Georgia';
+  special_message_context.textBaseline = 'middle';
+  special_message_context.fillText('Tutorial level', canvasWidth/2, canvasHeight/2);
+
+}

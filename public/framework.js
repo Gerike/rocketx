@@ -241,6 +241,27 @@ framework.other = {
   },
 };
 
+framework.drawer = {
+  secondaryCanvas : undefined,
+  secondaryCanvasCtx : undefined,
+  positions : {'CENTER' : 0, 'RIGHT' : 1, 'LEFT' : 2, 'TOP': 3, 'BOTTOM': 4},
+  setDrawingCanvas : function (canvas){
+    framework.drawer.secondaryCanvas = canvas;
+    framework.drawer.secondaryCanvasCtx = canvas.getContext('2d');
+  },
+
+  isSecondaryCanvasSet : function () {
+    return !framework.drawer.secondaryCanvas === undefined;
+  },
+
+  drawText(text, position){
+      if(!framework.drawer.isSecondaryCanvasSet())
+        return;
+      if (Array.isArray(position))
+        framework.drawer.secondaryCanvasCtx.fillText(text, position[0], position[1]);
+  }
+};
+
 //Shortcuts
 framework.getImageData = framework.maskHandler.getImageData;
 framework.createMask = framework.maskHandler.createMask;
