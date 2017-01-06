@@ -4,9 +4,19 @@ let framework = {
   frameEvents : [],
   masksData : {'static': {}, 'dynamic': {}},
   entities : [],
+  elements : [],
   pressedKeys : {},
   _frameIndex : 0,
-  _registeredEntities : 0
+  _registeredEntities : 0,
+  constants : {}
+};
+
+framework.setup = function(canvasHeight, canvasWidth, gameCanvas, secondaryCanvas){
+  framework.constants.canvasHeight = canvasHeight;
+  framework.constants.canvasWidth = canvasWidth;
+  framework.constants.gameCanvas = gameCanvas;
+  framework.constants.secondaryCanvas = secondaryCanvas;
+
 };
 
 framework.maskHandler = {
@@ -242,24 +252,37 @@ framework.other = {
 };
 
 framework.drawer = {
-  secondaryCanvas : undefined,
-  secondaryCanvasCtx : undefined,
-  positions : {'CENTER' : 0, 'RIGHT' : 1, 'LEFT' : 2, 'TOP': 3, 'BOTTOM': 4},
-  setDrawingCanvas : function (canvas){
-    framework.drawer.secondaryCanvas = canvas;
-    framework.drawer.secondaryCanvasCtx = canvas.getContext('2d');
+  elementsChanged : false,
+  addElement : function(element){
+    framework.elements.push(element);
+    framework.drawer.elementsChanged = true;
+  },
+  frame : function (){
+    framework.drawer.clearExpired();
   },
 
-  isSecondaryCanvasSet : function () {
-    return !framework.drawer.secondaryCanvas === undefined;
+  render : function (forced = false) {
+    if(framework.drawer.elementsChanged || forced) {
+      let sCtx = framework.constants.secondaryCanvas.getContext("2d");
+      sCtx.clearRect(0, 0, framework.constants.canvasWidth, framework.constants.canvasHeight);
+      for (let i = 0; i < framework.elements.length; i++) {
+        framework.elements[i].draw(sCtx);
+      }
+      framework.drawer.elementsChanged = false;
+    }
   },
 
-  drawText(text, position){
-      if(!framework.drawer.isSecondaryCanvasSet())
-        return;
-      if (Array.isArray(position))
-        framework.drawer.secondaryCanvasCtx.fillText(text, position[0], position[1]);
-  }
+  clearExpired : function (){
+    for(let i = 0; i < framework.elements.length; i++){
+      if (framework.elements[i].isExpired())
+        framework.drawer.removeElement(framework.elements[i]);
+    }
+  },
+
+  removeElement : function(element){
+    framework.elements.splice(framework.elements.indexOf(element), 1);
+    framework.drawer.elementsChanged = true;
+  },
 };
 
 //Shortcuts

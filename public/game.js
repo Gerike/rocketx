@@ -8,16 +8,25 @@ var destroyedShips = 0;
 const canvasWidth = 800;
 const canvasHeight = 400;
 
+const special_message_canvas = document.getElementById('special_messages');
+
 var gameThread;
 
 startLoad(ctx);
 
 var pause = false;
 
+
+
+
 function prepareGameField() {
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
+
+  special_message_canvas.width = canvasWidth;
+  special_message_canvas.height = canvasHeight;
 }
+
 
 
 function step() {
@@ -25,6 +34,8 @@ function step() {
     framework.frame();
     framework.sanityDeleteEntities(canvasWidth, canvasHeight)
     framework.render(ctx, canvas);
+    framework.drawer.frame();
+    framework.drawer.render();
     framework.detectCollision();
   }
   window.requestAnimationFrame(step);
@@ -46,6 +57,7 @@ function addShips(i, y, path) {
 }
 
 function startGame() {
+  framework.setup(canvasHeight, canvasWidth, canvas, special_message_canvas);
   framework.setUpEventHandlers();
   framework.createStaticMasks(resources);
   framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON], [patterns.ammos.BASE_AMMO]));
@@ -60,17 +72,7 @@ function cont() {
   pause = false;
 }
 
-function startTutorial() { //TODO: extract screen writer into a different class with its own methods
-  let special_message_canvas = document.getElementById('special_messages');
+function startTutorial() {
 
-  special_message_canvas.width = canvasWidth;
-  special_message_canvas.height = canvasHeight;
-
-  let special_message_context = special_message_canvas.getContext('2d');
-  special_message_context.textAlign = 'center';
-  special_message_context.fillStyle = 'white';
-  special_message_context.font = '60px Georgia';
-  special_message_context.textBaseline = 'middle';
-  special_message_context.fillText('Tutorial level', canvasWidth/2, canvasHeight/2);
 
 }
