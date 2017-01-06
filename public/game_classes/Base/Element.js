@@ -1,12 +1,22 @@
-class Element{
-  constructor(x,y){
-    this.x = x;
-    this.y = y;
+class Element {
+  constructor(position, expirationChecker) {
+    this.position = position;
+    this.expirationChecker = expirationChecker;
   }
-  draw(ctx){
+
+  draw(ctx) {
     ctx.save();
     this._draw(ctx);
     ctx.restore();
   }
-  _draw(ctx){}
+
+  _draw(ctx) {
+  }
+
+  isExpired() {
+    if (this.expirationChecker !== undefined)
+      return this.expirationChecker.expired();
+    else
+      return false;
+  }
 }
