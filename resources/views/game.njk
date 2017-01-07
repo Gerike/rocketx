@@ -2,9 +2,21 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="game.css">
 <div class="game_field">
+  <canvas id="special_messages"></canvas>
   <canvas id="game_canvas"></canvas>
 </div>
 <script src="/game_classes/Base/Entity.js"></script>
+<script src="/game_classes/Base/Element.js"></script>
+<script src="/game_classes/Elements/Styles/TextStyle.js"></script>
+<script src="/game_classes/Elements/TextElement.js"></script>
+<script src="/game_classes/Elements/ImageElement.js"></script>
+<script src="/game_classes/Elements/ExpirationCheckers/FrameExpiration.js"></script>
+<script src="/game_classes/Elements/ExpirationCheckers/EventExpiration.js"></script>
+<script src="/game_classes/Elements/Positions/Position.js"></script>
+<script src="/game_classes/Elements/Positions/TextPosition.js"></script>
+<script src="/game_classes/Elements/Positions/ImagePosition.js"></script>
+<script src="/game_classes/Elements/Transitions/FadeIn.js"></script>
+<script src="/game_classes/Elements/Transitions/FadeOut.js"></script>
 <script src="/game_classes/Paths/Path.js"></script>
 <script src="/game_classes/Paths/LinearPath.js"></script>
 <script src="/game_classes/Paths/WavePath.js"></script>

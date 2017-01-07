@@ -8,16 +8,25 @@ var destroyedShips = 0;
 const canvasWidth = 800;
 const canvasHeight = 400;
 
+const special_message_canvas = document.getElementById('special_messages');
+
 var gameThread;
 
 startLoad(ctx);
 
 var pause = false;
 
+
+
+
 function prepareGameField() {
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
+
+  special_message_canvas.width = canvasWidth;
+  special_message_canvas.height = canvasHeight;
 }
+
 
 
 function step() {
@@ -25,6 +34,8 @@ function step() {
     framework.frame();
     framework.sanityDeleteEntities(canvasWidth, canvasHeight)
     framework.render(ctx, canvas);
+    framework.drawer.frame();
+    framework.drawer.render();
     framework.detectCollision();
   }
   window.requestAnimationFrame(step);
@@ -46,6 +57,7 @@ function addShips(i, y, path) {
 }
 
 function startGame() {
+  framework.setup(canvasHeight, canvasWidth, canvas, special_message_canvas);
   framework.setUpEventHandlers();
   framework.createStaticMasks(resources);
   framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON], [patterns.ammos.BASE_AMMO]));
@@ -58,4 +70,9 @@ function stop() {
 
 function cont() {
   pause = false;
+}
+
+function startTutorial() {
+
+
 }
