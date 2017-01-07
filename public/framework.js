@@ -171,13 +171,19 @@ framework.timer = {
 };
 
 framework.entityHandler = {
-  destroyListeners : [],
+  eventSubscribers : {},
 
-  addEventListener : function(event, object){
-    if (event === "destroy")
-      framework.entityHandler.destroyListeners.push(object);
+  registerEvent : function (event, object){
+    if (framework.entityHandler.eventSubscribers[event])
+      for (let i = 0; i < framework.entityHandler.eventSubscribers[event].length; i++){
+        framework.entityHandler.eventSubscribers[event][i].notify(object, event);
+      }
+  },
+  addEventListener : function(event, object) {
+    if (event in framework.entityHandler.eventSubscribers)
+      framework.entityHandler.eventSubscribers[event].push(object);
     else
-      throw "Unsupported event";
+      framework.entityHandler.eventSubscribers[event] = [object];
   },
 
   addUniqueKey: function (entity) { //TODO: MAYBE USE WRAPPER?
@@ -204,8 +210,7 @@ framework.entityHandler = {
     }
   },
   requestDestroy: function (entity) {
-    for(let i = 0; i < framework.entityHandler.destroyListeners.length; i++)
-      framework.entityHandler.destroyListeners[i].notify(entity);
+    framework.entityHandler.registerEvent("destroy", entity);
     delete framework.masksData[entity._entityID];
     framework.entities.splice(framework.entities.indexOf(entity), 1);
   },
