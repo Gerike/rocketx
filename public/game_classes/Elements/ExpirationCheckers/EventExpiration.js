@@ -2,17 +2,18 @@ class EventExpiration {
   constructor() {
     this.delay = 0;
     this.expirationFrame = -1;
+    this.outTransitions = [];
   }
 
   setOutTransitionBeforeDelete(outTransition) {
-    this.delay = outTransition.takingTime;
-    this.outTransition = outTransition;
+    this.delay = (this.delay > outTransition.takingTime) ? this.delay : outTransition.takingTime;
+    this.outTransitions.push(outTransition);
   }
 
   fire() {
     this.expirationFrame = framework.timer.getCurrentFrameIndex() + this.delay;
-    if (this.outTransition)
-      this.outTransition.activate();
+    for(let i = 0; i < this.outTransitions.length; i++)
+      this.outTransitions[i].activate();
   }
 
   expired() {
