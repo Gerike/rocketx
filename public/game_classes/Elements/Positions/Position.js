@@ -14,11 +14,11 @@ POSITIONS.Y = {
 
 
 class Position {
-  constructor(xPos, yPos){
+  constructor(xPos, yPos, offset = 0){
+    this.offset = offset;
     if (isNaN(xPos)) {
       this.xAlign = xPos;
       this.yAlign = yPos;
-      this.offset = 20;
       switch(this.xAlign){
         case 'RIGHT': this.x = framework.constants.canvasWidth - this.offset; break;
         case 'CENTER': this.x = framework.constants.canvasWidth/2; break;

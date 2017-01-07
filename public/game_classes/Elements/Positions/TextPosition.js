@@ -1,6 +1,6 @@
 class TextPosition extends Position{
-  constructor(xPos, yPos){
-      super(xPos, yPos);
+  constructor(xPos, yPos, offset = 0){
+      super(xPos, yPos, offset);
   }
 
   prepareContext(ctx){

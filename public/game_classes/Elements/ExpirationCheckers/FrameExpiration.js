@@ -4,6 +4,6 @@ class FrameExpiration {
   }
 
   expired(){
-  return framework.timer.isFramePassed(this.expirationFrame);
+    return framework.timer.isFramePassed(this.expirationFrame);
   }
 }
