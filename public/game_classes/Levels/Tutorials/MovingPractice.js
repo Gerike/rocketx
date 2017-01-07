@@ -16,7 +16,7 @@ class MovingPractice {
     framework.entities = [];
     framework.elements = [];
     framework.frameEvents = [];
-    framework.entityHandler.destroyListeners = [];
+    framework.entityHandler.eventSubscribers = {};
   }
 
   isPlayerMoving() {

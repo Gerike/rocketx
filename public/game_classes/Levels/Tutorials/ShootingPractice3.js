@@ -18,6 +18,7 @@ class ShootingPractice3 {
 
   restartPractice() {
     this.resetFramework();
+    framework.entityHandler.eventSubscribers = {};
     this.start();
   }
 
@@ -25,7 +26,6 @@ class ShootingPractice3 {
     framework.entities = [];
     framework.elements = [];
     framework.frameEvents = [];
-    framework.entityHandler.destroyListeners = [];
   }
 
   endPractice() {
@@ -42,8 +42,8 @@ class ShootingPractice3 {
 
   practice() {
     this.resetFramework();
-
     let shootingTutorialExpiration = new EventExpiration();
+    this.framework.drawer.addElement(new WeaponHUD());
     framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON, patterns.weapons.TRIPLE_CANNON], [patterns.ammos.BASE_AMMO, patterns.ammos.BASE_AMMO]));
     this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.LEFT, POSITIONS.Y.BOTTOM, 30), shootingTutorialExpiration, "Press Q to change weapon", new TextStyle("20px Gerogia", "white"), new FadeIn(50), new FadeOut(50)));
     this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.TOP, 15), shootingTutorialExpiration, "Kill all enemies before they escape", new TextStyle("30px Gerogia", "white"), new FadeIn(50), new FadeOut(50)));

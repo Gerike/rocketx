@@ -18,6 +18,7 @@ class ShootingPractice1 {
 
   restartPractice() {
     this.resetFramework();
+    framework.entityHandler.eventSubscribers = {};
     this.start();
   }
 
@@ -25,7 +26,6 @@ class ShootingPractice1 {
     framework.entities = [];
     framework.elements = [];
     framework.frameEvents = [];
-    framework.entityHandler.destroyListeners = [];
   }
 
   endPractice() {
