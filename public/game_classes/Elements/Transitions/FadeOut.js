@@ -6,7 +6,6 @@ class FadeOut {
   }
 
   activateOnStartingFrame(elementExpirationFrame) {
-    console.log(elementExpirationFrame - this.takingTime);
     framework.timer.delegateFrameEvent(() => {
       this.activated = true;
       framework.drawer.render(true);
