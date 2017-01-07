@@ -25,8 +25,8 @@ patterns.ammos = {
 
   BASE_LASER_AMMO: {
     type: patterns.ammos.types.LASER,
-    damage: 1,
+    damage: 8,
     img: 'laser_4',
-    uptime: 60
+    uptime: 100
   },
 };

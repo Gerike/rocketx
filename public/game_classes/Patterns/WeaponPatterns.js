@@ -18,6 +18,6 @@ patterns.weapons = {
   },
   BEAM_CANNON: {
     type: patterns.weapons.types.BEAM_CANNON,
-    firerate: 30,
+    firerate: 300,
   },
 };

@@ -16,7 +16,8 @@ class Beam extends Entity {
   }
 
   frame() {
-    this.width = framework.getFirstCollideEntity(this);
+    let temp_w = framework.getFirstCollideEntity(this)
+    this.width = (temp_w + 30 < this.img.width) ? temp_w + 30 : this.img.width;
     this.x = this.linkedEntity.x + 45;
     this.y = this.linkedEntity.y + 10;
   }
