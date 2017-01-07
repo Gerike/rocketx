@@ -1,6 +1,6 @@
 class FrameExpiration {
   constructor(expirationFrame){
-    this.expirationFrame = expirationFrame;
+    this.expirationFrame = framework.timer.getCurrentFrameIndex() + expirationFrame;
   }
 
   expired(){
