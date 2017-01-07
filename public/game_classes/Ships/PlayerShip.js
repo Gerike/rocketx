@@ -31,7 +31,6 @@ class PlayerShip extends ArmedShip {
   }
 
   executeEffect(object){
-    object.hp -= 100;
   }
 
 }
