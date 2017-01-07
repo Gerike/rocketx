@@ -189,9 +189,10 @@ framework.entityHandler = {
     framework.entities.push(entity);
     if (entity.hasDynamicMask)
       framework.createDynamicMask(entity)
+    return entity;
   },
-  outOfCanvas: function (entity, canvas_width, canvas_height) {
-    if ((entity.x < 0) || (entity.x > canvas_width + entity.img.width) || (entity.y < 0) || (entity.y > canvas_height + entity.img.height))
+  outOfCanvas: function (entity) {
+    if ((entity.x < 0 - entity.img.width) || (entity.x > framework.constants.canvasWidth + entity.img.width) || (entity.y < 0 - entity.img.height) || (entity.y > framework.constants.canvasHeight + entity.img.height))
       return true;
     return false;
   },
