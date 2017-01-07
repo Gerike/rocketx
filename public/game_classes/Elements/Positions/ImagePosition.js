@@ -17,7 +17,6 @@ class ImagePosition extends Position {
       case 'BOTTOM': newStartingY = -desiredImage.height; break;
       default: throw 'Unsupported position'; break;
     }
-    console.log(newStartingX,newStartingY)
     ctx.translate(newStartingX, newStartingY);
   }
 }

@@ -252,23 +252,28 @@ framework.other = {
 };
 
 framework.drawer = {
-  elementsChanged : false,
+  _elementsChanged : false,
   addElement : function(element){
     framework.elements.push(element);
-    framework.drawer.elementsChanged = true;
+    framework.drawer.markElementsAsChanged();
   },
+
   frame : function (){
     framework.drawer.clearExpired();
   },
 
+  markElementsAsChanged : function (){
+    framework.drawer._elementsChanged = true;
+  },
+
   render : function (forced = false) {
-    if(framework.drawer.elementsChanged || forced) {
+    if(framework.drawer._elementsChanged || forced) {
+      framework.drawer._elementsChanged = false;
       let sCtx = framework.constants.secondaryCanvas.getContext("2d");
       sCtx.clearRect(0, 0, framework.constants.canvasWidth, framework.constants.canvasHeight);
       for (let i = 0; i < framework.elements.length; i++) {
         framework.elements[i].draw(sCtx);
       }
-      framework.drawer.elementsChanged = false;
     }
   },
 
@@ -281,7 +286,7 @@ framework.drawer = {
 
   removeElement : function(element){
     framework.elements.splice(framework.elements.indexOf(element), 1);
-    framework.drawer.elementsChanged = true;
+    framework.drawer.markElementsAsChanged();
   },
 };
 
