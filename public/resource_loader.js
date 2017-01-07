@@ -5,7 +5,7 @@
 
 const canvas = document.getElementById('game_canvas');
 const ctx = canvas.getContext('2d');
-const resources_location = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png'];
+const resources_location = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png', '/assets/keyboard_arrows.png', '/assets/keyboard_space.png'];
 
 var entities = [];
 var resources = {};
@@ -44,7 +44,7 @@ function loadResources(ctx, counter) {
     ctx.fillText("Press any key to start...", canvas.width / 2 - 100, canvas.height - 50);
     document.onkeydown = function (e) {
       e.preventDefault();
-      startGame();
+      startTutorial();
     };
   }
 }

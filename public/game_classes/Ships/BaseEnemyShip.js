@@ -27,10 +27,14 @@ class BaseEnemyShip extends SpaceShip {
 
   shoot(){}
 
+  destroy(){
+    framework.requestDestroy(this);
+  }
+
   collided (object){
     object.executeEffect(this);
     if (this.hp <= 0)
-      framework.requestDestroy(this);
+      this.destroy();
   }
 
   setSpeed(speed){

@@ -171,6 +171,15 @@ framework.timer = {
 };
 
 framework.entityHandler = {
+  destroyListeners : [],
+
+  addEventListener : function(event, object){
+    if (event === "destroy")
+      framework.entityHandler.destroyListeners.push(object);
+    else
+      throw "Unsupported event";
+  },
+
   addUniqueKey: function (entity) { //TODO: MAYBE USE WRAPPER?
     entity._entityID = framework._registeredEntities;
     framework._registeredEntities++;
@@ -194,6 +203,8 @@ framework.entityHandler = {
     }
   },
   requestDestroy: function (entity) {
+    for(let i = 0; i < framework.entityHandler.destroyListeners.length; i++)
+      framework.entityHandler.destroyListeners[i].notify(entity);
     delete framework.masksData[entity._entityID];
     framework.entities.splice(framework.entities.indexOf(entity), 1);
   },

@@ -25,12 +25,12 @@ class PlayerShip extends ArmedShip {
   }
 
   collided(object){
-    window.cancelAnimationFrame(gameThread);
-    framework.entities = [];
-    for (var i = 1; i < 99999; i++)
-      window.clearInterval(i);
-    framework.requestDestroy(this);
-    window.alert('Game over! You killed: ' + destroyedShips + ' enemy ships.')
+    framework.requestDestroy(this)
   }
+
+  executeEffect(object){
+    object.hp -= 100;
+  }
+
 }
 

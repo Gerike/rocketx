@@ -71,8 +71,8 @@ function stop() {
 function cont() {
   pause = false;
 }
-
+var level;
 function startTutorial() {
-
-
+  level = new Level(framework);
+  level.start();
 }
