@@ -5,7 +5,7 @@ class Level {
     this.framework.setUpEventHandlers();
     this.framework.createStaticMasks(resources);
     this.gameThread = window.requestAnimationFrame(step);
-    this.stages = [/*new MovingPractice(this.framework), new ShootingPractice1(this.framework), new ShootingPractice2(this.framework), */new ShootingPractice3(this.framework), new ShootingPractice4(this.framework)];
+    this.stages = [new MovingPractice(this.framework), new ShootingPractice1(this.framework), new ShootingPractice2(this.framework), new ShootingPractice3(this.framework), new ShootingPractice4(this.framework), new ShootingPractice5(this.framework)];
   }
 
   start() {
