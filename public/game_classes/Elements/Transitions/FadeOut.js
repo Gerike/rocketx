@@ -5,16 +5,24 @@ class FadeOut {
     this.activated = false;
   }
 
-  activateOnStartingFrame(elementExpirationFrame) {
+  waitUntilExpiring(elementExpirationFrame) {
     framework.timer.delegateFrameEvent(() => {
-      this.activated = true;
-      framework.drawer.render(true);
+      this.activate();
     }, elementExpirationFrame - this.takingTime - framework.timer.getCurrentFrameIndex())
+  }
+
+  activate() {
+    this.activated = true;
+    framework.drawer.render(true);
   }
 
   prepareContext(ctx) {
     framework.drawer.markElementsAsChanged();
     ctx.globalAlpha = 1 - 1 / this.takingTime * this.progress;
     this.progress++;
+  }
+
+  isDone() {
+    return this.progress === this.takingTime;
   }
 }

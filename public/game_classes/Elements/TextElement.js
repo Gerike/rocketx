@@ -5,7 +5,7 @@ class TextElement extends Element {
     this.style = style;
     this.inTransition = inTransition;
     this.outTransition = outTransition;
-    if (this.outTransition) outTransition.activateOnStartingFrame(this.expirationChecker.getExpirationFrame());
+    if (this.outTransition) this.expirationChecker.setOutTransitionBeforeDelete(this.outTransition);
   }
 
   _draw(ctx) {

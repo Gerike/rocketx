@@ -10,4 +10,8 @@ class FrameExpiration {
   getExpirationFrame() {
     return this.expirationFrame;
   }
+
+  setOutTransitionBeforeDelete(outTransition){
+    outTransition.waitUntilExpiring(this.expirationFrame)
+  }
 }

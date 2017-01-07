@@ -4,7 +4,7 @@ class ImageElement extends Element {
     this.image = image;
     this.inTransition = inTransition;
     this.outTransition = outTransition;
-    if (this.outTransition) this.outTransition.activateOnStartingFrame(this.expirationChecker.getExpirationFrame());
+    if (this.outTransition) this.expirationChecker.setOutTransitionBeforeDelete(this.outTransition);
   }
 
   _draw(ctx) {
