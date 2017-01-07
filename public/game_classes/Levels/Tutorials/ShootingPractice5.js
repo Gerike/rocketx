@@ -7,6 +7,7 @@ class ShootingPractice5 {
     this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), "Tutorial level", new TextStyle(), new FadeIn(50), new FadeOut(50)));
     this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.BOTTOM, 150), new FrameExpiration(200), "Shooting Practice 5", new TextStyle("25px Gerogia"), new FadeIn(50), new FadeOut(50)));
 
+    framework.entityHandler.eventSubscribers = {};
     this.enemiesDestroyed = 0;
     this.mustHaveDestroyed = 20;
     this.somebodyDied = new EventExpiration();
