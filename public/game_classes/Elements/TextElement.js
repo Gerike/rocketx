@@ -1,12 +1,12 @@
-class TextElement extends Element{
-  constructor(position, expirationChecker, text, font = "60px Georgia", color = "white"){
+class TextElement extends Element {
+  constructor(position, expirationChecker, text, font = "60px Georgia", color = "white") {
     super(position, expirationChecker);
     this.text = text;
     this.font = font;
     this.color = color;
   }
 
-  _draw(ctx){
+  _draw(ctx) {
     ctx.fillStyle = this.color;
     ctx.font = this.font;
     this.position.prepareContext(ctx);

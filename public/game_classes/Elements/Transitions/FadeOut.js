@@ -1,16 +1,19 @@
 class FadeOut {
-  constructor(takingTime){
+  constructor(takingTime) {
     this.takingTime = takingTime;
     this.progress = 0;
     this.activated = false;
   }
 
-  activateOnStartingFrame(elementExpirationFrame){
+  activateOnStartingFrame(elementExpirationFrame) {
     console.log(elementExpirationFrame - this.takingTime);
-    framework.timer.delegateFrameEvent(()=> {this.activated = true; framework.drawer.render(true);}, elementExpirationFrame - this.takingTime - framework.timer.getCurrentFrameIndex())
+    framework.timer.delegateFrameEvent(() => {
+      this.activated = true;
+      framework.drawer.render(true);
+    }, elementExpirationFrame - this.takingTime - framework.timer.getCurrentFrameIndex())
   }
 
-  prepareContext(ctx){
+  prepareContext(ctx) {
     framework.drawer.markElementsAsChanged();
     ctx.globalAlpha = 1 - 1 / this.takingTime * this.progress;
     this.progress++;

@@ -1,13 +1,13 @@
 class FrameExpiration {
-  constructor(expirationFrame){
+  constructor(expirationFrame) {
     this.expirationFrame = framework.timer.getCurrentFrameIndex() + expirationFrame;
   }
 
-  expired(){
+  expired() {
     return framework.timer.isFramePassed(this.expirationFrame);
   }
 
-  getExpirationFrame(){
+  getExpirationFrame() {
     return this.expirationFrame;
   }
 }

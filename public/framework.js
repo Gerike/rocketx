@@ -1,17 +1,17 @@
 'use strict';
 
 let framework = {
-  frameEvents : [],
-  masksData : {'static': {}, 'dynamic': {}},
-  entities : [],
-  elements : [],
-  pressedKeys : {},
-  _frameIndex : 0,
-  _registeredEntities : 0,
-  constants : {}
+  frameEvents: [],
+  masksData: {'static': {}, 'dynamic': {}},
+  entities: [],
+  elements: [],
+  pressedKeys: {},
+  _frameIndex: 0,
+  _registeredEntities: 0,
+  constants: {}
 };
 
-framework.setup = function(canvasHeight, canvasWidth, gameCanvas, secondaryCanvas){
+framework.setup = function (canvasHeight, canvasWidth, gameCanvas, secondaryCanvas) {
   framework.constants.canvasHeight = canvasHeight;
   framework.constants.canvasWidth = canvasWidth;
   framework.constants.gameCanvas = gameCanvas;
@@ -20,15 +20,15 @@ framework.setup = function(canvasHeight, canvasWidth, gameCanvas, secondaryCanva
 };
 
 framework.maskHandler = {
-  getImageData : function (img) {
+  getImageData: function (img) {
     let off_canvas = document.createElement('canvas');
     off_canvas.width = img.width;
     off_canvas.height = img.height;
     let off_ctx = off_canvas.getContext('2d');
     off_ctx.drawImage(img, 0, 0);
     return off_ctx.getImageData(0, 0, img.width, img.height);
-},
-  createMask : function(entity){
+  },
+  createMask: function (entity) {
     let off_canvas = document.createElement('canvas');
     off_canvas.width = entity.img.width;
     off_canvas.height = entity.img.height;
@@ -40,40 +40,40 @@ framework.maskHandler = {
     else
       off_ctx.drawImage(entity.img, 0, 0);
     return off_ctx.getImageData(0, 0, entity.img.width, entity.img.height);
-},
-  createStaticMasks : function (images) {
+  },
+  createStaticMasks: function (images) {
     for (const key in images)
       framework.masksData['static'][images[key].src] = framework.getImageData(images[key]);
-},
-  getMask : function (entity, force_static = false) {
+  },
+  getMask: function (entity, force_static = false) {
     if ((entity.hasDynamicMask) && (!force_static))
       return framework.masksData['dynamic'][entity._entityID];
     return framework.masksData['static'][entity.img.src];
   },
-  refreshDynamicMasks : function() { //TODO: Maybe some event like approach? The entity alert if its mask change
-    for (const entity of framework.entities){
+  refreshDynamicMasks: function () { //TODO: Maybe some event like approach? The entity alert if its mask change
+    for (const entity of framework.entities) {
       if (entity.hasDynamicMask)
         framework.refreshDynamicMask(entity)
     }
   },
-  refreshDynamicMask : function(entity){
+  refreshDynamicMask: function (entity) {
     framework.masksData['dynamic'][entity._entityID] = framework.createMask(entity)
-},
-  createDynamicMask : function(entity){
+  },
+  createDynamicMask: function (entity) {
     framework.masksData['dynamic'][entity._entityID] = framework.getImageData(entity.img);
-},
+  },
 };
 
 framework.collisionHandler = {
-  handleCollisions : function (array_of_collisions) {
+  handleCollisions: function (array_of_collisions) {
     for (let i = 0; i < array_of_collisions.length; i++)
       framework.notifyEntities(array_of_collisions[i][0], array_of_collisions[i][1]);
   },
-  notifyEntities : function (object1, object2) {
+  notifyEntities: function (object1, object2) {
     object1.collided(object2);
     object2.collided(object1);
-},
-  detectCollision : function () {
+  },
+  detectCollision: function () {
     let collidedObjects = [];
     framework.refreshDynamicMasks();
     for (var i = 0; i < framework.entities.length; i++) {
@@ -84,8 +84,8 @@ framework.collisionHandler = {
       }
     }
     framework.handleCollisions(collidedObjects);
-},
-  isPixelCollision : function (entity_1_image_data, entity_1_x, entity_1_y, entity_2_image_data, entity_2_x, entity_2_y) {
+  },
+  isPixelCollision: function (entity_1_image_data, entity_1_x, entity_1_y, entity_2_image_data, entity_2_x, entity_2_y) {
     entity_1_x = Math.round(entity_1_x);
     entity_1_y = Math.round(entity_1_y);
     entity_2_x = Math.round(entity_2_x);
@@ -147,23 +147,23 @@ framework.collisionHandler = {
 };
 
 framework.timer = {
-  isFramePassed : function(frame){
+  isFramePassed: function (frame) {
     return (frame <= framework._frameIndex);
-},
-  getCurrentFrameIndex : function() {
+  },
+  getCurrentFrameIndex: function () {
     return framework._frameIndex;
-},
-  delegateFrameEvent : function (callback, frame){
+  },
+  delegateFrameEvent: function (callback, frame) {
     framework.frameEvents.push({
-      _frameIndex : framework._frameIndex + frame,
+      _frameIndex: framework._frameIndex + frame,
       execute: callback
     });
   },
-  deleteExecutedEvents : function(){
+  deleteExecutedEvents: function () {
     framework.frameEvents = framework.frameEvents.filter((event) => event._frameIndex > framework._frameIndex)
   },
-  executeEvents : function(){
-    for(let i = 0; i < framework.frameEvents.length; i++){
+  executeEvents: function () {
+    for (let i = 0; i < framework.frameEvents.length; i++) {
       if (framework.isFramePassed(framework.frameEvents[i]._frameIndex))
         framework.frameEvents[i].execute();
     }
@@ -171,44 +171,44 @@ framework.timer = {
 };
 
 framework.entityHandler = {
-  addUniqueKey : function(entity){ //TODO: MAYBE USE WRAPPER?
+  addUniqueKey: function (entity) { //TODO: MAYBE USE WRAPPER?
     entity._entityID = framework._registeredEntities;
     framework._registeredEntities++;
   },
-  registerEntity : function (entity) {
+  registerEntity: function (entity) {
     framework.addUniqueKey(entity);
     framework.entities.push(entity);
     if (entity.hasDynamicMask)
       framework.createDynamicMask(entity)
   },
-  outOfCanvas : function (entity, canvas_width, canvas_height) {
+  outOfCanvas: function (entity, canvas_width, canvas_height) {
     if ((entity.x < 0) || (entity.x > canvas_width + entity.img.width) || (entity.y < 0) || (entity.y > canvas_height + entity.img.height))
       return true;
     return false;
   },
-  sanityDeleteEntities : function (canvas_width, canvas_height) {
+  sanityDeleteEntities: function (canvas_width, canvas_height) {
     for (let i = 0; i < framework.entities.length; i++) {
       if (framework.outOfCanvas(framework.entities[i], canvas_width, canvas_height)) {
         framework.requestDestroy(framework.entities[i]);
       }
     }
   },
-  requestDestroy : function (entity) {
+  requestDestroy: function (entity) {
     delete framework.masksData[entity._entityID];
     framework.entities.splice(framework.entities.indexOf(entity), 1);
-},
-  executeEntityFrames : function(){
+  },
+  executeEntityFrames: function () {
     for (let i = 0; i < framework.entities.length; i++)
       if (framework.entities[i].frame)
         framework.entities[i].frame();
   },
-  getNearestEntity : function (fromEntity) {
+  getNearestEntity: function (fromEntity) {
     //TODO: DO IT
   },
-  getFirstCollideEntity : function (fromEntity) {
+  getFirstCollideEntity: function (fromEntity) {
     let minX = fromEntity.img.width;
-    for (var i = 0; i < framework.entities.length; i++){
-      if (framework.entities[i].constructor.name !== fromEntity.constructor.name){
+    for (var i = 0; i < framework.entities.length; i++) {
+      if (framework.entities[i].constructor.name !== fromEntity.constructor.name) {
         if (framework.isPixelCollision(framework.getMask(framework.entities[i]), framework.entities[i].x, framework.entities[i].y, framework.getMask(fromEntity, true), fromEntity.x, fromEntity.y))
           if (minX > framework.entities[i].x - fromEntity.x)
             minX = framework.entities[i].x - fromEntity.x
@@ -221,7 +221,7 @@ framework.entityHandler = {
 };
 
 framework.eventHandler = {
-  setUpEventHandlers : function () {
+  setUpEventHandlers: function () {
     $(document).off("keydown");
     document.onkeydown = function (e) {
       e.preventDefault();
@@ -232,18 +232,18 @@ framework.eventHandler = {
       framework.pressedKeys[e.which] = false;
     };
   },
-  isDown : function (key) {
+  isDown: function (key) {
     return framework.pressedKeys[key];
   },
 };
 
 framework.other = {
-  render : function (ctx, canvas) {
+  render: function (ctx, canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < framework.entities.length; i++)
       framework.entities[i].draw(ctx);
   },
-  frame : function(){
+  frame: function () {
     framework._frameIndex += 1;
     framework.executeEvents();
     framework.deleteExecutedEvents();
@@ -252,22 +252,22 @@ framework.other = {
 };
 
 framework.drawer = {
-  _elementsChanged : false,
-  addElement : function(element){
+  _elementsChanged: false,
+  addElement: function (element) {
     framework.elements.push(element);
     framework.drawer.markElementsAsChanged();
   },
 
-  frame : function (){
+  frame: function () {
     framework.drawer.clearExpired();
   },
 
-  markElementsAsChanged : function (){
+  markElementsAsChanged: function () {
     framework.drawer._elementsChanged = true;
   },
 
-  render : function (forced = false) {
-    if(framework.drawer._elementsChanged || forced) {
+  render: function (forced = false) {
+    if (framework.drawer._elementsChanged || forced) {
       framework.drawer._elementsChanged = false;
       let sCtx = framework.constants.secondaryCanvas.getContext("2d");
       sCtx.clearRect(0, 0, framework.constants.canvasWidth, framework.constants.canvasHeight);
@@ -277,14 +277,14 @@ framework.drawer = {
     }
   },
 
-  clearExpired : function (){
-    for(let i = 0; i < framework.elements.length; i++){
+  clearExpired: function () {
+    for (let i = 0; i < framework.elements.length; i++) {
       if (framework.elements[i].isExpired())
         framework.drawer.removeElement(framework.elements[i]);
     }
   },
 
-  removeElement : function(element){
+  removeElement: function (element) {
     framework.elements.splice(framework.elements.indexOf(element), 1);
     framework.drawer.markElementsAsChanged();
   },
