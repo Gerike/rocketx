@@ -1,6 +1,6 @@
 class FadeIn {
-  constructor(takingTime) {
-    this.takingTime = takingTime;
+  constructor(length) {
+    this.length = length;
     this.progress = 0;
   }
 
@@ -10,7 +10,11 @@ class FadeIn {
 
   prepareContext(ctx) {
     framework.drawer.markElementsAsChanged();
-    ctx.globalAlpha = 1 / this.takingTime * this.progress;
+    ctx.globalAlpha = 1 / this.length * this.progress;
     this.progress++;
+  }
+
+  getLength() {
+    return this.length;
   }
 }

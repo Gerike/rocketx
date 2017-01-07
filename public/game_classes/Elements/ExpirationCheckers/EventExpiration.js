@@ -6,13 +6,13 @@ class EventExpiration {
   }
 
   setOutTransitionBeforeDelete(outTransition) {
-    this.delay = (this.delay > outTransition.takingTime) ? this.delay : outTransition.takingTime;
+    this.delay = (this.delay > outTransition.getLength()) ? this.delay : outTransition.getLength();
     this.outTransitions.push(outTransition);
   }
 
   fire() {
     this.expirationFrame = framework.timer.getCurrentFrameIndex() + this.delay;
-    for(let i = 0; i < this.outTransitions.length; i++)
+    for (let i = 0; i < this.outTransitions.length; i++)
       this.outTransitions[i].activate();
   }
 

@@ -11,7 +11,7 @@ class FrameExpiration {
     return this.expirationFrame;
   }
 
-  setOutTransitionBeforeDelete(outTransition){
+  setOutTransitionBeforeDelete(outTransition) {
     outTransition.waitUntilExpiring(this.expirationFrame)
   }
 }
