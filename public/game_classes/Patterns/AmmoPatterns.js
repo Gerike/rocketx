@@ -17,7 +17,7 @@ patterns.ammos = {
 
   FREEZING_AMMO: {
     type: patterns.ammos.types.FREEZING,
-    damage: 5,
+    damage: 8,
     img: 'laser_3',
     firerate: 5,
     speed: 6,

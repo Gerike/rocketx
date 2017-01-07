@@ -22,6 +22,8 @@ class PlayerShip extends ArmedShip {
       if (this.y + this.speed + this.img.height > canvasHeight ) this.y = canvasHeight - this.img.height; else this.y += this.speed;
     if (framework.isDown(32))
       this.shoot();
+    if (framework.isDown(81))
+      this.changeWeapon();
   }
 
   collided(object){
