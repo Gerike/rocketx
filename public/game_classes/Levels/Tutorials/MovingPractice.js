@@ -25,7 +25,7 @@ class MovingPractice {
 
   endPractice() {
     this.resetFramework();
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), "Good job", new TextStyle(), new FadeIn(50), new FadeOut(50)));
+    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), "Well done!", new TextStyle(), new FadeIn(50), new FadeOut(50)));
     this.framework.timer.delegateFrameEvent(() => (level.nextStage()), 200);
   }
 
