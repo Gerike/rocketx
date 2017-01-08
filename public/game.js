@@ -73,6 +73,6 @@ function cont() {
 }
 var level;
 function startTutorial() {
-  level = new Level(framework);
+  level = new TutorialPack(framework);
   level.start();
 }
