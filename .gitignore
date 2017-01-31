@@ -11,6 +11,7 @@ settings.json
 users.json
 Y
 config.json
+.editorconfig
 
 # Node modules
 node_modules
