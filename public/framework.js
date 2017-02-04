@@ -4,6 +4,7 @@ let framework = {
   frameEvents: [],
   masksData: {'static': {}, 'dynamic': {}},
   entities: [],
+  attachedEntities: {},
   elements: [],
   pressedKeys: {},
   _frameIndex: 0,
@@ -173,6 +174,15 @@ framework.timer = {
 framework.entityHandler = {
   eventSubscribers : {},
 
+  attachEntity(entity, attachedTo){
+    entity = framework.registerEntity(entity);
+
+    if(attachedTo._entityID in framework.attachedEntities)
+      framework.attachedEntities[attachedTo._entityID].push(entity);
+    else
+      framework.attachedEntities[attachedTo._entityID] = [entity];
+  },
+
   registerEvent : function (event, object){
     if (framework.entityHandler.eventSubscribers[event])
       for (let i = 0; i < framework.entityHandler.eventSubscribers[event].length; i++){
@@ -211,9 +221,18 @@ framework.entityHandler = {
   },
   requestDestroy: function (entity) {
     framework.entityHandler.registerEvent("destroy", entity);
+    framework.entityHandler.destroyAttachedEntities(entity);
     delete framework.masksData[entity._entityID];
     framework.entities.splice(framework.entities.indexOf(entity), 1);
   },
+
+  destroyAttachedEntities(entity){
+    if (entity._entityID in framework.attachedEntities)
+      for (const e in framework.attachedEntities[entity._entityID]) {
+        framework.requestDestroy(e);
+      }
+  },
+
   executeEntityFrames: function () {
     for (let i = 0; i < framework.entities.length; i++)
       if (framework.entities[i].frame)
