@@ -13,7 +13,7 @@ class TutorialPack {
   }
 
   start() {
-    this.stages = [new MovingPractice(this.framework), new ShootingPractice1(this.framework), new ShootingPractice2(this.framework), new ShootingPractice3(this.framework), new ShootingPractice4(this.framework), new ShootingPractice5(this.framework)];
+    this.stages = [new MovingPractice(this.framework), new ShootingPractice1(this.framework), new ShootingPractice2(this.framework), new ShootingPractice3(this.framework), new ShootingPractice4(this.framework), new ShootingPractice5(this.framework), new BossPractice(this.framework)];
     this.currentStage = 0;
     this.stages[0].start();
   }
