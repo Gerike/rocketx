@@ -13,10 +13,6 @@ class BaseEnemyShip extends SpaceShip {
     this.waypoints = this.path.getWaypoints();
   }
 
-  draw(ctx) {
-    ctx.drawImage(this.img, this.x, this.y);
-  }
-
   frame() {
     if (this.path !== null) {
       let next_waypoint = this.waypoints.next();
