@@ -75,6 +75,7 @@ class TutorialBossAI {
     this.waiting = Math.floor(Math.random() * 30 + 10);
     this.attackCooldowns[0] = this.timer + this.waiting;
     yield () => {
+      this.controlledShip.weapons[0].direction = 270 + Math.floor(Math.random() * 20) - 10;
       this.controlledShip.weapons[0].shoot();
     };
   }
