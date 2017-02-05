@@ -1,18 +1,22 @@
-class Shield {
-  constructor(damageAbsorbance, rechargeTime, linkedEntity) {
+class Shield extends Entity{
+  constructor(damageAbsorbance, rechargeTime, linkedEntity, img) {
+    super(linkedEntity.getX(), linkedEntity.getY());
     this.maxDamageAbsorbance = damageAbsorbance;
     this.currentAbsorbance = damageAbsorbance;
     this.rechargeTime = rechargeTime;
     this.linkedEntity = linkedEntity;
+    this.img = img;
+    this.hasDynamicMask = true;
+    this.offset = 10;
   }
 
-  draw(ctx) {
+  draw(ctx, x = this.getX(), y = this.getY()) {
     if (!this.isRecharging())
-      ctx.ellipse(this.linkedEntity.x + this.linkedEntity.img.width / 2, this.linkedEntity.y + this.linkedEntity.img.height / 2, this.linkedEntity.img.width + 20, this.linkedEntity.img.height + 20, 0, 0, 2 * Math.PI);
+      ctx.drawImage(this.img, x, y, this.linkedEntity.img.width+this.offset*2, this.linkedEntity.img.height+this.offset*2);
   }
 
-  collided(obj) {
-    obj.executeEffect(this);
+  collided(object) {
+    object.executeEffect(this);
     if (this.currentAbsorbance <= 0) {
       this.startRecharge();
     }
@@ -21,7 +25,7 @@ class Shield {
   modifyHp(modifier) {
     this.currentAbsorbance += modifier;
   }
-  
+
   isRecharging() {
     return this.currentAbsorbance <= 0;
   }
@@ -31,4 +35,12 @@ class Shield {
       this.currentAbsorbance = this.maxDamageAbsorbance
     }, this.rechargeTime);
   }
+
+  getX(){
+    return this.linkedEntity.getX()-this.offset;
+  }
+  getY(){
+    return this.linkedEntity.getY()-this.offset;
+  }
+
 }

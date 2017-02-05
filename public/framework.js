@@ -80,7 +80,7 @@ framework.collisionHandler = {
     for (var i = 0; i < framework.entities.length; i++) {
       for (var j = i + 1; j < framework.entities.length; j++) {
         if (framework.entities[i].constructor.name !== framework.entities[j].constructor.name)
-          if (framework.isPixelCollision(framework.getMask(framework.entities[i]), framework.entities[i].x, framework.entities[i].y, framework.getMask(framework.entities[j]), framework.entities[j].x, framework.entities[j].y))
+          if (framework.isPixelCollision(framework.getMask(framework.entities[i]), framework.entities[i].getX(), framework.entities[i].getY(), framework.getMask(framework.entities[j]), framework.entities[j].getX(), framework.entities[j].getY()))
             collidedObjects.push([framework.entities[i], framework.entities[j]]);
       }
     }
