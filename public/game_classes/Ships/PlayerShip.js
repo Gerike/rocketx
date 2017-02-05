@@ -30,8 +30,5 @@ class PlayerShip extends ArmedShip {
     framework.requestDestroy(this)
   }
 
-  executeEffect(object){
-  }
-
 }
 

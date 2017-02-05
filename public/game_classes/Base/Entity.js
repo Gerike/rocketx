@@ -1,6 +1,3 @@
-/**
- * Created by Win10 on 2016. 12. 12..
- */
 class Entity {
   constructor (x,y){
     this.x = x;
@@ -13,8 +10,16 @@ class Entity {
       y: this.y,
     }
   }
+  getX(){
+    return this.x;
+  }
+
+  getY(){
+    return this.y;
+  }
 
   frame (){}
   draw(ctx){}
   collided(object){}
+  executeEffect(object){}
 }
