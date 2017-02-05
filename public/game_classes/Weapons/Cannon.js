@@ -22,6 +22,10 @@ class Cannon {
     }
   }
 
+  setDirection(direction){
+    this.direction = direction;
+  }
+
   _shoot(){}
 
 }

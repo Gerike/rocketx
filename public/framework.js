@@ -219,7 +219,7 @@ framework.entityHandler = {
       }
     }
   },
-  requestDestroy: function (entity) {
+  requestDestroy: function (entity) { //Should delete it from the attachedEntities too
     framework.entityHandler.registerEvent("destroy", entity);
     framework.entityHandler.destroyAttachedEntities(entity);
     delete framework.masksData[entity._entityID];
