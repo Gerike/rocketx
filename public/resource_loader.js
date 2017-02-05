@@ -1,11 +1,11 @@
 /**
  * Created by Geri on 2016. 11. 14..
  */
-'use strict'
+'use strict';
 
 const canvas = document.getElementById('game_canvas');
 const ctx = canvas.getContext('2d');
-const resources_location = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png', '/assets/keyboard_arrows.png', '/assets/keyboard_space.png'];
+const resources_location = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png', '/assets/keyboard_arrows.png', '/assets/keyboard_space.png', '/assets/shield.png'];
 
 var entities = [];
 var resources = {};
@@ -34,7 +34,7 @@ function loadResources(ctx, counter) {
     let temp_img = document.createElement('img');
     temp_img.onload = function () {
       resources[getFileName(resources_location[counter])] = temp_img;
-      updateLoaderBar(ctx, counter + 1, resources_location.length)
+      updateLoaderBar(ctx, counter + 1, resources_location.length);
       loadResources(ctx, counter += 1);
     };
     temp_img.src = resources_location[counter];
@@ -51,7 +51,7 @@ function loadResources(ctx, counter) {
 
 
 function startLoad(ctx) {
-  prepareGameField() //Need this to set the canvas resolution to write on it. Maybe extract the loading bar drawing into another file?
+  prepareGameField(); //Need this to set the canvas resolution to write on it. Maybe extract the loading bar drawing into another file?
   setUpLoadingScreen(ctx);
   loadResources(ctx, 0);
 }
