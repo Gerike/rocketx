@@ -11,9 +11,9 @@ class LoadingViewer { //TODO: Using ingame HUDHandler to draw elements instead t
     this.setUpLoadingScreen();
 
     for (const promise of promises) {
-      promise.then((value) => {
+      promise.then(() => {
         this.increaseLoaderBar();
-      })
+      });
     }
 
     Promise.all(promises).then(() => {

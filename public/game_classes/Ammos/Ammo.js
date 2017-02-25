@@ -1,8 +1,12 @@
 class Ammo {
-  constructor(damage, img){
+  constructor(damage, img) {
     this.damage = damage;
     this.img = img;
   }
-  createProjectile () {}
-  effect () {}
+
+  createProjectile() {
+  }
+
+  effect() {
+  }
 }

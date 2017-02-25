@@ -20,9 +20,9 @@ class CollisionHandler {
     let collidedObjects = [];
     this._maskHandler.refreshDynamicMasks(entities);
 
-    for (var i = 0; i < entities.length; i++) {
+    for (let i = 0; i < entities.length; i++) {
       let entity1 = entities[i];
-      for (var j = i + 1; j < entities.length; j++) {
+      for (let j = i + 1; j < entities.length; j++) {
         let entity2 = entities[j];
         if (this.shouldCheckCollision(entity1, entity2))
           if (this.isPixelCollision(this._maskHandler.getMask(entity1), entity1.x, entity1.y, this._maskHandler.getMask(entity2), entity2.x, entity2.y))
@@ -77,10 +77,10 @@ class CollisionHandler {
       incX = (~~incX === incX) ? incX : (incX + 1 | 0);
       incY = (~~incY === incY) ? incY : (incY + 1 | 0);
 
-      for (var offsetY = 0; offsetY < incY; offsetY++) {
-        for (var offsetX = 0; offsetX < incX; offsetX++) {
-          for (var pixelY = yMin + offsetY; pixelY < yMax; pixelY += incY) {
-            for (var pixelX = xMin + offsetX; pixelX < xMax; pixelX += incX) {
+      for (let offsetY = 0; offsetY < incY; offsetY++) {
+        for (let offsetX = 0; offsetX < incX; offsetX++) {
+          for (let pixelY = yMin + offsetY; pixelY < yMax; pixelY += incY) {
+            for (let pixelX = xMin + offsetX; pixelX < xMax; pixelX += incX) {
               if (
                 ( pixels [((pixelX - entity1XPos ) + (pixelY - entity1YPos ) * w ) * 4 + 3] !== 0 ) &&
                 ( pixels2[((pixelX - entity2XPos) + (pixelY - entity2YPos) * w2) * 4 + 3] !== 0 )

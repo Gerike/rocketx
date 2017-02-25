@@ -19,10 +19,10 @@ class BaseEnemyShip extends SpaceShip {
 
   frame() {
     if (this.path !== null) {
-      let next_waypoint = this.waypoints.next();
-      if (!next_waypoint.done) {
-        this.x = next_waypoint.value.x;
-        this.y = next_waypoint.value.y;
+      let nextWaypoint = this.waypoints.next();
+      if (!nextWaypoint.done) {
+        this.x = nextWaypoint.value.x;
+        this.y = nextWaypoint.value.y;
       }
       else
         this.path = null;
@@ -47,6 +47,6 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   setTemporarySpeed(speed, frame) {
-    this.path.adjustSpeed(speed, frame)
+    this.path.adjustSpeed(speed, frame);
   }
 }

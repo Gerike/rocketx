@@ -1,4 +1,4 @@
-class FrameExpiration extends ExpirationChecker{
+class FrameExpiration extends ExpirationChecker {
   constructor(expirationFrame) {
     super();
     this.expirationFrame = this.timer.getCurrentFrameIndex() + expirationFrame;
@@ -13,6 +13,6 @@ class FrameExpiration extends ExpirationChecker{
   }
 
   setOutTransitionBeforeDelete(outTransition) {
-    outTransition.waitUntilExpiring(this.expirationFrame)
+    outTransition.waitUntilExpiring(this.expirationFrame);
   }
 }

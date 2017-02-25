@@ -1,5 +1,5 @@
 class TutorialPack {
-  constructor(framework) {
+  constructor() {
     this.name = "Tutorial level pack";
     this.neededResources = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png', '/assets/keyboard_arrows.png', '/assets/keyboard_space.png'];
   }
@@ -15,7 +15,7 @@ class TutorialPack {
   }
 
   resetFramework() {
-   framework.resetFramework();
+    framework.resetFramework();
   }
 
   nextStage() {

@@ -1,11 +1,11 @@
 class AmmoFactory {
-  static createAmmo(ammo_pattern) {
-    let ammo = new ammo_pattern['type'];
-    for (const key in ammo_pattern) {
+  static createAmmo(ammoPattern) {
+    let ammo = new ammoPattern.type();
+    for (const key in ammoPattern) {
       if ((key !== 'type') && (key !== 'img'))
-        ammo[key] = ammo_pattern[key];
+        ammo[key] = ammoPattern[key];
       else if (key === 'img')
-        ammo[key] = framework.getResources()[ammo_pattern[key]];
+        ammo[key] = framework.getResources()[ammoPattern[key]];
     }
     return ammo;
   }

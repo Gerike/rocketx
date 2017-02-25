@@ -1,9 +1,9 @@
-class Projectile extends Entity{
+class Projectile extends Entity {
   constructor(damage, img, x, y, direction, speed, effect) {
-    super(x,y);
+    super(x, y);
     this.damage = damage;
     this.img = img;
-    this.path = new LinearPath(x, y, direction, speed).getWaypoints()
+    this.path = new LinearPath(x, y, direction, speed).getWaypoints();
     this.effect = effect;
   }
 
@@ -12,16 +12,16 @@ class Projectile extends Entity{
   }
 
   frame() {
-    let next_waypoint = this.path.next().value;
-    this.x = next_waypoint.x;
-    this.y = next_waypoint.y;
+    let nextWaypoint = this.path.next().value;
+    this.x = nextWaypoint.x;
+    this.y = nextWaypoint.y;
   }
 
   collided(object) {
     framework.requestDestroy(this, 'Collided');
   }
 
-  executeEffect(object){
+  executeEffect(object) {
     this.effect(object);
   }
 }

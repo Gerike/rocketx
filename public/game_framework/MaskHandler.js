@@ -36,29 +36,30 @@ class MaskHandler {
   }
 
   createStaticMasks(images) {
-    for (const key in images)
+    for (const key of Object.keys(images)) {
       this._masksData['static'][images[key].src] = this._getImageData(images[key]);
+    }
   }
 
   getMask(entity, forceStatic = false) {
     if ((entity.hasDynamicMask) && (!forceStatic))
-      return this._masksData['dynamic'][entity._entityID];
-    return this._masksData['static'][entity.img.src];
+      return this._masksData.dynamic[entity._entityID];
+    return this._masksData.static[entity.img.src];
   }
 
   refreshDynamicMasks(entities) { //TODO: Maybe some event like approach? The entity alert if its mask change
     for (const entity of entities) {
       if (entity.hasDynamicMask)
-        this._refreshDynamicMask(entity)
+        this._refreshDynamicMask(entity);
     }
   }
 
   _refreshDynamicMask(entity) {
-    this._masksData['dynamic'][entity._entityID] = this.createMask(entity)
+    this._masksData.dynamic[entity._entityID] = this.createMask(entity);
   }
 
   _createDynamicMask(entity) {
-    this._masksData['dynamic'][entity._entityID] = this._getImageData(entity.img);
+    this._masksData.dynamic[entity._entityID] = this._getImageData(entity.img);
   }
 
   deleteMask(entity) {

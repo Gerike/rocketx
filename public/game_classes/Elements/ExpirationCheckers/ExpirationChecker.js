@@ -1,7 +1,8 @@
 class ExpirationChecker {
-  constructor(){
+  constructor() {
     this.timer = TimeHandler.getInstance();
   }
 
-  expired(){}
+  expired() {
+  }
 }

@@ -20,13 +20,17 @@ class KillXLevel extends Level {
   }
 
   notify(entity, event, reason) {
-    if (entity.constructor.name === 'BaseEnemyShip' && event === 'destroy' ) {
-      switch(reason){
-        case 'Out of bounds' : this.failed(this.strings.objectiveFailed); break;
-        case 'Killed' : this.increaseObjectiveCounter(); break;
+    if (entity.constructor.name === 'BaseEnemyShip' && event === 'destroy') {
+      switch (reason) {
+        case 'Out of bounds' :
+          this.failed(this.strings.objectiveFailed);
+          break;
+        case 'Killed' :
+          this.increaseObjectiveCounter();
+          break;
       }
     }
-    else if (entity.constructor.name === 'PlayerShip' && event === 'destroy')  {
+    else if (entity.constructor.name === 'PlayerShip' && event === 'destroy') {
       this.failed(this.strings.playerDied);
     }
   }

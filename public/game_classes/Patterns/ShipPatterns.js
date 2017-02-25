@@ -1,4 +1,4 @@
-patterns.ships = {}
+patterns.ships = {};
 
 patterns.ships.types = {
   BASE_ENEMY_SHIP: BaseEnemyShip,

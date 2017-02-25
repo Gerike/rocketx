@@ -31,7 +31,6 @@ class Position {
           break;
         default:
           throw 'Unsupported position';
-          break;
       }
       switch (this.yAlign) {
         case 'TOP':
@@ -45,7 +44,6 @@ class Position {
           break;
         default:
           throw 'Unsupported position';
-          break;
       }
     }
     else {

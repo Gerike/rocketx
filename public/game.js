@@ -4,12 +4,12 @@ const canvasWidth = 800;
 const canvasHeight = 400;
 
 
-var gameThread;
-var framework;
-var pause = false;
+let gameThread;
+let framework;
+let pause = false;
 
 
-function prepareGame(){
+function prepareGame() {
   prepareGameField();
   framework = new Framework(canvasHeight, canvasWidth, document.getElementById('game_canvas'));
   framework.loadLevelPack(new TutorialPack());
@@ -17,13 +17,13 @@ function prepareGame(){
 
 function prepareGameField() {
   const canvas = document.getElementById('game_canvas');
-  const special_message_canvas = document.getElementById('special_messages');
+  const specialMessageCanvas = document.getElementById('special_messages');
 
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
 
-  special_message_canvas.width = canvasWidth;
-  special_message_canvas.height = canvasHeight;
+  specialMessageCanvas.width = canvasWidth;
+  specialMessageCanvas.height = canvasHeight;
 }
 
 function step() {

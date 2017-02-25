@@ -15,22 +15,22 @@ class PlayerShip extends ArmedShip {
     if (framework.isDown(37))
       if (this.x - this.speed < 0) this.x = 0; else this.x -= this.speed;
     if (framework.isDown(39))
-      if (this.x + this.speed + this.img.width > canvasWidth ) this.x = canvasWidth - this.img.width; else this.x += this.speed;
+      if (this.x + this.speed + this.img.width > framework.getConstants().CANVAS_WIDTH) this.x = framework.getConstants().CANVAS_WIDTH - this.img.width; else this.x += this.speed;
     if (framework.isDown(38))
       if (this.y - this.speed < 0) this.y = 0; else this.y -= this.speed;
     if (framework.isDown(40))
-      if (this.y + this.speed + this.img.height > canvasHeight ) this.y = canvasHeight - this.img.height; else this.y += this.speed;
+      if (this.y + this.speed + this.img.height > framework.getConstants().CANVAS_HEIGHT) this.y = framework.getConstants().CANVAS_HEIGHT - this.img.height; else this.y += this.speed;
     if (framework.isDown(32))
       this.shoot();
     if (framework.isDown(81))
       this.changeWeapon();
   }
 
-  collided(object){
+  collided(object) {
     framework.requestDestroy(this, 'Killed');
   }
 
-  executeEffect(object){
+  executeEffect(object) {
   }
 
 }

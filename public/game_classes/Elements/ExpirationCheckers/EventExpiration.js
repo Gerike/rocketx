@@ -1,4 +1,4 @@
-class EventExpiration extends ExpirationChecker{
+class EventExpiration extends ExpirationChecker {
   constructor() {
     super();
     this.delay = 0;

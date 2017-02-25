@@ -4,8 +4,10 @@ class BaseAmmo extends Ammo {
     this.speed = speed;
   }
 
-  effect(){
-    return (entity) => {entity.modifyHp(-this.damage)}
+  effect() {
+    return (entity) => {
+      entity.modifyHp(-this.damage);
+    };
   }
 
   createProjectile(x, y, direction) {

@@ -19,7 +19,7 @@ class Level {
       'objectiveFailed': 'Objective failed...',
       'completeStage': 'Well done!',
       'completePack': 'You completed all of the trainings',
-    }
+    };
   }
 
   getName() {
@@ -50,9 +50,10 @@ class Level {
     this.resetFramework();
     this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.strings.completeStage, new TextStyle(), new FadeIn(50), new FadeOut(50)));
     this.timer.delegateFrameEvent(() => {
-      this.resetFramework();
-      this.levelPack.nextStage()},
-    200);
+        this.resetFramework();
+        this.levelPack.nextStage();
+      },
+      200);
   }
 
   restart() {
@@ -99,7 +100,7 @@ class Level {
     this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), reason, new TextStyle(), new FadeIn(50), new FadeOut(50)));
     this.timer.delegateFrameEvent(() => {
       this.restart();
-    }, 200)
+    }, 200);
   }
 
   practice() {

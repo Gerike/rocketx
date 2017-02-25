@@ -1,12 +1,12 @@
 class WeaponFactory {
-  static createWeapon(weapon_pattern, ammo_pattern) {
-    let weapon = new weapon_pattern['type'];
-    for (const key in weapon_pattern) {
+  static createWeapon(weaponPattern, ammoPattern) {
+    let weapon = new weaponPattern.type();
+    for (const key in weaponPattern) {
       if (key !== 'type')
-        weapon[key] = weapon_pattern[key];
+        weapon[key] = weaponPattern[key];
     }
-    if (ammo_pattern)
-      weapon.ammo = AmmoFactory.createAmmo(ammo_pattern);
+    if (ammoPattern)
+      weapon.ammo = AmmoFactory.createAmmo(ammoPattern);
     return weapon;
   }
 }

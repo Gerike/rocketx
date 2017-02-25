@@ -1,26 +1,27 @@
-class NCannon extends BaseCannon{
-  constructor(ammo, firerate, linked_entity, projectile_count){
-    super(ammo, firerate, linked_entity);
-    this.projectile_count = projectile_count;
-    this._shooting_angle = 30;
+class NCannon extends BaseCannon {
+  constructor(ammo, firerate, linkedEntity, projectileCount) {
+    super(ammo, firerate, linkedEntity);
+    this.projectileCount = projectileCount;
+    this._shootingAngle = 30;
 
   }
-  _shoot(direction) {
-      let projectile_angle_diff = this._shooting_angle / this.projectile_count;
-      let left = this.projectile_count;
-      super._shoot(direction);
-      left--;
-      let temp_direction  = direction;
-      for (let i = 0; i < (this.projectile_count -1) / 2; i++) {
-        temp_direction += projectile_angle_diff;
-        super._shoot(temp_direction);
-        left--;
-      }
 
-      temp_direction  = direction;
-      for (let i = 0; i < left; i++) {
-        temp_direction -= projectile_angle_diff;
-        super._shoot(temp_direction);
-      }
+  _shoot(direction) {
+    let projectileAngleDiff = this._shootingAngle / this.projectileCount;
+    let left = this.projectileCount;
+    super._shoot(direction);
+    left--;
+    let tempDirection = direction;
+    for (let i = 0; i < (this.projectileCount - 1) / 2; i++) {
+      tempDirection += projectileAngleDiff;
+      super._shoot(tempDirection);
+      left--;
+    }
+
+    tempDirection = direction;
+    for (let i = 0; i < left; i++) {
+      tempDirection -= projectileAngleDiff;
+      super._shoot(tempDirection);
+    }
   }
 }

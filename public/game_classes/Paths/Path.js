@@ -1,6 +1,3 @@
-/**
- * Created by Geri on 2016. 11. 15..
- */
 'use strict';
 class Path {
   constructor(startX, startY, speed) {
@@ -10,19 +7,19 @@ class Path {
   }
 
   _adjustSpeed(speed) {
-    this._previous_speed = this.speed;
+    this._previousSpeed = this.speed;
     this.speed = speed;
   }
 
   _revertSpeed() {
-    this.speed = this._previous_speed;
+    this.speed = this._previousSpeed;
   }
 
   adjustSpeed(speed, frame = 0) {
     this._adjustSpeed(speed);
     if (frame)
       TimeHandler.getInstance().delegateFrameEvent(() => {
-        this._revertSpeed()
+        this._revertSpeed();
       }, frame);
   }
 }

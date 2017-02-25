@@ -65,7 +65,7 @@ class EntityHandler {
       if (entity.constructor.name !== fromEntity.constructor.name) {
         if (this._collisionHandler.isPixelCollision(this._maskHandler.getMask(entity), entity.x, entity.y, this._maskHandler.getMask(fromEntity, true), fromEntity.x, fromEntity.y))
           if (minX > entity.x - fromEntity.x)
-            minX = entity.x - fromEntity.x
+            minX = entity.x - fromEntity.x;
       }
     }
     if (minX !== fromEntity.img.width)

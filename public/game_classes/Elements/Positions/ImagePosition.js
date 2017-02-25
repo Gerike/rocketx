@@ -17,7 +17,6 @@ class ImagePosition extends Position {
         break;
       default:
         throw 'Unsupported position';
-        break;
     }
     switch (this.yAlign) {
       case 'TOP':
@@ -31,7 +30,6 @@ class ImagePosition extends Position {
         break;
       default:
         throw 'Unsupported position';
-        break;
     }
     ctx.translate(newStartingX, newStartingY);
   }

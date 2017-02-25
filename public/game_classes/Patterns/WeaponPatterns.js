@@ -14,7 +14,7 @@ patterns.weapons = {
   TRIPLE_CANNON: {
     type: patterns.weapons.types.NCannon,
     firerate: 30,
-    projectile_count: 3,
+    projectileCount: 3,
   },
   BEAM_CANNON: {
     type: patterns.weapons.types.BEAM_CANNON,

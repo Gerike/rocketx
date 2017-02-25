@@ -31,9 +31,9 @@ class Framework {
       Promise.all(loader).then(() => {
         this.resources = resourceLoader.getResources();
         MaskHandler.getInstance().createStaticMasks(this.resources);
-        $(document).on('keydown', (e) => {
+        $(document).on('keydown', () => {
           this.addKeyEventListeners();
-          this.levelPack.start()
+          this.levelPack.start();
           step(); //TODO: MOVE IT FROM HERE
         });
       });

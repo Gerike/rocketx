@@ -5,7 +5,7 @@ class ResourceLoader {
   }
 
   getFileName(path) {
-    return path.split('/').pop().split('.')[0]
+    return path.split('/').pop().split('.')[0];
   }
 
   loadResources() {
