@@ -1,7 +1,7 @@
 class Level {
   constructor(framework, levelName, objectivesToComplete, objective, objectivePrefix, help, insteadWeaponHud) {
     this.framework = framework;
-    this.packName = level.getName();
+    this.packName = 'LEVEL PACK'; //TODO: FIX IT
     this.levelName = levelName;
     this.objectivePrefix = objectivePrefix;
     this.objective = objective;
@@ -10,6 +10,8 @@ class Level {
     this.objectiveToComplete = objectivesToComplete;
     this.objectiveScored = new EventExpiration();
     this.objectiveCounter = 0;
+    this.hudHandler = HUDHandler.getInstance();
+    this.timer = TimeHandler.getInstance();
 
     this.strings = {
       'playerDied': 'You died... ',
@@ -36,10 +38,10 @@ class Level {
   start() {
     this.objectiveCounter = 0;
 
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.getPackName(), new TextStyle(), new FadeIn(50), new FadeOut(50)));
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.BOTTOM, 150), new FrameExpiration(200), this.getName(), new TextStyle("25px Gerogia"), new FadeIn(50), new FadeOut(50)));
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.getPackName(), new TextStyle(), new FadeIn(50), new FadeOut(50)));
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.BOTTOM, 150), new FrameExpiration(200), this.getName(), new TextStyle("25px Gerogia"), new FadeIn(50), new FadeOut(50)));
 
-    this.framework.timer.delegateFrameEvent(() => {
+    this.timer.delegateFrameEvent(() => {
       this.drawHUD();
       this.practice();
     }, 200);
@@ -47,8 +49,8 @@ class Level {
 
   completed() {
     this.resetFramework();
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.strings.completeStage, new TextStyle(), new FadeIn(50), new FadeOut(50)));
-    this.framework.timer.delegateFrameEvent(() => (level.nextStage()), 200);
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.strings.completeStage, new TextStyle(), new FadeIn(50), new FadeOut(50)));
+    this.timer.delegateFrameEvent(() => (level.nextStage()), 200);
   }
 
   restart() {
@@ -60,22 +62,22 @@ class Level {
   drawHUD() {
     let shootingTutorialExpiration = new EventExpiration();
 
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.LEFT, POSITIONS.Y.BOTTOM, 15), shootingTutorialExpiration, this.help, new TextStyle("20px Gerogia", "white"), new FadeIn(50)));
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.TOP, 15), shootingTutorialExpiration, this.objective, new TextStyle("30px Gerogia", "white"), new FadeIn(50)));
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.LEFT, POSITIONS.Y.BOTTOM, 15), shootingTutorialExpiration, this.help, new TextStyle("20px Gerogia", "white"), new FadeIn(50)));
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.TOP, 15), shootingTutorialExpiration, this.objective, new TextStyle("30px Gerogia", "white"), new FadeIn(50)));
 
     if (this.insteadWeaponHud !== undefined)
-      this.framework.drawer.addElement(new ImageElement(new ImagePosition(POSITIONS.X.RIGHT, POSITIONS.Y.BOTTOM, 15), shootingTutorialExpiration, this.insteadWeaponHud, new FadeIn(50), new FadeOut(50)));
+      this.hudHandler.addElement(new ImageElement(new ImagePosition(POSITIONS.X.RIGHT, POSITIONS.Y.BOTTOM, 15), shootingTutorialExpiration, this.insteadWeaponHud, new FadeIn(50), new FadeOut(50)));
     else
-      this.framework.drawer.addElement(new WeaponHUD());
+      this.hudHandler.addElement(new WeaponHUD());
 
     this.updateObjectiveCounter();
   }
 
   updateObjectiveCounter() {
     this.objectiveScored.fire();
-    framework.delegateFrameEvent(() => {
+    this.timer.delegateFrameEvent(() => {
       this.objectiveScored = new EventExpiration();
-      this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.RIGHT, POSITIONS.Y.TOP, 15), this.objectiveScored, this.objectivePrefix + this.objectiveCounter + " / " + this.objectiveToComplete, new TextStyle("20px Gerogia", "white")));
+      this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.RIGHT, POSITIONS.Y.TOP, 15), this.objectiveScored, this.objectivePrefix + this.objectiveCounter + " / " + this.objectiveToComplete, new TextStyle("20px Gerogia", "white")));
     }, 1);
   }
 
@@ -93,8 +95,8 @@ class Level {
 
   failed(reason) {
     this.resetFramework();
-    this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), reason, new TextStyle(), new FadeIn(50), new FadeOut(50)));
-    framework.delegateFrameEvent(() => {
+    this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), reason, new TextStyle(), new FadeIn(50), new FadeOut(50)));
+    this.timer.delegateFrameEvent(() => {
       this.restart();
     }, 200)
   }

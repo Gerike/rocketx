@@ -5,7 +5,7 @@ class AmmoFactory {
       if ((key !== 'type') && (key !== 'img'))
         ammo[key] = ammo_pattern[key];
       else if (key === 'img')
-        ammo[key] = resources[ammo_pattern[key]];
+        ammo[key] = framework.getResources()[ammo_pattern[key]];
     }
     return ammo;
   }

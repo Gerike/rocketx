@@ -1,6 +1,6 @@
 class MovingPractice extends Level {
   constructor(framework) {
-    super(framework, 'Moving Practice', 10, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', resources['keyboard_arrows']);
+    super(framework, 'Moving Practice', 10, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', framework.getResources()['keyboard_arrows']);
   }
 
   isPlayerMoving() {
@@ -11,10 +11,9 @@ class MovingPractice extends Level {
     if (this.isPlayerMoving() && !this.waiting) {
       this.increaseObjectiveCounter();
     }
-    framework.delegateFrameEvent(() => {
+    this.timer.delegateFrameEvent(() => {
       this.checkRecursively();
     }, 60);
-
   }
 
   practice() {

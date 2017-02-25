@@ -6,18 +6,19 @@ class FadeOut {
   }
 
   waitUntilExpiring(elementExpirationFrame) {
-    framework.timer.delegateFrameEvent(() => {
+    let timer = TimeHandler.getInstance();
+    timer.delegateFrameEvent(() => {
       this.activate();
-    }, elementExpirationFrame - this.length - framework.timer.getCurrentFrameIndex())
+    }, elementExpirationFrame - this.length - timer.getCurrentFrameIndex())
   }
 
   activate() {
     this.activated = true;
-    framework.drawer.render(true);
+    HUDHandler.getInstance().render(true);
   }
 
   prepareContext(ctx) {
-    framework.drawer.markElementsAsChanged();
+    HUDHandler.getInstance().markElementsAsChanged();
     ctx.globalAlpha = 1 - 1 / this.length * this.progress;
     this.progress++;
   }

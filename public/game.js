@@ -1,25 +1,24 @@
-/**
- * Created by Geri on 2016. 11. 13..
- */
 'use strict';
-
-var destroyedShips = 0;
 
 const canvasWidth = 800;
 const canvasHeight = 400;
 
-const special_message_canvas = document.getElementById('special_messages');
 
 var gameThread;
-
-startLoad(ctx);
-
+var framework;
 var pause = false;
 
 
-
+function prepareGame(){
+  prepareGameField();
+  framework = new Framework(canvasHeight, canvasWidth, document.getElementById('game_canvas'));
+  framework.loadLevelPack(new TutorialPack());
+}
 
 function prepareGameField() {
+  const canvas = document.getElementById('game_canvas');
+  const special_message_canvas = document.getElementById('special_messages');
+
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
 
@@ -27,41 +26,10 @@ function prepareGameField() {
   special_message_canvas.height = canvasHeight;
 }
 
-
-
 function step() {
-  if (!pause) {
-    framework.frame();
-    framework.sanityDeleteEntities(canvasWidth, canvasHeight)
-    framework.render(ctx, canvas);
-    framework.drawer.frame();
-    framework.drawer.render();
-    framework.detectCollision();
-  }
+  if (!pause)
+    framework.step();
   window.requestAnimationFrame(step);
-
-}
-
-function addShips(i, y, path) {
-
-  var addingShips = setInterval(() => {
-    if (path === 1) var path = new LinearPath(800, y, 270, 2);
-    else {
-      if (y - 100 < 0) y = y + 100;
-      else if (y + 100 > 400) y = y - 100;
-      var path = new WavePath(800, y, 270, 3, 100, 45);
-    }
-    framework.registerEntity(ShipFactory.createBaseEnemyShip(800, y, path))
-  }, 500);
-  setTimeout(() => clearInterval(addingShips), 300 * i);
-}
-
-function startGame() {
-  framework.setup(canvasHeight, canvasWidth, canvas, special_message_canvas);
-  framework.setUpEventHandlers();
-  framework.createStaticMasks(resources);
-  framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON], [patterns.ammos.BASE_AMMO]));
-  gameThread = window.requestAnimationFrame(step);
 }
 
 function stop() {
@@ -70,9 +38,4 @@ function stop() {
 
 function cont() {
   pause = false;
-}
-var level;
-function startTutorial() {
-  level = new TutorialPack(framework);
-  level.start();
 }

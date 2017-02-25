@@ -1,19 +1,15 @@
 class TutorialPack {
   constructor(framework) {
     this.name = "Tutorial level pack";
-    this.framework = framework;
-    this.framework.setup(canvasHeight, canvasWidth, canvas, special_message_canvas);
-    this.framework.setUpEventHandlers();
-    this.framework.createStaticMasks(resources);
-    this.gameThread = window.requestAnimationFrame(step);
+    this.neededResources = ['/assets/laser_4.png', '/assets/ship.png', '/assets/base_laser.png', '/assets/laser_2.png', '/assets/ship_2.png', 'assets/ship_3.png', '/assets/laser_3.png', '/assets/keyboard_arrows.png', '/assets/keyboard_space.png'];
   }
 
   getName() {
     return this.name;
   }
 
-  start() {
-    this.stages = [new MovingPractice(this.framework), new ShootingPractice1(this.framework), new ShootingPractice2(this.framework), new ShootingPractice3(this.framework), new ShootingPractice4(this.framework), new ShootingPractice5(this.framework)];
+  start() { //TODO: MAKE IT LAZY LOAD
+    this.stages = [new MovingPractice(framework), new ShootingPractice1(framework), new ShootingPractice2(framework), new ShootingPractice3(framework), new ShootingPractice4(framework), new ShootingPractice5(framework)];
     this.currentStage = 0;
     this.stages[0].start();
   }

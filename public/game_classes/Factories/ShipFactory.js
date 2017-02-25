@@ -10,7 +10,7 @@ class ShipFactory {
       if ((key !== 'type') && (key !== 'img'))
         ship[key] = ship_pattern[key];
       else if (key === 'img')
-        ship[key] = resources[ship_pattern[key]];
+        ship[key] = framework.getResources()[ship_pattern[key]];
     }
 
     if (weapon_patterns)
