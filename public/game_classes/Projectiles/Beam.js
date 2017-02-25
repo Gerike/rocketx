@@ -1,6 +1,6 @@
 class Beam extends Entity {
-  constructor(damage, x, y, img, effect, uptime, linkedEntity) {
-    super(x, y);
+  constructor(damage, position, img, effect, uptime, linkedEntity) {
+    super(position);
     this.damage = damage;
     this.img = img;
     this.effect = effect;
@@ -13,15 +13,15 @@ class Beam extends Entity {
     }, this.uptime);
   }
 
-  draw(ctx, x = this.x, y = this.y) {
-    ctx.drawImage(this.img, x, y, this.width, this.img.height);
+  draw(ctx, position = this.getPosition()) {
+    ctx.drawImage(this.img, position.getX(), position.getY(), this.width, this.img.height);
   }
 
   frame() {
     let tempW = framework.getFirstCollideEntity(this);
-    this.width = (tempW + 30 < this.img.width) ? tempW + 30 : this.img.width;
-    this.x = this.linkedEntity.x + 45;
-    this.y = this.linkedEntity.y + 10;
+    this.width = (tempW + 10 < this.img.width) ? tempW + 10 : this.img.width;
+    this.position.setX( this.linkedEntity.getPosition().getX() + 45);
+    this.position.setY( this.linkedEntity.getPosition().getY() + 10);
   }
 
   collided(object) {

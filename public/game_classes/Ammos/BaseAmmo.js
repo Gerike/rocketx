@@ -10,7 +10,7 @@ class BaseAmmo extends Ammo {
     };
   }
 
-  createProjectile(x, y, direction) {
-    framework.registerEntity(new Projectile(this.damage, this.img, x, y, direction, this.speed, this.effect()));
+  createProjectile(position, direction) {
+    framework.registerEntity(new Projectile(this.damage, this.img, position, direction, this.speed, this.effect()));
   }
 }

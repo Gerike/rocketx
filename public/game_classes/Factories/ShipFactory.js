@@ -3,8 +3,7 @@ class ShipFactory {
     let ship = new shipPattern.type();
 
     ship.weapons = [];
-    ship.x = x;
-    ship.y = y;
+    ship.position = new Position(x,y);
 
     for (const key in shipPattern) {
       if ((key !== 'type') && (key !== 'img'))

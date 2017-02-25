@@ -1,4 +1,4 @@
-class ImagePosition extends Position {
+class ImagePosition extends ElementPosition {
   constructor(xPos, yPos, offset = 0) {
     super(xPos, yPos, offset);
   }

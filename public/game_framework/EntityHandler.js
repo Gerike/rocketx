@@ -33,7 +33,7 @@ class EntityHandler {
   }
 
   outOfCanvas(entity) {
-    if ((entity.x < 0 - entity.img.width) || (entity.x > framework.getConstants().CANVAS_WIDTH + entity.img.width) || (entity.y < 0 - entity.img.height) || (entity.y > framework.getConstants().CANVAS_HEIGHT + entity.img.height))
+    if ((entity.getPosition().getX() < 0 - entity.img.width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.img.width) || (entity.getPosition().getY() < 0 - entity.img.height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.img.height))
       return true;
     return false;
   }
@@ -63,14 +63,14 @@ class EntityHandler {
     let minX = fromEntity.img.width;
     for (const entity of this._entities) {
       if (entity.constructor.name !== fromEntity.constructor.name) {
-        if (this._collisionHandler.isPixelCollision(this._maskHandler.getMask(entity), entity.x, entity.y, this._maskHandler.getMask(fromEntity, true), fromEntity.x, fromEntity.y))
-          if (minX > entity.x - fromEntity.x)
-            minX = entity.x - fromEntity.x;
+        if (this._collisionHandler.isPixelCollision(this._maskHandler.getMask(entity), entity.getPosition(), this._maskHandler.getMask(fromEntity, true), fromEntity.getPosition())) {
+          if (minX > entity.getPosition().getX() - fromEntity.getPosition().getX()) {
+            minX = entity.getPosition().getX() - fromEntity.getPosition().getX();
+          }
+        }
       }
     }
-    if (minX !== fromEntity.img.width)
-      return minX + 3;
-    return fromEntity.img.width;
+    return minX;
   }
 
   resetEntities(){

@@ -13,7 +13,7 @@ POSITIONS.Y = {
 };
 
 
-class Position {
+class ElementPosition {
   constructor(xPos, yPos, offset = 0) {
     this.offset = offset;
     if (isNaN(xPos)) {

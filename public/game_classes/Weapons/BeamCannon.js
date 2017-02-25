@@ -5,8 +5,9 @@ class BeamCannon extends Cannon {
   }
 
   _shoot() {
-    let projectileX = this.linkedEntity.x + this.linkedEntity.img.width / 2 + Math.sin(this.direction * Math.PI / 180) * this.linkedEntity.img.width / 2 - 5;
-    let projectileY = this.linkedEntity.y + this.linkedEntity.img.height / 2 + Math.cos(this.direction * Math.PI / 180) * this.linkedEntity.img.height / 2 * -1;
-    this.ammo.createProjectile(projectileX, projectileY, this.direction, this.linkedEntity);
+    let projectilePosition = new Position(
+      this.linkedEntity.getPosition().getX() + this.linkedEntity.img.width / 2 + Math.sin(this.direction * Math.PI / 180) * this.linkedEntity.img.width / 2 - 5,
+      this.linkedEntity.getPosition().getY() + this.linkedEntity.img.height / 2 + Math.cos(this.direction * Math.PI / 180) * this.linkedEntity.img.height / 2 * -1);
+    this.ammo.createProjectile(projectilePosition, this.direction, this.linkedEntity);
   }
 }

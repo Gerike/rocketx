@@ -1,9 +1,6 @@
-/**
- * Created by Geri on 2016. 11. 15..
- */
 class BaseEnemyShip extends SpaceShip {
-  constructor(x, y, hp, img, path = null) {
-    super(x, y, hp, img);
+  constructor(position, hp, img, path = null) {
+    super(position, hp, img);
     this.path = path;
     if (this.path) this.waypoints = this.path.getWaypoints();
   }
@@ -14,16 +11,14 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   draw(ctx) {
-    ctx.drawImage(this.img, this.x, this.y);
+    ctx.drawImage(this.img, this.position.getX(), this.position.getY());
   }
 
   frame() {
     if (this.path !== null) {
       let nextWaypoint = this.waypoints.next();
-      if (!nextWaypoint.done) {
-        this.x = nextWaypoint.value.x;
-        this.y = nextWaypoint.value.y;
-      }
+      if (!nextWaypoint.done)
+       this.position = nextWaypoint.value;
       else
         this.path = null;
     }

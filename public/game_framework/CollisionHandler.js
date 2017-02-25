@@ -25,7 +25,7 @@ class CollisionHandler {
       for (let j = i + 1; j < entities.length; j++) {
         let entity2 = entities[j];
         if (this.shouldCheckCollision(entity1, entity2))
-          if (this.isPixelCollision(this._maskHandler.getMask(entity1), entity1.x, entity1.y, this._maskHandler.getMask(entity2), entity2.x, entity2.y))
+          if (this.isPixelCollision(this._maskHandler.getMask(entity1), entity1.getPosition(), this._maskHandler.getMask(entity2), entity2.getPosition()))
             collidedObjects.push([entity1, entity2]);
       }
     }
@@ -36,11 +36,11 @@ class CollisionHandler {
     return entity1.constructor.name !== entity2.constructor.name; //Object from the same type can't collide (projectiles wont kill each other) TODO: Should depend upen if the object is care about the other one
   }
 
-  isPixelCollision(entity1ImageData, entity1XPos, entity1YPos, entity2ImageData, entity2XPos, entity2YPos) { //TODO: Using position {x,y} instead two different variables
-    entity1XPos = Math.round(entity1XPos);
-    entity1YPos = Math.round(entity1YPos);
-    entity2XPos = Math.round(entity2XPos);
-    entity2YPos = Math.round(entity2YPos);
+  isPixelCollision(entity1ImageData, entity1Position, entity2ImageData, entity2Position) {
+    let entity1XPos = Math.round(entity1Position.getX());
+    let entity1YPos = Math.round(entity1Position.getY());
+    let entity2XPos = Math.round(entity2Position.getX());
+    let entity2YPos = Math.round(entity2Position.getY());
 
     let w = entity1ImageData.width,
       h = entity1ImageData.height,

@@ -1,31 +1,31 @@
 'use strict';
 class LinearPath extends Path {
-  constructor(startX, startY, direction, speed, length = undefined) {
-    super(startX, startY, speed);
+  constructor(startPosition, direction, speed, length = undefined) {
+    super(startPosition, speed);
     this.direction = direction;
     this.length = length;
     if (length) {
-      this.endX = this.startX + Math.sin(this.direction * Math.PI / 180) * this.length;
-      this.endY = this.startY + Math.cos(this.direction * Math.PI / 180) * this.length * -1;
+      this.endPosition = new Position(startPosition.getX() + Math.sin(this.direction * Math.PI / 180) * this.length, startPosition.getY() + Math.cos(this.direction * Math.PI / 180) * this.length * -1);
     }
   }
 
-  _calculateNextWaypoint(currentPos) {
-    currentPos.x += Math.sin(this.direction * Math.PI / 180) * this.speed;
-    currentPos.y += Math.cos(this.direction * Math.PI / 180) * -1 * this.speed;
-    return currentPos;
+  _calculateNextWaypoint() {
+    this.position.setPosition(
+      this.position.getX() + Math.sin(this.direction * Math.PI / 180) * this.speed,
+      this.position.getY() + Math.cos(this.direction * Math.PI / 180) * -1 * this.speed
+    );
   }
 
   * getWaypoints() {
-    let currentPos = {x: this.startX, y: this.startY};
     if (this.length === undefined)
       while (true) {
-        yield this._calculateNextWaypoint(currentPos);
+        this._calculateNextWaypoint();
+        yield this.position;
       }
     else
-      while ((Math.abs(currentPos.x - this.endX) > this.speed) || ((Math.abs(currentPos.y - this.endY) > this.speed)))
-        yield this._calculateNextWaypoint(currentPos);
-    return currentPos;
+      while ((Math.abs(this.position.getX() - this.endPosition.getY()) > this.speed) || ((Math.abs(this.position.getY() - this.endPosition.getY()) > this.speed))) {
+        this._calculateNextWaypoint();
+        yield this.position;
+      }
   }
-
 }

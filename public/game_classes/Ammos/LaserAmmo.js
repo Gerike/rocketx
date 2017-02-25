@@ -10,7 +10,7 @@ class LaserAmmo extends Ammo {
     };
   }
 
-  createProjectile(x, y, direction, linkedTo) {
-    framework.registerEntity(new Beam(this.damage, x, y, this.img, this.effect(), this.uptime, linkedTo));
+  createProjectile(position, direction, linkedTo) {
+    framework.registerEntity(new Beam(this.damage, position, this.img, this.effect(), this.uptime, linkedTo));
   }
 }

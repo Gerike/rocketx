@@ -1,4 +1,4 @@
-class TextPosition extends Position {
+class TextPosition extends ElementPosition {
   constructor(xPos, yPos, offset = 0) {
     super(xPos, yPos, offset);
   }

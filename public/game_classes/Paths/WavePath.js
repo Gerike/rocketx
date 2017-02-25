@@ -1,7 +1,7 @@
 'use strict';
 class WavePath extends Path {
-  constructor(startX, startY, direction, speed, maxElongation, gradient) {
-    super(startX, startY, speed);
+  constructor(startPosition, direction, speed, maxElongation, gradient) {
+    super(startPosition, speed);
     this.direction = direction;
     this.gradient = gradient;
     this.maxElongation = maxElongation;
@@ -18,7 +18,7 @@ class WavePath extends Path {
 
   * getWaypoints() {
     let nextDirection = this._nextDirection();
-    let currentPath = new LinearPath(this.startX, this.startY, nextDirection.next().value, this.speed, this.waveLength).getWaypoints();
+    let currentPath = new LinearPath(this.startPosition, nextDirection.next().value, this.speed, this.waveLength).getWaypoints();
     let currentPos = currentPath.next();
     while (!currentPos.done) {
       yield currentPos.value;
@@ -26,7 +26,7 @@ class WavePath extends Path {
       currentPos = currentPath.next();
     }
     while (true) {
-      currentPath = new LinearPath(currentPos.value.x, currentPos.value.y, nextDirection.next().value, this.speed, this.waveLength * 2).getWaypoints();
+      currentPath = new LinearPath(currentPos.value, nextDirection.next().value, this.speed, this.waveLength * 2).getWaypoints();
       currentPos = currentPath.next();
       while (!currentPos.done) {
         yield currentPos.value;
