@@ -20,8 +20,8 @@ class Beam extends Entity {
   frame() {
     let tempW = framework.getFirstCollideEntity(this);
     this.width = (tempW + 10 < this.img.width) ? tempW + 10 : this.img.width;
-    this.position.setX( this.linkedEntity.getPosition().getX() + 45);
-    this.position.setY( this.linkedEntity.getPosition().getY() + 10);
+    this.position.setX(this.linkedEntity.getPosition().getX() + 45);
+    this.position.setY(this.linkedEntity.getPosition().getY() + 10);
   }
 
   collided(object) {

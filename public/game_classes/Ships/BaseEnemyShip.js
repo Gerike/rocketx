@@ -18,7 +18,7 @@ class BaseEnemyShip extends SpaceShip {
     if (this.path !== null) {
       let nextWaypoint = this.waypoints.next();
       if (!nextWaypoint.done)
-       this.position = nextWaypoint.value;
+        this.position = nextWaypoint.value;
       else
         this.path = null;
     }

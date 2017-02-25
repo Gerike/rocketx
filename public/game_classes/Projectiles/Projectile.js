@@ -12,7 +12,7 @@ class Projectile extends Entity {
   }
 
   frame() {
-   this.position = this.path.next().value;
+    this.position = this.path.next().value;
   }
 
   collided(object) {

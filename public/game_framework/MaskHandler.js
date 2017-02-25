@@ -29,7 +29,7 @@ class MaskHandler {
   createMask(entity) {
     this._resizeHelperCanvas(entity.img.height, entity.img.width);
     if (entity.hasDynamicMask)
-      entity.draw(this._helperCanvasCTX, new Position(0,0));
+      entity.draw(this._helperCanvasCTX, new Position(0, 0));
     else
       this._helperCanvasCTX.drawImage(entity.img, 0, 0);
     return this._helperCanvasCTX.getImageData(0, 0, entity.img.width, entity.img.height);

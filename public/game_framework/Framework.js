@@ -94,33 +94,34 @@ class Framework {
     return this.CONSTANTS;
   }
 
-  getResources(){
+  getResources() {
     return this.resources;
   }
 
-  registerEntity(entity){
+  registerEntity(entity) {
     return this.entityHandler.registerEntity(entity);
   }
 
-  resetFramework(){
+  resetFramework() {
     this.entityHandler.resetEntities();
     this.hud.resetHUD();
     this.timeHandler.resetEvents();
     this.eventHandler.resetEventSubscriptions();
   }
 
-  addEventListener(event, object){
+  addEventListener(event, object) {
     this.eventHandler.addEventListener(event, object);
   }
 
-  registerEvent(event, object){
+  registerEvent(event, object) {
     this.eventHandler.registerEvent(event, object);
   }
 
-  requestDestroy(entity, reason){
+  requestDestroy(entity, reason) {
     this.entityHandler.requestDestroy(entity, reason);
   }
-  getFirstCollideEntity(entity){
+
+  getFirstCollideEntity(entity) {
     return this.entityHandler.getFirstCollideEntity(entity);
   }
 }
