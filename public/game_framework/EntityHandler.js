@@ -28,7 +28,7 @@ class EntityHandler {
     this._entities.push(entity);
 
     if (entity.hasDynamicMask)
-      this._maskHandler.createDynamicMask(entity);
+      this._maskHandler._createDynamicMask(entity);
     return entity;
   }
 

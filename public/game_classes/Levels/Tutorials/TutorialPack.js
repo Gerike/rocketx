@@ -15,10 +15,7 @@ class TutorialPack {
   }
 
   resetFramework() {
-    framework.entities = [];
-    framework.elements = [];
-    framework.frameEvents = [];
-    framework.entityHandler.eventSubscribers = {};
+   framework.resetFramework();
   }
 
   nextStage() {
@@ -27,6 +24,6 @@ class TutorialPack {
     if (this.currentStage < this.stages.length)
       this.stages[this.currentStage].start();
     else
-      this.framework.drawer.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), "You completed all of the trainings", new TextStyle("50px Gerogia"), new FadeIn(50), new FadeOut(50)));
+      HUDHandler.getInstance().addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), "You have completed all of the trainings", new TextStyle("50px Gerogia"), new FadeIn(50), new FadeOut(50)));
   }
 }

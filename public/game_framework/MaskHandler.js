@@ -54,7 +54,7 @@ class MaskHandler {
   }
 
   _refreshDynamicMask(entity) {
-    this._masksData['dynamic'][entity._entityID] = this._createMask(entity)
+    this._masksData['dynamic'][entity._entityID] = this.createMask(entity)
   }
 
   _createDynamicMask(entity) {

@@ -120,4 +120,7 @@ class Framework {
   requestDestroy(entity, reason){
     this.entityHandler.requestDestroy(entity, reason);
   }
+  getFirstCollideEntity(object){
+    this.entityHandler.getFirstCollideEntity(object);
+  }
 }

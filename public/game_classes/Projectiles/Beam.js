@@ -8,7 +8,7 @@ class Beam extends Entity {
     this.width = this.img.width;
     this.uptime = uptime;
     this.linkedEntity = linked_entity;
-    framework.delegateFrameEvent(() => {framework.requestDestroy(this)}, this.uptime);
+    TimeHandler.getInstance().delegateFrameEvent(() => {framework.requestDestroy(this)}, this.uptime);
   }
 
   draw(ctx, x = this.x, y = this.y) {
@@ -16,7 +16,7 @@ class Beam extends Entity {
   }
 
   frame() {
-    let temp_w = framework.getFirstCollideEntity(this)
+    let temp_w = framework.getFirstCollideEntity(this);
     this.width = (temp_w + 30 < this.img.width) ? temp_w + 30 : this.img.width;
     this.x = this.linkedEntity.x + 45;
     this.y = this.linkedEntity.y + 10;
