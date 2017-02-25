@@ -1,7 +1,7 @@
 /**
  * Created by Geri on 2016. 11. 15..
  */
-'use strict'
+'use strict';
 class Path {
   constructor(startX, startY, speed) {
     this.startX = startX;
@@ -21,7 +21,7 @@ class Path {
   adjustSpeed(speed, frame = 0) {
     this._adjustSpeed(speed);
     if (frame)
-      framework.delegateFrameEvent(() => {
+      TimeHandler.getInstance().delegateFrameEvent(() => {
         this._revertSpeed()
       }, frame);
   }

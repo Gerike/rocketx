@@ -33,7 +33,7 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   destroy() {
-    framework.requestDestroy(this);
+    framework.requestDestroy(this, 'Killed');
   }
 
   collided(object) {

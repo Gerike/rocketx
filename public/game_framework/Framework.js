@@ -99,6 +99,25 @@ class Framework {
   }
 
   registerEntity(entity){
-    this.entityHandler.registerEntity(entity);
+    return this.entityHandler.registerEntity(entity);
+  }
+
+  resetFramework(){
+    this.entityHandler.resetEntities();
+    this.hud.resetHUD();
+    this.timeHandler.resetEvents();
+    this.eventHandler.resetEventSubscriptions();
+  }
+
+  addEventListener(event, object){
+    this.eventHandler.addEventListener(event, object);
+  }
+
+  registerEvent(event, object){
+    this.eventHandler.registerEvent(event, object);
+  }
+
+  requestDestroy(entity, reason){
+    this.entityHandler.requestDestroy(entity, reason);
   }
 }

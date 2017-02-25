@@ -18,7 +18,7 @@ class Projectile extends Entity{
   }
 
   collided(object) {
-    framework.requestDestroy(this);
+    framework.requestDestroy(this, 'Collided');
   }
 
   executeEffect(object){

@@ -1,6 +1,6 @@
 class MovingPractice extends Level {
-  constructor(framework) {
-    super(framework, 'Moving Practice', 10, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', framework.getResources()['keyboard_arrows']);
+  constructor(levelPack) {
+    super(levelPack, 'Moving Practice', 2, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', framework.getResources()['keyboard_arrows']);
   }
 
   isPlayerMoving() {

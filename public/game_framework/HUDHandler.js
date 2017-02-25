@@ -48,4 +48,9 @@ class HUDHandler {
     this._elements.splice(this._elements.indexOf(element), 1);
     this.markElementsAsChanged();
   }
+
+  resetHUD(){
+    this._elements = [];
+    this._elementsChanged = true;
+  }
 }

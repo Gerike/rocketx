@@ -1,7 +1,8 @@
 class Level {
-  constructor(framework, levelName, objectivesToComplete, objective, objectivePrefix, help, insteadWeaponHud) {
+  constructor(levelPack, levelName, objectivesToComplete, objective, objectivePrefix, help, insteadWeaponHud) {
+    this.levelPack = levelPack;
     this.framework = framework;
-    this.packName = 'LEVEL PACK'; //TODO: FIX IT
+    this.packName = levelPack.getName();
     this.levelName = levelName;
     this.objectivePrefix = objectivePrefix;
     this.objective = objective;
@@ -30,9 +31,7 @@ class Level {
   }
 
   resetFramework() {
-    framework.entities = [];
-    framework.elements = [];
-    framework.frameEvents = [];
+    framework.resetFramework();
   }
 
   start() {
@@ -50,11 +49,13 @@ class Level {
   completed() {
     this.resetFramework();
     this.hudHandler.addElement(new TextElement(new TextPosition(POSITIONS.X.CENTER, POSITIONS.Y.CENTER), new FrameExpiration(200), this.strings.completeStage, new TextStyle(), new FadeIn(50), new FadeOut(50)));
-    this.timer.delegateFrameEvent(() => (level.nextStage()), 200);
+    this.timer.delegateFrameEvent(() => {
+      this.resetFramework();
+      this.levelPack.nextStage()},
+    200);
   }
 
   restart() {
-    framework.entityHandler.eventSubscribers = {};
     this.resetFramework();
     this.start();
   }

@@ -13,17 +13,21 @@ class EventHandler {
     return new EventHandler();
   }
 
-  registerEvent(event, object) {
-    if (framework.entityHandler.eventSubscribers[event])
-      for (let i = 0; i < framework.entityHandler.eventSubscribers[event].length; i++) {
-        framework.entityHandler.eventSubscribers[event][i].notify(object, event);
+  registerEvent(event, object, reason) {
+    if (this.eventSubscribers[event])
+      for (const subscriber of this.eventSubscribers[event]) {
+        subscriber.notify(object, event, reason);
       }
   }
 
   addEventListener(event, object) {
-    if (event in framework.entityHandler.eventSubscribers)
-      framework.entityHandler.eventSubscribers[event].push(object);
+    if (event in this.eventSubscribers)
+      this.eventSubscribers[event].push(object);
     else
-      framework.entityHandler.eventSubscribers[event] = [object];
+      this.eventSubscribers[event] = [object];
+  }
+
+  resetEventSubscriptions() {
+    this.eventSubscribers = {};
   }
 }

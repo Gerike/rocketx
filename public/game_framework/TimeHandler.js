@@ -48,4 +48,8 @@ class TimeHandler {
         event.execute();
     }
   }
+
+  resetEvents(){
+    this._frameEvents = [];
+  }
 }

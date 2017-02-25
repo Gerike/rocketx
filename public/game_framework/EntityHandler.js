@@ -41,13 +41,13 @@ class EntityHandler {
   sanityDeleteEntities() {
     for (const entity of this._entities) {
       if (this.outOfCanvas(entity))
-        this.requestDestroy(entity);
+        this.requestDestroy(entity, 'Out of bounds');
     }
   }
 
-  requestDestroy(entity) {
-    this._eventHandler.registerEvent("destroy", entity);
-    this.maskHandler.deleteMask(entity);
+  requestDestroy(entity, reason) {
+    this._eventHandler.registerEvent('destroy', entity, reason);
+    this._maskHandler.deleteMask(entity);
     this._entities.splice(this._entities.indexOf(entity), 1);
   }
 
@@ -71,5 +71,9 @@ class EntityHandler {
     if (minX !== fromEntity.img.width)
       return minX + 3;
     return fromEntity.img.width;
+  }
+
+  resetEntities(){
+    this._entities = [];
   }
 }

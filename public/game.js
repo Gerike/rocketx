@@ -39,3 +39,5 @@ function stop() {
 function cont() {
   pause = false;
 }
+
+prepareGame();

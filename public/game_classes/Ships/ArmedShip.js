@@ -16,7 +16,7 @@ class ArmedShip extends SpaceShip{
   addWeapon(weapon){
       weapon.linkTo(this);
       this.weapons.push(weapon);
-      framework.entityHandler.registerEvent("changeWeapon", this);
+      framework.registerEvent("changeWeapon", this);
   }
 
   shoot() {
@@ -30,8 +30,8 @@ class ArmedShip extends SpaceShip{
       if(this.activeWeapon === this.weapons.length)
         this.activeWeapon = 0;
       this.canSwitch = false;
-      framework.entityHandler.registerEvent("changeWeapon", this);
-      framework.timer.delegateFrameEvent(() => {this.canSwitch = true;}, 10);
+      framework.registerEvent("changeWeapon", this);
+      TimeHandler.getInstance().delegateFrameEvent(() => {this.canSwitch = true;}, 10);
     }
   }
 }

@@ -27,7 +27,7 @@ class PlayerShip extends ArmedShip {
   }
 
   collided(object){
-    framework.requestDestroy(this)
+    framework.requestDestroy(this, 'Killed');
   }
 
   executeEffect(object){

@@ -9,7 +9,7 @@ class TutorialPack {
   }
 
   start() { //TODO: MAKE IT LAZY LOAD
-    this.stages = [new MovingPractice(framework), new ShootingPractice1(framework), new ShootingPractice2(framework), new ShootingPractice3(framework), new ShootingPractice4(framework), new ShootingPractice5(framework)];
+    this.stages = [new MovingPractice(this), new ShootingPractice1(this), new ShootingPractice2(this), new ShootingPractice3(this), new ShootingPractice4(this), new ShootingPractice5(this)];
     this.currentStage = 0;
     this.stages[0].start();
   }

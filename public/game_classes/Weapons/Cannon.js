@@ -8,7 +8,7 @@ class Cannon {
 
   makeCooldown(){
     this.ready = false;
-    framework.delegateFrameEvent(() => {this.ready = true}, this.firerate);
+    TimeHandler.getInstance().delegateFrameEvent(() => {this.ready = true}, this.firerate);
   }
 
   linkTo(entity){
