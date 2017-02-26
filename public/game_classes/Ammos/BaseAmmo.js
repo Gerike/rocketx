@@ -1,6 +1,6 @@
 class BaseAmmo extends Ammo {
-  constructor(damage, img, speed) {
-    super(damage, img);
+  constructor(damage, image, speed) {
+    super(damage, image);
     this.speed = speed;
   }
 
@@ -11,6 +11,6 @@ class BaseAmmo extends Ammo {
   }
 
   createProjectile(position, direction) {
-    framework.registerEntity(new Projectile(this.damage, this.img, position, direction, this.speed, this.effect()));
+    framework.registerEntity(new Projectile(this.damage, this.image, position, direction, this.speed, this.effect()));
   }
 }

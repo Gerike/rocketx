@@ -20,19 +20,19 @@ class MaskHandler {
     this._helperCanvas.width = width;
   }
 
-  _getImageData(img) {
-    this._resizeHelperCanvas(img.height, img.width);
-    this._helperCanvasCTX.drawImage(img, 0, 0);
-    return this._helperCanvasCTX.getImageData(0, 0, img.width, img.height);
+  _getImageData(image) {
+    this._resizeHelperCanvas(image.height, image.width);
+    this._helperCanvasCTX.drawImage(image, 0, 0);
+    return this._helperCanvasCTX.getImageData(0, 0, image.width, image.height);
   }
 
   createMask(entity) {
-    this._resizeHelperCanvas(entity.img.height, entity.img.width);
+    this._resizeHelperCanvas(entity.getImage().height, entity.getImage().width);
     if (entity.hasDynamicMask)
       entity.draw(this._helperCanvasCTX, new Position(0, 0));
     else
-      this._helperCanvasCTX.drawImage(entity.img, 0, 0);
-    return this._helperCanvasCTX.getImageData(0, 0, entity.img.width, entity.img.height);
+      this._helperCanvasCTX.drawImage(entity.getImage(), 0, 0);
+    return this._helperCanvasCTX.getImageData(0, 0, entity.getImage().width, entity.getImage().height);
   }
 
   createStaticMasks(images) {
@@ -44,7 +44,7 @@ class MaskHandler {
   getMask(entity, forceStatic = false) {
     if ((entity.hasDynamicMask) && (!forceStatic))
       return this._masksData.dynamic[entity._entityID];
-    return this._masksData.static[entity.img.src];
+    return this._masksData.static[entity.getImage().src];
   }
 
   refreshDynamicMasks(entities) { //TODO: Maybe some event like approach? The entity alert if its mask change
@@ -59,7 +59,7 @@ class MaskHandler {
   }
 
   _createDynamicMask(entity) {
-    this._masksData.dynamic[entity._entityID] = this._getImageData(entity.img);
+    this._masksData.dynamic[entity._entityID] = this._getImageData(entity.getImage());
   }
 
   deleteMask(entity) {

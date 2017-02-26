@@ -6,9 +6,9 @@ class ShipFactory {
     ship.position = new Position(x,y);
 
     for (const key in shipPattern) {
-      if ((key !== 'type') && (key !== 'img'))
+      if ((key !== 'type') && (key !== 'image'))
         ship[key] = shipPattern[key];
-      else if (key === 'img')
+      else if (key === 'image')
         ship[key] = framework.getResources()[shipPattern[key]];
     }
 

@@ -10,7 +10,7 @@ patterns.ammos = {
   BASE_AMMO: {
     type: patterns.ammos.types.BASE,
     damage: 10,
-    img: 'laser_2',
+    image: 'laser_2',
     firerate: 5,
     speed: 6,
   },
@@ -18,7 +18,7 @@ patterns.ammos = {
   FREEZING_AMMO: {
     type: patterns.ammos.types.FREEZING,
     damage: 8,
-    img: 'laser_3',
+    image: 'laser_3',
     firerate: 5,
     speed: 6,
   },
@@ -26,7 +26,7 @@ patterns.ammos = {
   BASE_LASER_AMMO: {
     type: patterns.ammos.types.LASER,
     damage: 8,
-    img: 'laser_4',
+    image: 'laser_4',
     uptime: 100
   },
 };

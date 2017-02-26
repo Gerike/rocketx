@@ -1,6 +1,6 @@
 class ArmedShip extends SpaceShip {
-  constructor(position, hp, img, weapons = [], extras) {
-    super(position, hp, img);
+  constructor(position, hp, image, weapons = [], extras) {
+    super(position, hp, image);
 
     this.weapons = [];
     this.activeWeapon = 0;

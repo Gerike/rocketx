@@ -33,7 +33,7 @@ class EntityHandler {
   }
 
   outOfCanvas(entity) {
-    if ((entity.getPosition().getX() < 0 - entity.img.width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.img.width) || (entity.getPosition().getY() < 0 - entity.img.height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.img.height))
+    if ((entity.getPosition().getX() < 0 - entity.getImage().width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.getImage().width) || (entity.getPosition().getY() < 0 - entity.getImage().height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.getImage().height))
       return true;
     return false;
   }
@@ -60,7 +60,7 @@ class EntityHandler {
   }
 
   getFirstCollideEntity(fromEntity) {
-    let minX = fromEntity.img.width;
+    let minX = fromEntity.getImage().width;
     for (const entity of this._entities) {
       if (entity.constructor.name !== fromEntity.constructor.name) {
         if (this._collisionHandler.isPixelCollision(this._maskHandler.getMask(entity), entity.getPosition(), this._maskHandler.getMask(fromEntity, true), fromEntity.getPosition())) {

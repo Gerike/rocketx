@@ -1,6 +1,6 @@
 class FreezingAmmo extends BaseAmmo {
-  constructor(damage, img, speed) {
-    super(damage, img, speed);
+  constructor(damage, image, speed) {
+    super(damage, image, speed);
   }
 
   effect() {

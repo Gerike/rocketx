@@ -1,6 +1,6 @@
 class BaseEnemyShip extends SpaceShip {
-  constructor(position, hp, img, path = null) {
-    super(position, hp, img);
+  constructor(position, hp, image, path = null) {
+    super(position, hp, image);
     this.path = path;
     if (this.path) this.waypoints = this.path.getWaypoints();
   }
@@ -8,10 +8,6 @@ class BaseEnemyShip extends SpaceShip {
   setPath(path) {
     this.path = path;
     this.waypoints = this.path.getWaypoints();
-  }
-
-  draw(ctx) {
-    ctx.drawImage(this.img, this.position.getX(), this.position.getY());
   }
 
   frame() {

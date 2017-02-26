@@ -1,8 +1,7 @@
-class SpaceShip extends Entity {
-  constructor(position, hp, img) {
-    super(position);
+class SpaceShip extends EntityWithImage {
+  constructor(position, hp, image) {
+    super(position, image);
     this.hp = hp;
-    this.img = img;
   }
 
   modifyHp(hp) {

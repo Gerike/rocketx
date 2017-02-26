@@ -1,14 +1,7 @@
-/**
- * Created by Geri on 2016. 11. 13..
- */
 class PlayerShip extends ArmedShip {
-  constructor(position, hp, img, weapons, extras, speed) {
-    super(position, hp, img, weapons, extras);
+  constructor(position, hp, image, weapons, extras, speed) {
+    super(position, hp, image, weapons, extras);
     this.speed = speed;
-  }
-
-  draw(ctx) {
-    ctx.drawImage(this.img, this.position.getX(), this.position.getY());
   }
 
   frame() {
@@ -19,8 +12,8 @@ class PlayerShip extends ArmedShip {
         this.position.setX(this.position.getX() - this.speed);
 
     if (framework.isDown(39))
-      if (this.position.getX() + this.speed + this.img.width > framework.getConstants().CANVAS_WIDTH)
-        this.position.setX(framework.getConstants().CANVAS_WIDTH - this.img.width);
+      if (this.position.getX() + this.speed + this.image.width > framework.getConstants().CANVAS_WIDTH)
+        this.position.setX(framework.getConstants().CANVAS_WIDTH - this.image.width);
       else
         this.position.setX(this.position.getX() + this.speed);
 
@@ -31,7 +24,7 @@ class PlayerShip extends ArmedShip {
         this.position.setY(this.position.getY() - this.speed);
 
     if (framework.isDown(40))
-      if (this.position.getY() + this.speed + this.img.height > framework.getConstants().CANVAS_HEIGHT)
+      if (this.position.getY() + this.speed + this.image.height > framework.getConstants().CANVAS_HEIGHT)
         this.position.setY(framework.getConstants().CANVAS_HEIGHT - this.img.height);
       else
         this.position.setY(this.position.getY() + this.speed);

@@ -1,7 +1,7 @@
 class Ammo {
-  constructor(damage, img) {
+  constructor(damage, image) {
     this.damage = damage;
-    this.img = img;
+    this.image = image;
   }
 
   createProjectile() {

@@ -1,6 +1,6 @@
 class LaserAmmo extends Ammo {
-  constructor(damage, img, uptime) {
-    super(damage, img);
+  constructor(damage, image, uptime) {
+    super(damage, image);
     this.uptime = uptime;
   }
 
@@ -11,6 +11,6 @@ class LaserAmmo extends Ammo {
   }
 
   createProjectile(position, direction, linkedTo) {
-    framework.registerEntity(new Beam(this.damage, position, this.img, this.effect(), this.uptime, linkedTo));
+    framework.registerEntity(new Beam(this.damage, position, this.image, this.effect(), this.uptime, linkedTo));
   }
 }
