@@ -1,22 +1,29 @@
 const LOGGING_LEVEL = {
   NONE: 0,
   ERROR: 1,
-  WARN: 2,
+  DEBUG: 2,
   INFO: 3,
   ALL: 4
 };
 
 class Logger {
   constructor() {
+    if (Logger.prototype._singletonInstance)
+      return Logger.prototype._singletonInstance;
+
     this.loggingLevel = LOGGING_LEVEL.INFO;
     this.infoEventFilter = null;
-
-    EventHandler.getInstance().setLogger(this);
 
     window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
       this._handleEvent(LOGGING_LEVEL.ERROR, errorMsg, errorObj);
       return true;
     };
+
+    Logger.prototype._singletonInstance = this;
+  }
+
+  static getInstance(){
+    return new Logger();
   }
 
   setLoggingLevel(loggingLevel) {
@@ -33,6 +40,9 @@ class Logger {
         case 1:
           this.prettyPrintError(information, informationObject);
           break;
+        case 2:
+          this.prettyPrintDebug(information, informationObject);
+          break;
         case 3:
           if (information.toLocaleLowerCase().includes(this.infoEventFilter))
             this.prettyPrintInfo(information, informationObject);
@@ -48,8 +58,8 @@ class Logger {
     this._handleEvent(LOGGING_LEVEL.ERROR, errorMsg, errorObj);
   }
 
-  warn(warning) {
-    this._handleEvent(LOGGING_LEVEL.WARN, warning);
+  debug(debugMessage, debugObject) {
+    this._handleEvent(LOGGING_LEVEL.DEBUG, debugMessage, debugObject);
   }
 
   info(event, object, reason, subscribers) {
@@ -77,6 +87,13 @@ class Logger {
         '--Reason: ', eventInformation.reason, '\n',
         '--Subscribers to this event:', eventInformation.subscribers
       );
+  }
+
+  prettyPrintDebug(debugInfo, debugObjects){
+    if(debugObjects)
+      console.warn(debugInfo, ': ', debugObjects);
+    else
+      console.warn(debugInfo);
   }
 
   prettyPrint(information, output, object) {
