@@ -1,27 +1,20 @@
-class Projectile extends Entity{
-  constructor(damage, img, x, y, direction, speed, effect) {
-    super(x,y);
+class Projectile extends EntityWithImage {
+  constructor(position, image, damage, effect, direction, speed) {
+    super(position, image);
     this.damage = damage;
-    this.img = img;
-    this.path = new LinearPath(x, y, direction, speed).getWaypoints()
+    this._path = new LinearPath(position, speed, direction).getWaypoints();
     this.effect = effect;
   }
 
-  draw(ctx) {
-    ctx.drawImage(this.img, this.x, this.y);
-  }
-
   frame() {
-    let next_waypoint = this.path.next().value;
-    this.x = next_waypoint.x;
-    this.y = next_waypoint.y;
+    this._position = this._path.next().value;
   }
 
   collided(object) {
-    framework.requestDestroy(this);
+    framework.requestDestroy(this, 'Collided');
   }
 
-  executeEffect(object){
+  executeEffect(object) {
     this.effect(object);
   }
 }

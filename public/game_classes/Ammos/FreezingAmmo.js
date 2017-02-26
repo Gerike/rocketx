@@ -1,11 +1,12 @@
-class FreezingAmmo extends BaseAmmo{
-  constructor(damage, img, speed){
-    super(damage, img, speed);
+class FreezingAmmo extends BaseAmmo {
+  constructor(damage, image, speed) {
+    super(damage, image, speed);
   }
-  effect(){
+
+  effect() {
     return (entity) => {
       entity.modifyHp(-this.damage);
       entity.setTemporarySpeed(0, 60);
-    }
+    };
   }
 }

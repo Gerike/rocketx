@@ -6,11 +6,14 @@
   <canvas id="game_canvas"></canvas>
 </div>
 <script src="/game_classes/Base/Level.js"></script>
+<script src="/game_classes/Base/Position.js"></script>
 <script src="/game_classes/Base/Entity.js"></script>
+<script src="/game_classes/Base/EntityWithImage.js"></script>
 <script src="/game_classes/Base/Element.js"></script>
 <script src="/game_classes/Elements/Styles/TextStyle.js"></script>
 <script src="/game_classes/Elements/TextElement.js"></script>
 <script src="/game_classes/Elements/ImageElement.js"></script>
+<script src="/game_classes/Elements/ExpirationCheckers/ExpirationChecker.js"></script>
 <script src="/game_classes/Elements/ExpirationCheckers/FrameExpiration.js"></script>
 <script src="/game_classes/Elements/ExpirationCheckers/EventExpiration.js"></script>
 <script src="/game_classes/Elements/Positions/Position.js"></script>
@@ -51,7 +54,14 @@
 <script src="/game_classes/Levels/Tutorials/ShootingPractice4.js"></script>
 <script src="/game_classes/Levels/Tutorials/ShootingPractice5.js"></script>
 <script src="/game_classes/HUD/WeaponHUD.js"></script>
-<script src="resource_loader.js"></script>
-<script src="framework.js"></script>
+<script src="/game_framework/CollisionHandler.js"></script>
+<script src="/game_framework/EntityHandler.js"></script>
+<script src="/game_framework/EventHandler.js"></script>
+<script src="/game_framework/HUDHandler.js"></script>
+<script src="/game_framework/MaskHandler.js"></script>
+<script src="/game_framework/TimeHandler.js"></script>
+<script src="/game_framework/ResourceLoader.js"></script>
+<script src="/game_framework/Framework.js"></script>
+<script src="/game_framework/LoadingViewer.js"></script>
 <script src="game.js"></script>
 {% endblock %}

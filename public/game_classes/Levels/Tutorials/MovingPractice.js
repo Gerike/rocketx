@@ -1,24 +1,23 @@
 class MovingPractice extends Level {
-  constructor(framework) {
-    super(framework, 'Moving Practice', 10, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', resources['keyboard_arrows']);
+  constructor(levelPack) {
+    super(levelPack, 'Moving Practice', 2, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', framework.getResources().keyboard_arrows);
   }
 
-  isPlayerMoving() {
-    return (framework.isDown(37) || framework.isDown(38) || framework.isDown(39) || framework.isDown(40))
+  _isPlayerMoving() {
+    return (framework.isDown(37) || framework.isDown(38) || framework.isDown(39) || framework.isDown(40));
   }
 
-  checkRecursively() {
-    if (this.isPlayerMoving() && !this.waiting) {
+  _checkRecursively() {
+    if (this._isPlayerMoving()) {
       this.increaseObjectiveCounter();
     }
-    framework.delegateFrameEvent(() => {
-      this.checkRecursively();
+    this.timer.delegateFrameEvent(() => {
+      this._checkRecursively();
     }, 60);
-
   }
 
   practice() {
     framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [], []));
-    this.checkRecursively();
+    this._checkRecursively();
   }
 }

@@ -1,33 +1,34 @@
-class Beam extends Entity {
-  constructor(damage, x, y, img, effect, uptime, linked_entity) {
-    super(x,y);
+class Beam extends EntityWithImage {
+  constructor(position, image, damage, effect, uptime, linkedEntity) {
+    super(position, image);
     this.damage = damage;
-    this.img = img;
     this.effect = effect;
     this.hasDynamicMask = true;
-    this.width = this.img.width;
+    this.width = this._image.width;
     this.uptime = uptime;
-    this.linkedEntity = linked_entity;
-    framework.delegateFrameEvent(() => {framework.requestDestroy(this)}, this.uptime);
+    this.linkedEntity = linkedEntity;
+    TimeHandler.getInstance().delegateFrameEvent(() => {
+      framework.requestDestroy(this);
+    }, this.uptime);
   }
 
-  draw(ctx, x = this.x, y = this.y) {
-    ctx.drawImage(this.img, x, y, this.width, this.img.height);
+  draw(ctx, position = this.getPosition()) {
+    ctx.drawImage(this._image, position.getX(), position.getY(), this.width, this._image.height);
   }
 
   frame() {
-    let temp_w = framework.getFirstCollideEntity(this)
-    this.width = (temp_w + 30 < this.img.width) ? temp_w + 30 : this.img.width;
-    this.x = this.linkedEntity.x + 45;
-    this.y = this.linkedEntity.y + 10;
+    let tempW = framework.getFirstCollideEntity(this);
+    this.width = (tempW + 10 < this._image.width) ? tempW + 10 : this._image.width;
+    this._position.setX(this.linkedEntity.getPosition().getX() + 45);
+    this._position.setY(this.linkedEntity.getPosition().getY() + 10);
   }
 
   collided(object) {
     /*if (object.x - this.x < this.width)
-      this.width = object.x - this.x + 1;*/
+     this.width = object.x - this.x + 1;*/
   }
 
-  executeEffect(object){
+  executeEffect(object) {
     this.effect(object);
   }
 }

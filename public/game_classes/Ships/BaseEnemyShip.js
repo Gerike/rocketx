@@ -1,31 +1,22 @@
-/**
- * Created by Geri on 2016. 11. 15..
- */
 class BaseEnemyShip extends SpaceShip {
-  constructor(x, y, hp, img, path = null) {
-    super(x, y, hp, img);
-    this.path = path;
-    if (this.path) this.waypoints = this.path.getWaypoints();
+  constructor(position, hp, image, path = null) {
+    super(position, hp, image);
+    this._path = path;
+    if (this._path) this._waypoints = this._path.getWaypoints();
   }
 
   setPath(path) {
-    this.path = path;
-    this.waypoints = this.path.getWaypoints();
-  }
-
-  draw(ctx) {
-    ctx.drawImage(this.img, this.x, this.y);
+    this._path = path;
+    this._waypoints = this._path.getWaypoints();
   }
 
   frame() {
-    if (this.path !== null) {
-      let next_waypoint = this.waypoints.next();
-      if (!next_waypoint.done) {
-        this.x = next_waypoint.value.x;
-        this.y = next_waypoint.value.y;
-      }
+    if (this._path !== null) {
+      let nextWaypoint = this._waypoints.next();
+      if (!nextWaypoint.done)
+        this._position = nextWaypoint.value;
       else
-        this.path = null;
+        this._path = null;
     }
   }
 
@@ -33,7 +24,7 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   destroy() {
-    framework.requestDestroy(this);
+    framework.requestDestroy(this, 'Killed');
   }
 
   collided(object) {
@@ -43,10 +34,10 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   setSpeed(speed) {
-    this.path.adjustSpeed(speed);
+    this._path.adjustSpeed(speed);
   }
 
   setTemporarySpeed(speed, frame) {
-    this.path.adjustSpeed(speed, frame)
+    this._path.adjustSpeed(speed, frame);
   }
 }

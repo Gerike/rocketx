@@ -1,28 +1,24 @@
-/**
- * Created by Geri on 2016. 11. 15..
- */
-'use strict'
+'use strict';
 class Path {
-  constructor(startX, startY, speed) {
-    this.startX = startX;
-    this.startY = startY;
+  constructor(startPosition, speed) {
+    this._position = startPosition;
     this.speed = speed;
   }
 
   _adjustSpeed(speed) {
-    this._previous_speed = this.speed;
+    this._previousSpeed = this.speed;
     this.speed = speed;
   }
 
   _revertSpeed() {
-    this.speed = this._previous_speed;
+    this.speed = this._previousSpeed;
   }
 
   adjustSpeed(speed, frame = 0) {
     this._adjustSpeed(speed);
     if (frame)
-      framework.delegateFrameEvent(() => {
-        this._revertSpeed()
+      TimeHandler.getInstance().delegateFrameEvent(() => {
+        this._revertSpeed();
       }, frame);
   }
 }

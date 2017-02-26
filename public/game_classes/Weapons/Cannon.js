@@ -1,27 +1,30 @@
 class Cannon {
-  constructor(ammo, linked_entity){
+  constructor(ammo, firerate, linkedEntity) {
     this.ammo = ammo;
-    this.linked_entity = linked_entity;
-    this.ready = true;
+    this.linkedEntity = linkedEntity;
+    this._ready = true;
     this.direction = 90;
+    this._firerate = firerate;
   }
 
-  makeCooldown(){
-    this.ready = false;
-    framework.delegateFrameEvent(() => {this.ready = true}, this.firerate);
+  makeCooldown() {
+    this._ready = false;
+    TimeHandler.getInstance().delegateFrameEvent(() => {
+      this._ready = true;
+    }, this._firerate);
   }
 
-  linkTo(entity){
-    this.linked_entity = entity;
+  linkTo(entity) {
+    this.linkedEntity = entity;
   }
 
   shoot() {
-    if (this.ready) {
+    if (this._ready) {
       this._shoot(this.direction);
       this.makeCooldown();
     }
   }
 
-  _shoot(){}
-
+  _shoot() {
+  }
 }

@@ -1,20 +1,18 @@
-/**
- * Created by Win10 on 2016. 12. 12..
- */
 class Entity {
-  constructor (x,y){
-    this.x = x;
-    this.y = y;
+  constructor(position) {
+    this._position = position;
   }
 
-  getPosition(){
-    return {
-      x: this.x,
-      y: this.y,
-    }
+  getPosition() {
+    return this._position;
   }
 
-  frame (){}
-  draw(ctx){}
-  collided(object){}
+  frame() {
+  }
+
+  draw(ctx) {
+  }
+
+  collided(object) {
+  }
 }

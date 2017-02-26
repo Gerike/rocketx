@@ -1,4 +1,4 @@
-class TextPosition extends Position {
+class TextPosition extends ElementPosition {
   constructor(xPos, yPos, offset = 0) {
     super(xPos, yPos, offset);
   }
@@ -16,7 +16,6 @@ class TextPosition extends Position {
         break;
       default:
         throw 'Unsupported position';
-        break;
     }
     switch (this.yAlign) {
       case 'TOP':
@@ -30,7 +29,6 @@ class TextPosition extends Position {
         break;
       default:
         throw 'Unsupported position';
-        break;
     }
   }
 

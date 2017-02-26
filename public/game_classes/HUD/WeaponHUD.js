@@ -1,21 +1,24 @@
 class WeaponHUD {
-  constructor(){
+  constructor() {
     this.element = new TextElement(new TextPosition(POSITIONS.X.RIGHT, POSITIONS.Y.BOTTOM, 30), new EventExpiration(), '0 / 0', new TextStyle("25px Gerogia"));
-    framework.entityHandler.addEventListener("changeWeapon", this);
+    framework.addEventListener("changeWeapon", this);
   }
-  draw(ctx){
+
+  draw(ctx) {
     this.element.draw(ctx);
   }
 
-  isExpired(){
+  isExpired() {
     return false;
   }
 
-  update(armedShip){
-    this.element.text = (armedShip.activeWeapon + 1) + '/' + armedShip.weapons.length;
-    framework.drawer.markElementsAsChanged();
+  update(armedShip) {
+    this.element.text = (armedShip._activeWeapon + 1) + '/' + armedShip._weapons.length;
+    HUDHandler.getInstance().markElementsAsChanged();
   }
-  notify(object, event){
-    this.update(object);
+
+  notify(object, event) {
+    if (event === 'changeWeapon' && object.constructor.name === 'PlayerShip')
+      this.update(object);
   }
 }

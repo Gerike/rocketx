@@ -9,7 +9,7 @@ class FadeIn {
   }
 
   prepareContext(ctx) {
-    framework.drawer.markElementsAsChanged();
+    HUDHandler.getInstance().markElementsAsChanged();
     ctx.globalAlpha = 1 / this.length * this.progress;
     this.progress++;
   }

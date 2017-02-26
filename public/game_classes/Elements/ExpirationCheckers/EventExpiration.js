@@ -1,5 +1,6 @@
-class EventExpiration {
+class EventExpiration extends ExpirationChecker {
   constructor() {
+    super();
     this.delay = 0;
     this.expirationFrame = -1;
     this.outTransitions = [];
@@ -11,7 +12,7 @@ class EventExpiration {
   }
 
   fire() {
-    this.expirationFrame = framework.timer.getCurrentFrameIndex() + this.delay;
+    this.expirationFrame = this.timer.getCurrentFrameIndex() + this.delay;
     for (let i = 0; i < this.outTransitions.length; i++)
       this.outTransitions[i].activate();
   }
@@ -20,7 +21,7 @@ class EventExpiration {
     if (this.expirationFrame === -1)
       return false;
     else
-      return framework.timer.isFramePassed(this.expirationFrame);
+      return this.timer.isFramePassed(this.expirationFrame);
 
   }
 

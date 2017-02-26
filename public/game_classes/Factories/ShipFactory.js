@@ -1,21 +1,20 @@
 class ShipFactory {
-  static createShip(x, y, ship_pattern, weapon_patterns, ammo_patterns) {
-    let ship = new ship_pattern['type'];
+  static createShip(x, y, shipPattern, weaponPatterns, ammoPatterns) {
+    let ship = new shipPattern.type();
 
-    ship.weapons = [];
-    ship.x = x;
-    ship.y = y;
+    ship._weapons = [];
+    ship._position = new Position(x,y);
 
-    for (const key in ship_pattern) {
-      if ((key !== 'type') && (key !== 'img'))
-        ship[key] = ship_pattern[key];
-      else if (key === 'img')
-        ship[key] = resources[ship_pattern[key]];
+    for (const key in shipPattern) {
+      if ((key !== 'type') && (key !== 'image'))
+        ship[key] = shipPattern[key];
+      else if (key === 'image')
+        ship._image = framework.getResources()[shipPattern[key]];
     }
 
-    if (weapon_patterns)
-      for (let i = 0; i < weapon_patterns.length; i++)
-        ship.addWeapon(WeaponFactory.createWeapon(weapon_patterns[i], ammo_patterns[i]));
+    if (weaponPatterns)
+      for (let i = 0; i < weaponPatterns.length; i++)
+        ship.addWeapon(WeaponFactory.createWeapon(weaponPatterns[i], ammoPatterns[i]));
     return ship;
   }
 }

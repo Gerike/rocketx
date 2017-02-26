@@ -1,14 +1,16 @@
 class BaseAmmo extends Ammo {
-  constructor(damage, img, speed) {
-    super(damage, img);
+  constructor(damage, image, speed) {
+    super(damage, image);
     this.speed = speed;
   }
 
-  effect(){
-    return (entity) => {entity.modifyHp(-this.damage)}
+  effect() {
+    return (entity) => {
+      entity.modifyHp(-this.damage);
+    };
   }
 
-  createProjectile(x, y, direction) {
-    framework.registerEntity(new Projectile(this.damage, this.img, x, y, direction, this.speed, this.effect()));
+  createProjectile(position, direction) {
+    framework.registerEntity(new Projectile(position, this._image, this.damage, this.effect(), direction, this.speed));
   }
 }

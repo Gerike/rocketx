@@ -13,7 +13,7 @@ POSITIONS.Y = {
 };
 
 
-class Position {
+class ElementPosition {
   constructor(xPos, yPos, offset = 0) {
     this.offset = offset;
     if (isNaN(xPos)) {
@@ -21,31 +21,29 @@ class Position {
       this.yAlign = yPos;
       switch (this.xAlign) {
         case 'RIGHT':
-          this.x = framework.constants.canvasWidth - this.offset;
+          this.x = framework.getConstants().CANVAS_WIDTH - this.offset;
           break;
         case 'CENTER':
-          this.x = framework.constants.canvasWidth / 2;
+          this.x = framework.getConstants().CANVAS_WIDTH / 2;
           break;
         case 'LEFT':
           this.x = this.offset;
           break;
         default:
           throw 'Unsupported position';
-          break;
       }
       switch (this.yAlign) {
         case 'TOP':
           this.y = this.offset;
           break;
         case 'CENTER':
-          this.y = framework.constants.canvasHeight / 2;
+          this.y = framework.getConstants().CANVAS_HEIGHT / 2;
           break;
         case 'BOTTOM':
-          this.y = framework.constants.canvasHeight - this.offset;
+          this.y = framework.getConstants().CANVAS_HEIGHT - this.offset;
           break;
         default:
           throw 'Unsupported position';
-          break;
       }
     }
     else {
