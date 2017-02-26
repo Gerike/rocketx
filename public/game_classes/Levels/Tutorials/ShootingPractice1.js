@@ -1,6 +1,6 @@
 class ShootingPractice1 extends KillXLevel {
   constructor(levelPack) {
-    super(levelPack, 'Shooting Practice 1', 1, 'Use the spacebar to shoot', framework.getResources()['keyboard_space']);
+    super(levelPack, 'Shooting Practice 1', 3, 'Use the spacebar to shoot', framework.getResources()['keyboard_space']);
   }
 
   practice() {

@@ -1,6 +1,6 @@
 class ShootingPractice4 extends KillXLevel {
   constructor(levelPack) {
-    super(levelPack, 'Shooting Practice 4', 4, 'Press Q to change weapon');
+    super(levelPack, 'Shooting Practice 4', 15, 'Press Q to change weapon');
   }
 
   practice() {
