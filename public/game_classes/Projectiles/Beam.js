@@ -4,7 +4,7 @@ class Beam extends EntityWithImage {
     this.damage = damage;
     this.effect = effect;
     this.hasDynamicMask = true;
-    this.width = this.image.width;
+    this.width = this._image.width;
     this.uptime = uptime;
     this.linkedEntity = linkedEntity;
     TimeHandler.getInstance().delegateFrameEvent(() => {
@@ -13,14 +13,14 @@ class Beam extends EntityWithImage {
   }
 
   draw(ctx, position = this.getPosition()) {
-    ctx.drawImage(this.image, position.getX(), position.getY(), this.width, this.image.height);
+    ctx.drawImage(this._image, position.getX(), position.getY(), this.width, this._image.height);
   }
 
   frame() {
     let tempW = framework.getFirstCollideEntity(this);
-    this.width = (tempW + 10 < this.image.width) ? tempW + 10 : this.image.width;
-    this.position.setX(this.linkedEntity.getPosition().getX() + 45);
-    this.position.setY(this.linkedEntity.getPosition().getY() + 10);
+    this.width = (tempW + 10 < this._image.width) ? tempW + 10 : this._image.width;
+    this._position.setX(this.linkedEntity.getPosition().getX() + 45);
+    this._position.setY(this.linkedEntity.getPosition().getY() + 10);
   }
 
   collided(object) {

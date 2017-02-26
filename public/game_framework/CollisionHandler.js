@@ -5,7 +5,7 @@ class CollisionHandler {
     this._maskHandler = MaskHandler.getInstance();
   }
 
-  notifyEntities(collisions) {
+  _notifyEntities(collisions) {
     for (const collision of collisions) {
       collision[0].collided(collision[1]);
       collision[1].collided(collision[0]);
@@ -13,7 +13,7 @@ class CollisionHandler {
   }
 
   handleCollisions(entities) {
-    this.notifyEntities(this.getCollidedEntities(entities));
+    this._notifyEntities(this.getCollidedEntities(entities));
   }
 
   getCollidedEntities(entities) {

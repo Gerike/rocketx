@@ -1,7 +1,6 @@
 class BaseCannon extends Cannon {
   constructor(ammo, firerate, linkedEntity) {
-    super(ammo, linkedEntity);
-    this.firerate = firerate;
+    super(ammo, linkedEntity, firerate);
   }
 
   _shoot(direction) {

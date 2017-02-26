@@ -2,12 +2,12 @@ class Projectile extends EntityWithImage {
   constructor(damage, image, position, direction, speed, effect) {
     super(position, image);
     this.damage = damage;
-    this.path = new LinearPath(position, direction, speed).getWaypoints();
+    this._path = new LinearPath(position, direction, speed).getWaypoints();
     this.effect = effect;
   }
 
   frame() {
-    this.position = this.path.next().value;
+    this._position = this._path.next().value;
   }
 
   collided(object) {

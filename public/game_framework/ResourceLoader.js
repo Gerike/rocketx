@@ -1,19 +1,19 @@
 class ResourceLoader {
   constructor() {
     this.resourceLocations = [];
-    this.resources = {};
+    this._resources = {};
   }
 
-  getFileName(path) {
+  _getFileName(path) {
     return path.split('/').pop().split('.')[0];
   }
 
-  loadResources() {
+  _loadResources() {
     let loadingImagePromises = this.resourceLocations.map((resourceLocation) => {
       return new Promise((resolve, reject) => {
         let tempImg = new Image();
         tempImg.onload = () => {
-          this.resources[this.getFileName(resourceLocation)] = tempImg;
+          this._resources[this._getFileName(resourceLocation)] = tempImg;
           resolve("Image loaded");
         };
         tempImg.src = resourceLocation;
@@ -25,10 +25,10 @@ class ResourceLoader {
 
   startLoad(resourceLocations) {
     this.resourceLocations = resourceLocations;
-    return this.loadResources();
+    return this._loadResources();
   }
 
   getResources(){
-    return this.resources;
+    return this._resources;
   }
 }

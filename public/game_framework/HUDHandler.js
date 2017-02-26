@@ -21,7 +21,7 @@ class HUDHandler {
   }
 
   frame() {
-    this.clearExpired();
+    this._clearExpired();
   }
 
   markElementsAsChanged() {
@@ -37,7 +37,7 @@ class HUDHandler {
     }
   }
 
-  clearExpired() {
+  _clearExpired() {
     for (const element of this._elements) {
       if (element.isExpired())
         this.removeElement(element);

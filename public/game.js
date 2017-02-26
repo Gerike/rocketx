@@ -3,19 +3,16 @@
 const canvasWidth = 800;
 const canvasHeight = 400;
 
-
-let gameThread;
 let framework;
 let pause = false;
 
-
 function prepareGame() {
-  prepareGameField();
+  _prepareGameField();
   framework = new Framework(canvasHeight, canvasWidth, document.getElementById('game_canvas'));
   framework.loadLevelPack(new TutorialPack());
 }
 
-function prepareGameField() {
+function _prepareGameField() {
   const canvas = document.getElementById('game_canvas');
   const specialMessageCanvas = document.getElementById('special_messages');
 
@@ -28,7 +25,7 @@ function prepareGameField() {
 
 function step() {
   if (!pause)
-    framework.step();
+    framework._step();
   window.requestAnimationFrame(step);
 }
 

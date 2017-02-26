@@ -17,8 +17,8 @@ class TimeHandler {
 
   step() {
     this._frameIndex += 1;
-    this.executeEvents();
-    this.deleteExecutedEvents();
+    this._executeEvents();
+    this._deleteExecutedEvents();
   }
 
   isFramePassed(frame) {
@@ -36,13 +36,13 @@ class TimeHandler {
     });
   }
 
-  deleteExecutedEvents() {
+  _deleteExecutedEvents() {
     this._frameEvents = this._frameEvents.filter((event) => {
       return !this.isFramePassed(event.activationFrame);
     }); //TODO: Do the deletion when the frameEvent fires, now iterating throught the array twice
   }
 
-  executeEvents() {
+  _executeEvents() {
     for (const event of this._frameEvents) {
       if (this.isFramePassed(event.activationFrame))
         event.execute();

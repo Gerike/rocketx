@@ -1,7 +1,7 @@
 'use strict';
 
 class EntityHandler {
-  constructor(k) {
+  constructor() {
     this._entities = [];
     this._registeredEntities = 0;
     this._maskHandler = MaskHandler.getInstance();
@@ -13,18 +13,18 @@ class EntityHandler {
     return this._entities;
   }
 
-  manageEntities(){
-    this.sanityDeleteEntities();
+  _manageEntities(){
+    this._sanityDeleteEntities();
     this._collisionHandler.handleCollisions(this._entities);
   }
 
-  addUniqueKey(entity) { //TODO: MAYBE USE WRAPPER?
+  _addUniqueKey(entity) { //TODO: MAYBE USE WRAPPER?
     entity._entityID = this._registeredEntities;
     this._registeredEntities++;
   }
 
   registerEntity(entity) {
-    this.addUniqueKey(entity);
+    this._addUniqueKey(entity);
     this._entities.push(entity);
 
     if (entity.hasDynamicMask)
@@ -38,7 +38,7 @@ class EntityHandler {
     return false;
   }
 
-  sanityDeleteEntities() {
+  _sanityDeleteEntities() {
     for (const entity of this._entities) {
       if (this.outOfCanvas(entity))
         this.requestDestroy(entity, 'Out of bounds');
@@ -56,7 +56,7 @@ class EntityHandler {
       entity.frame();
     }
 
-    this.manageEntities();
+    this._manageEntities();
   }
 
   getFirstCollideEntity(fromEntity) {

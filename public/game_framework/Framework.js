@@ -15,25 +15,25 @@ class Framework {
     this.timeHandler = TimeHandler.getInstance();
     this.eventHandler = new EventHandler();
     this.hud = HUDHandler.getInstance();
-    this.ready = false;
-    this.levelPack = null;
-    this.resources = [];
+    this._ready = false;
+    this._levelPack = null;
+    this._resources = [];
   }
 
-  setup() {
-    if (!this.ready) {
+  _setup() {
+    if (!this._ready) {
       let resourceLoader = new ResourceLoader();
       let loadingViewer = new LoadingViewer(this.CONSTANTS.CANVAS_CTX);
 
-      let loader = resourceLoader.startLoad(this.levelPack.neededResources);
+      let loader = resourceLoader.startLoad(this._levelPack.neededResources);
       loadingViewer.showProgressBarForPromises(loader);
 
       Promise.all(loader).then(() => {
-        this.resources = resourceLoader.getResources();
-        MaskHandler.getInstance().createStaticMasks(this.resources);
+        this._resources = resourceLoader.getResources();
+        MaskHandler.getInstance().createStaticMasks(this._resources);
         $(document).on('keydown', () => {
-          this.addKeyEventListeners();
-          this.levelPack.start();
+          this._addKeyEventListeners();
+          this._levelPack.start();
           step(); //TODO: MOVE IT FROM HERE
         });
       });
@@ -42,13 +42,13 @@ class Framework {
   }
 
   loadLevelPack(levelPack) {
-    this.ready = false;
-    this.levelPack = levelPack;
-    this.setup();
-    this.ready = true;
+    this._ready = false;
+    this._levelPack = levelPack;
+    this._setup();
+    this._ready = true;
   }
 
-  addKeyEventListeners() {
+  _addKeyEventListeners() {
     $(document).off();
     $(document).on('keydown', (e) => {
       e.preventDefault();
@@ -60,13 +60,13 @@ class Framework {
     });
   }
 
-  render() {
+  _render() {
     this.CONSTANTS.CANVAS_CTX.clearRect(0, 0, this.CONSTANTS.CANVAS_WIDTH, this.CONSTANTS.CANVAS_HEIGHT);
     for (const entity of this.entityHandler.getEntities())
       entity.draw(this.CONSTANTS.CANVAS_CTX);
   }
 
-  frame() {
+  _frame() {
     this.timeHandler.step();
     this.entityHandler.executeEntityFrames();
   }
@@ -76,10 +76,10 @@ class Framework {
     return this._pressedKeys[key];
   }
 
-  step() {
-    if (this.ready) {
-      this.frame();
-      this.render();
+  _step() {
+    if (this._ready) {
+      this._frame();
+      this._render();
 
       this.hud.frame();
       this.hud.render();
@@ -95,7 +95,7 @@ class Framework {
   }
 
   getResources() {
-    return this.resources;
+    return this._resources;
   }
 
   registerEntity(entity) {

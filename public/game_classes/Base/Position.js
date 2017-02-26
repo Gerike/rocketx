@@ -1,27 +1,27 @@
 class Position {
   constructor(x, y) {
-    this.x = x;
-    this.y = y;
+    this._x = x;
+    this._y = y;
   }
 
   setPosition(x, y) {
-    this.x = x;
-    this.y = y;
+    this._x = x;
+    this._y = y;
   }
 
   setX(x) {
-    this.x = x;
+    this._x = x;
   }
 
   setY(y) {
-    this.y = y;
+    this._y = y;
   }
 
   getX() {
-    return this.x;
+    return this._x;
   }
 
   getY() {
-    return this.y;
+    return this._y;
   }
 }

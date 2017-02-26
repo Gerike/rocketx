@@ -6,7 +6,7 @@ class KillXLevel extends Level {
   createEnemyShip(speed = 0, x = 800, y = Math.random() * 300, path = true) {
     let ship = framework.registerEntity(ShipFactory.createShip(x, y, patterns.ships.BASE_ENEMY_SHIP));
     if (path) {
-      let lp = new LinearPath(ship.position, 270, speed);
+      let lp = new LinearPath(ship.getPosition(), 270, speed);
       ship.setPath(lp);
     }
     return ship;

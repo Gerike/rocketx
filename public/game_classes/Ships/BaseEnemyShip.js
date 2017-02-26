@@ -1,22 +1,22 @@
 class BaseEnemyShip extends SpaceShip {
   constructor(position, hp, image, path = null) {
     super(position, hp, image);
-    this.path = path;
-    if (this.path) this.waypoints = this.path.getWaypoints();
+    this._path = path;
+    if (this._path) this._waypoints = this._path.getWaypoints();
   }
 
   setPath(path) {
-    this.path = path;
-    this.waypoints = this.path.getWaypoints();
+    this._path = path;
+    this._waypoints = this._path.getWaypoints();
   }
 
   frame() {
-    if (this.path !== null) {
-      let nextWaypoint = this.waypoints.next();
+    if (this._path !== null) {
+      let nextWaypoint = this._waypoints.next();
       if (!nextWaypoint.done)
-        this.position = nextWaypoint.value;
+        this._position = nextWaypoint.value;
       else
-        this.path = null;
+        this._path = null;
     }
   }
 
@@ -34,10 +34,10 @@ class BaseEnemyShip extends SpaceShip {
   }
 
   setSpeed(speed) {
-    this.path.adjustSpeed(speed);
+    this._path.adjustSpeed(speed);
   }
 
   setTemporarySpeed(speed, frame) {
-    this.path.adjustSpeed(speed, frame);
+    this._path.adjustSpeed(speed, frame);
   }
 }

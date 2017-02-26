@@ -13,7 +13,7 @@ class WeaponHUD {
   }
 
   update(armedShip) {
-    this.element.text = (armedShip.activeWeapon + 1) + '/' + armedShip.weapons.length;
+    this.element.text = (armedShip._activeWeapon + 1) + '/' + armedShip._weapons.length;
     HUDHandler.getInstance().markElementsAsChanged();
   }
 

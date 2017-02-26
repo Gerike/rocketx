@@ -3,21 +3,21 @@ class MovingPractice extends Level {
     super(levelPack, 'Moving Practice', 2, 'Move around a bit', 'Moved: ', 'Use the arrow buttons to move your ship', framework.getResources().keyboard_arrows);
   }
 
-  isPlayerMoving() {
+  _isPlayerMoving() {
     return (framework.isDown(37) || framework.isDown(38) || framework.isDown(39) || framework.isDown(40));
   }
 
-  checkRecursively() {
-    if (this.isPlayerMoving()) {
+  _checkRecursively() {
+    if (this._isPlayerMoving()) {
       this.increaseObjectiveCounter();
     }
     this.timer.delegateFrameEvent(() => {
-      this.checkRecursively();
+      this._checkRecursively();
     }, 60);
   }
 
   practice() {
     framework.registerEntity(ShipFactory.createShip(0, 0, patterns.ships.BASE_PLAYER_SHIP, [], []));
-    this.checkRecursively();
+    this._checkRecursively();
   }
 }

@@ -1,10 +1,10 @@
 class Entity {
   constructor(position) {
-    this.position = position;
+    this._position = position;
   }
 
   getPosition() {
-    return this.position;
+    return this._position;
   }
 
   frame() {

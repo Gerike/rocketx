@@ -1,7 +1,7 @@
 'use strict';
 class Path {
   constructor(startPosition, speed) {
-    this.position = startPosition;
+    this._position = startPosition;
     this.speed = speed;
   }
 

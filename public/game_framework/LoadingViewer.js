@@ -8,25 +8,25 @@ class LoadingViewer { //TODO: Using ingame HUDHandler to draw elements instead t
   showProgressBarForPromises(promises) {
     this.loadedPromise = 0;
     this.allPromise = promises.length;
-    this.setUpLoadingScreen();
+    this._setUpLoadingScreen();
 
     for (const promise of promises) {
       promise.then(() => {
-        this.increaseLoaderBar();
+        this._increaseLoaderBar();
       });
     }
 
     Promise.all(promises).then(() => {
-      this.allReady();
+      this._allReady();
     });
   }
 
-  increaseLoaderBar(){
+  _increaseLoaderBar(){
     this.loadedPromise++;
-    this.updateLoaderBar();
+    this._updateLoaderBar();
   }
 
-  setUpLoadingScreen() {
+  _setUpLoadingScreen() {
     this.ctx.font = "40px Georgia";
     this.ctx.fillStyle = 'white';
     this.ctx.fillText("Loading in progress", framework.getConstants().CANVAS_WIDTH / 2 - 180, framework.getConstants().CANVAS_HEIGHT / 2 - 50);
@@ -35,13 +35,13 @@ class LoadingViewer { //TODO: Using ingame HUDHandler to draw elements instead t
     this.ctx.stroke();
   }
 
-  updateLoaderBar() {
+  _updateLoaderBar() {
     this.ctx.fillRect(framework.getConstants().CANVAS_WIDTH / 2 - 100, framework.getConstants().CANVAS_HEIGHT / 2 - 20, 200 / this.allPromise * this.loadedPromise, 40);
     this.ctx.strokeStyle = "white";
     this.ctx.stroke();
   }
 
-  allReady(){
+  _allReady(){
     this.ctx.font = "20px Georgia";
     this.ctx.fillText("Press any key to continue...", framework.getConstants().CANVAS_WIDTH / 2 - 100, framework.getConstants().CANVAS_HEIGHT - 50);
   }

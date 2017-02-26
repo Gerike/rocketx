@@ -9,15 +9,15 @@ patterns.weapons.types = {
 patterns.weapons = {
   BASE_CANNON: {
     type: patterns.weapons.types.BASE_CANNON,
-    firerate: 30,
+    _firerate: 30,
   },
   TRIPLE_CANNON: {
     type: patterns.weapons.types.NCannon,
-    firerate: 30,
-    projectileCount: 3,
+    _firerate: 30,
+    _projectileCount: 3,
   },
   BEAM_CANNON: {
     type: patterns.weapons.types.BEAM_CANNON,
-    firerate: 300,
+    _firerate: 300,
   },
 };

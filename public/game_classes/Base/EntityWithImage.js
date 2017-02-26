@@ -1,14 +1,14 @@
 class EntityWithImage extends Entity {
   constructor(position, image){
     super(position);
-    this.image = image;
+    this._image = image;
   }
 
-  draw(ctx, position = this.position){
-    ctx.drawImage(this.image, position.getX(), position.getY());
+  draw(ctx, position = this._position){
+    ctx.drawImage(this._image, position.getX(), position.getY());
   }
 
   getImage(){
-    return this.image;
+    return this._image;
   }
 }
