@@ -1,48 +1,89 @@
 const LOGGING_LEVEL = {
-  IGNORE: 0,
+  NONE: 0,
   ERROR: 1,
   WARN: 2,
-  INFO: 3
+  INFO: 3,
+  ALL: 4
 };
 
 class Logger {
   constructor() {
-    this.loggingLevel = LOGGING_LEVEL.IGNORE;
+    this.loggingLevel = LOGGING_LEVEL.INFO;
+    this.infoEventFilter = null;
+
+    EventHandler.getInstance().setLogger(this);
+
+    window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
+      this._handleEvent(LOGGING_LEVEL.ERROR, errorMsg, errorObj);
+      return true;
+    };
   }
 
   setLoggingLevel(loggingLevel) {
     this.loggingLevel = loggingLevel;
   }
 
-  _handleLog(information, level) {
-    if (level <= this.loggingLevel) {
-      switch (level) {
-        case 1 :
-          console.error(information);
-          break;
-        case 2:
-          console.warn(information);
+  setInfoEventFilter(infoEventFilter){
+    this.infoEventFilter = infoEventFilter.toLowerCase();
+  }
+
+  _handleEvent(loggingLevel, information, informationObject) {
+    if (loggingLevel <= this.loggingLevel) {
+      switch (loggingLevel) {
+        case 1:
+          this.prettyPrintError(information, informationObject);
           break;
         case 3:
-          console.info(information);
+          if (information.toLocaleLowerCase().includes(this.infoEventFilter))
+            this.prettyPrintInfo(information, informationObject);
           break;
         default:
-          console.log(information);
+          this.prettyPrint(information, console.log, informationObject);
           break;
       }
     }
   }
 
-  error(error) {
-    this._handleLog(error, LOGGING_LEVEL.ERROR);
+  error(errorMsg, errorObj) {
+    this._handleEvent(LOGGING_LEVEL.ERROR, errorMsg, errorObj);
   }
 
   warn(warning) {
-    this._handleLog(warning, LOGGING_LEVEL.WARN);
+    this._handleEvent(LOGGING_LEVEL.WARN, warning);
   }
 
-  info(information) {
-    this._handleLog(information, LOGGING_LEVEL.INFO);
+  info(event, object, reason, subscribers) {
+    this._handleEvent(LOGGING_LEVEL.INFO, event, {sender: object, reason: reason, subscribers: subscribers});
   }
 
+  async prettyPrintError(errorMessage, stackTrace) {
+    console.error(
+      '%cRocketX Error Report:\n', 'font-size: 20px',
+      'Error: ', errorMessage, '\n',
+      'Stack Trace: ', stackTrace, '\n\n',
+      'State of the memory before the error:\n',
+      '--Current frame: ', TimeHandler.getInstance().getCurrentFrameIndex(), '\n',
+      '--Player: ', framework.getEntities()[0], '\n',
+      '--Entities in the memory: ', framework.getEntities(), '\n',
+      '--Scheduled Frame Events: ', TimeHandler.getInstance()._frameEvents,
+      '\n\nTips to solve the problem:', await TipsContainer.getInstance().getTips(stackTrace.stack.toString()),
+      '\n\nUse the step() command to restart the framework event loop, after you fixed the bug.');
+  }
+
+  prettyPrintInfo(eventName, eventInformation){
+      console.info(
+        eventName, 'event happened:\n',
+        '--Sender: ', eventInformation.sender, '\n',
+        '--Reason: ', eventInformation.reason, '\n',
+        '--Subscribers to this event:', eventInformation.subscribers
+      );
+  }
+
+  prettyPrint(information, output, object) {
+    if (object)
+      output('RocketX Logger:\n', information, '\n', object);
+    else
+      output('RocketX Logger:\n', information);
+  }
 }
+
