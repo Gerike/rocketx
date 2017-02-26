@@ -1,5 +1,5 @@
 class Beam extends EntityWithImage {
-  constructor(damage, position, image, effect, uptime, linkedEntity) {
+  constructor(position, image, damage, effect, uptime, linkedEntity) {
     super(position, image);
     this.damage = damage;
     this.effect = effect;

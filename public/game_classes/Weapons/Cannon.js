@@ -1,5 +1,5 @@
 class Cannon {
-  constructor(ammo, linkedEntity, firerate) {
+  constructor(ammo, firerate, linkedEntity) {
     this.ammo = ammo;
     this.linkedEntity = linkedEntity;
     this._ready = true;

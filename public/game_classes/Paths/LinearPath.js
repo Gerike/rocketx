@@ -1,6 +1,6 @@
 'use strict';
 class LinearPath extends Path {
-  constructor(startPosition, direction, speed, length = undefined) {
+  constructor(startPosition, speed, direction, length = undefined) {
     super(startPosition, speed);
     this.direction = direction;
     this.length = length;

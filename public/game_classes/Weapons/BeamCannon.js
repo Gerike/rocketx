@@ -1,6 +1,6 @@
 class BeamCannon extends Cannon {
   constructor(ammo, firerate, linkedEntity) {
-    super(ammo, linkedEntity, firerate);
+    super(ammo, firerate, linkedEntity);
   }
 
   _shoot() {

@@ -1,6 +1,6 @@
 'use strict';
 class WavePath extends Path {
-  constructor(startPosition, direction, speed, maxElongation, gradient) {
+  constructor(startPosition, speed, direction, maxElongation, gradient) {
     super(startPosition, speed);
     this.direction = direction;
     this.gradient = gradient;
