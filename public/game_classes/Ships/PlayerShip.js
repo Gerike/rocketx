@@ -25,7 +25,7 @@ class PlayerShip extends ArmedShip {
 
     if (framework.isDown(40))
       if (this._position.getY() + this.speed + this._image.height > framework.getConstants().CANVAS_HEIGHT)
-        this._position.setY(framework.getConstants().CANVAS_HEIGHT - this.img.height);
+        this._position.setY(framework.getConstants().CANVAS_HEIGHT - this.getImage().height);
       else
         this._position.setY(this._position.getY() + this.speed);
 
