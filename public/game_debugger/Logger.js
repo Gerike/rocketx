@@ -13,6 +13,7 @@ class Logger {
 
     this.loggingLevel = LOGGING_LEVEL.INFO;
     this.infoEventFilter = null;
+    EventHandler.getInstance().setLogger(this);
 
     window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
       this._handleEvent(LOGGING_LEVEL.ERROR, errorMsg, errorObj);
@@ -22,7 +23,7 @@ class Logger {
     Logger.prototype._singletonInstance = this;
   }
 
-  static getInstance(){
+  static getInstance() {
     return new Logger();
   }
 
@@ -30,7 +31,7 @@ class Logger {
     this.loggingLevel = loggingLevel;
   }
 
-  setInfoEventFilter(infoEventFilter){
+  setInfoEventFilter(infoEventFilter) {
     this.infoEventFilter = infoEventFilter.toLowerCase();
   }
 
@@ -38,17 +39,17 @@ class Logger {
     if (loggingLevel <= this.loggingLevel) {
       switch (loggingLevel) {
         case 1:
-          this.prettyPrintError(information, informationObject);
+          this._prettyPrintError(information, informationObject);
           break;
         case 2:
-          this.prettyPrintDebug(information, informationObject);
+          this._prettyPrintDebug(information, informationObject);
           break;
         case 3:
           if (information.toLocaleLowerCase().includes(this.infoEventFilter))
-            this.prettyPrintInfo(information, informationObject);
+            this._prettyPrintInfo(information, informationObject);
           break;
         default:
-          this.prettyPrint(information, console.log, informationObject);
+          this._prettyPrint(information, console.log, informationObject);
           break;
       }
     }
@@ -66,7 +67,7 @@ class Logger {
     this._handleEvent(LOGGING_LEVEL.INFO, event, {sender: object, reason: reason, subscribers: subscribers});
   }
 
-  async prettyPrintError(errorMessage, stackTrace) {
+  async _prettyPrintError(errorMessage, stackTrace) {
     console.error(
       '%cRocketX Error Report:\n', 'font-size: 20px',
       'Error: ', errorMessage, '\n',
@@ -80,23 +81,23 @@ class Logger {
       '\n\nUse the step() command to restart the framework event loop, after you fixed the bug.');
   }
 
-  prettyPrintInfo(eventName, eventInformation){
-      console.info(
-        eventName, 'event happened:\n',
-        '--Sender: ', eventInformation.sender, '\n',
-        '--Reason: ', eventInformation.reason, '\n',
-        '--Subscribers to this event:', eventInformation.subscribers
-      );
+  _prettyPrintInfo(eventName, eventInformation) {
+    console.info(
+      eventName, 'event happened:\n',
+      '--Sender: ', eventInformation.sender, '\n',
+      '--Reason: ', eventInformation.reason, '\n',
+      '--Subscribers to this event:', eventInformation.subscribers
+    );
   }
 
-  prettyPrintDebug(debugInfo, debugObjects){
-    if(debugObjects)
+  _prettyPrintDebug(debugInfo, debugObjects) {
+    if (debugObjects)
       console.warn(debugInfo, ': ', debugObjects);
     else
       console.warn(debugInfo);
   }
 
-  prettyPrint(information, output, object) {
+  _prettyPrint(information, output, object) {
     if (object)
       output('RocketX Logger:\n', information, '\n', object);
     else

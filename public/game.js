@@ -26,14 +26,18 @@ function _prepareGameField() {
 function step() {
   if (!pause)
     framework._step();
+  else {
+    framework._render();
+    HUDHandler.getInstance().render();
+  }
   window.requestAnimationFrame(step);
 }
 
-function stop() {
+function pauseGame() {
   pause = true;
 }
 
-function cont() {
+function continueGame() {
   pause = false;
 }
 

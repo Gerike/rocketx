@@ -1,9 +1,9 @@
 const DEBUG_MENU_OPTIONS = {
-  PAUSE : 0,
-  ADD_PLAYER : 1,
-  ADD_ENEMY : 2,
-  DELETE_ENTITIES : 3,
-  RESET_FRAMEWORK : 4
+  PAUSE: 0,
+  ADD_PLAYER: 1,
+  ADD_ENEMY: 2,
+  DELETE_ENTITIES: 3,
+  RESET_FRAMEWORK: 4
 };
 
 class ContextMenu {
@@ -11,8 +11,8 @@ class ContextMenu {
     if (ContextMenu.prototype._singletonInstance)
       return ContextMenu.prototype._singletonInstance;
     this.forcePause = false;
-    this.createContextMenu();
-    this.setupEventListener();
+    this._createContextMenu();
+    this._setupEventListener();
     ContextMenu.prototype._singletonInstance = this;
   }
 
@@ -20,39 +20,41 @@ class ContextMenu {
     return new ContextMenu();
   }
 
-
-  createContextMenuButton(type) {
+  _createContextMenuButton(type) {
     let menuButton;
     switch (type) {
       case 0:
-        menuButton = $('<a href="#"><li>Pause</li></a>');
+        if (this.forcePause)
+          menuButton = $('<a href="#"><li>Continue</li></a>');
+        else
+          menuButton = $('<a href="#"><li>Pause</li></a>');
         menuButton.on('click', (e) => {
-          this.pauseGame(e);
-          this.hideContextMenu();
+          this._pauseGame(e);
+          this._hideContextMenu();
         });
         break;
 
       case 1:
         menuButton = $('<a href="#"><li>Add Player Ship</li></a>');
         menuButton.on('click', (e) => {
-          this.addPlayerShip(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top')));
-          this.hideContextMenu();
+          this._addPlayerShip(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top')));
+          this._hideContextMenu();
         });
         break;
 
       case 2:
         menuButton = $('<a href="#"><li>Add Enemy Ship</li></a>');
         menuButton.on('click', (e) => {
-          this.addNewShip(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top')));
-          this.hideContextMenu();
+          this._addNewShip(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top')));
+          this._hideContextMenu();
         });
         break;
 
       case 3:
         menuButton = $('<a href="#"><li>Delete entities under the cursor</li></a>');
         menuButton.on('click', (e) => {
-          this.deleteEntities(this.locateEntityUnderClick(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top'))));
-          this.hideContextMenu();
+          this._deleteEntities(this._locateEntitiesUnderClick(parseInt(this.contextMenu.css('left')), parseInt(this.contextMenu.css('top'))));
+          this._hideContextMenu();
         });
         break;
 
@@ -60,95 +62,86 @@ class ContextMenu {
         menuButton = $('<a href="#"><li>Reset framework</li></a>');
         menuButton.on('click', (e) => {
           framework.resetFramework();
-          this.hideContextMenu();
+          this._hideContextMenu();
         });
         break;
-
-
     }
     return menuButton;
   }
 
 
-  pauseGame(e) {
-    if (this.forcePause) {
-      this.forcePause = false;
-      e.target.innerHTML = 'Pause';
-    }
-    else {
-      this.forcePause = true;
-      e.target.innerHTML = 'Continue';
-    }
+  _pauseGame(e) {
+    this.forcePause = (this.forcePause) ? false : true;
   }
 
-  createContextMenu() {
+  _createContextMenu() {
     this.contextMenu = $('<div class="menu"></div>');
     $('.game_field').append(this.contextMenu);
     this.contextMenuList = $('<ul></ul>');
     this.contextMenu.append(this.contextMenuList);
   }
 
-  fillContextMenu(e){
-    this.contextMenuList[0].innerHTML = '';
+  _chooseOptionalContextMenuOptions(e, menuOptions) {
+    if (!this._isPlayerShipAlive())
+      menuOptions.push(DEBUG_MENU_OPTIONS.ADD_PLAYER);
+
+    if (this._locateEntitiesUnderClick(e.offsetX, e.offsetY).length > 0)
+      menuOptions.push(DEBUG_MENU_OPTIONS.DELETE_ENTITIES);
+  }
+
+  _updateContextMenu(e) {
+    this.contextMenuList.empty();
     let menuOptions = [];
 
     menuOptions.push(DEBUG_MENU_OPTIONS.PAUSE);
-
-    if(!this.isPlayerShipPresent())
-      menuOptions.push(DEBUG_MENU_OPTIONS.ADD_PLAYER);
-
     menuOptions.push(DEBUG_MENU_OPTIONS.ADD_ENEMY);
-
-    if(this.locateEntityUnderClick(e.offsetX, e.offsetY).length > 0)
-      menuOptions.push(DEBUG_MENU_OPTIONS.DELETE_ENTITIES);
-
     menuOptions.push(DEBUG_MENU_OPTIONS.RESET_FRAMEWORK);
 
-    for (const menuPoint of menuOptions){
-      this.contextMenuList.append(this.createContextMenuButton(menuPoint));
+    this._chooseOptionalContextMenuOptions(e, menuOptions);
+
+    for (const menuPoint of menuOptions) {
+      this.contextMenuList.append(this._createContextMenuButton(menuPoint));
     }
   }
 
-  isPlayerShipPresent(){
-    for(const entity of framework.getEntities()){
+  _isPlayerShipAlive() {
+    for (const entity of framework.getEntities()) {
       if (entity.constructor.name === 'PlayerShip')
         return true;
     }
     return false;
   }
 
-  showContextMenu(e) {
-    stop();
+  _showContextMenu(e) {
     let menu = $(".menu");
-    menu.hide();
-
     let pageX = e.offsetX;
     let pageY = e.offsetY;
 
+    pauseGame();
     menu.css({top: pageY, left: pageX});
     menu.show();
   }
 
 
-  hideContextMenu(e) {
+  _hideContextMenu(e) {
     let menu = $(".menu").hide();
     if (!this.forcePause)
-      cont();
+      continueGame();
   }
 
-  addNewShip(x, y) {
+  _addNewShip(x, y) {
     let ship = ShipFactory.createShip(x, y, patterns.ships.BASE_ENEMY_SHIP);
     framework.registerEntity(ship);
   }
 
 
-  deleteEntities(entities) {
+  _deleteEntities(entities) {
     for (const entity of entities) {
       framework.requestDestroy(entity);
     }
   }
 
-  locateEntityUnderClick(x, y) {
+  _locateEntitiesUnderClick(x, y) {
     let entities = [];
 
     for (const entity of framework.getEntities()) {
@@ -159,47 +152,52 @@ class ContextMenu {
     return entities;
   }
 
-  moveEntities(entities, x, y) {
+  _moveEntities(entities, x, y) {
     for (const entity of entities) {
       entity.getPosition().setPosition(x, y);
     }
-    framework._render();
   }
 
-  addPlayerShip(x, y) {
+  _addPlayerShip(x, y) {
     let playerShip = ShipFactory.createShip(x, y, patterns.ships.BASE_PLAYER_SHIP, [patterns.weapons.BASE_CANNON], [patterns.ammos.BASE_AMMO]);
     framework.registerEntity(playerShip);
   }
 
-  setupEventListener() {
-    $('#game_canvas').on('contextmenu', (e) => {
-      e.preventDefault();
-      this.fillContextMenu(e);
-      this.showContextMenu(e);
-    });
-    $('#game_canvas').mousedown((e) => {
-      switch (e.which) {
-        case 1:
-          e.preventDefault();
-          this.mouseUnderEntities = this.locateEntityUnderClick(e.offsetX, e.offsetY);
-          if (this.mouseUnderEntities.length > 0) {
-            Logger.getInstance().debug('Entities under the cursor', this.mouseUnderEntities);
-            $('#game_canvas').mousemove((e) => {
-              stop();
-              this.moveEntities(this.mouseUnderEntities, e.offsetX, e.offsetY);
-            });
-          }
-
-        this.hideContextMenu(e);
-        break;
-
-      }
-    });
-    $('#game_canvas').mouseup((e) => {
-      $('#game_canvas').off("mousemove");
-      if (!this.forcePause)
-        cont();
+  activateEntityDragging() {
+    $('#game_canvas').mousemove((e) => {
+      pauseGame();
+      this._moveEntities(this.mouseUnderEntities, e.offsetX, e.offsetY);
     });
   }
 
+  _logEntitiesUnderMouse(e) {
+    this.mouseUnderEntities = this._locateEntitiesUnderClick(e.offsetX, e.offsetY);
+    if (this.mouseUnderEntities.length > 0)
+      Logger.getInstance().debug('Entities under the cursor', this.mouseUnderEntities);
+  }
+
+  _disableEntityDragging() {
+    $('#game_canvas').off("mousemove");
+  }
+
+  _setupEventListener() {
+    $('#game_canvas').on('contextmenu', (e) => {
+      e.preventDefault();
+      this._updateContextMenu(e);
+      this._showContextMenu(e);
+    });
+
+    $('#game_canvas').on('mousedown', (e) => {
+      e.preventDefault();
+      this._hideContextMenu(e);
+      this._logEntitiesUnderMouse(e);
+      this.activateEntityDragging();
+
+    });
+    $('#game_canvas').mouseup(() => {
+      this._disableEntityDragging();
+      if (!this.forcePause)
+        continueGame();
+    });
+  }
 }
