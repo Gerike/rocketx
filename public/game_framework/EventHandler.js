@@ -6,6 +6,7 @@ class EventHandler {
       return EventHandler.prototype._singletonInstance;
 
     this.eventSubscribers = {};
+    this.logger = null;
     EventHandler.prototype._singletonInstance = this;
   }
 
@@ -13,7 +14,13 @@ class EventHandler {
     return new EventHandler();
   }
 
+  setLogger(logger){
+    this.logger = logger;
+  }
+
   registerEvent(event, object, reason) {
+    if(this.logger)
+      this.logger.info(event, object, reason, this.eventSubscribers[event]);
     if (this.eventSubscribers[event])
       for (const subscriber of this.eventSubscribers[event]) {
         subscriber.notify(object, event, reason);
