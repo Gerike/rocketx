@@ -4,7 +4,11 @@ class MovingPractice extends Level {
   }
 
   _isPlayerMoving() {
-    return (framework.isDown(37) || framework.isDown(38) || framework.isDown(39) || framework.isDown(40));
+    return (
+      framework.isDown(PlayerShip.getControlKeys().LEFT) ||
+      framework.isDown(PlayerShip.getControlKeys().UP) ||
+      framework.isDown(PlayerShip.getControlKeys().DOWN) ||
+      framework.isDown(PlayerShip.getControlKeys().RIGHT));
   }
 
   _checkRecursively() {
