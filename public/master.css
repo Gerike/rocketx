@@ -69,7 +69,7 @@ header button:hover {
 
 /* Footer **/
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   background: #003687;
