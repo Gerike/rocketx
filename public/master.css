@@ -31,7 +31,12 @@ header a {
 }
 
 header #logo {
+  cursor: pointer;
   float: left;
+}
+
+header #logo:hover a{
+  color: #00fcff;
 }
 
 header .__login_container {
