@@ -4,7 +4,8 @@ body {
   color: #ffffff;
   padding: 0;
   margin: 0;
-  background-color: #090a71;
+  background-image: url("/assets/background.jpg");
+  overflow-x: hidden;
 }
 
 /* Header **/
@@ -101,6 +102,10 @@ footer li {
 
 /* Media Queries */
 @media (max-width: 703px) {
+  body {
+    background-image: none;
+    background-color: #090a71;
+  }
   header #logo {
     float: none;
     text-align: center;
