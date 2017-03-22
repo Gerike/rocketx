@@ -5,17 +5,12 @@
   <form class="register_form" method="post">
     {{ csrfField }}
     <h1>Registration</h1>
-    {% if errors %}
-    <div class="errors">
-      {% for error in errors %}
-      <span class="error">* {{error}}</span><br>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <div class="field_container"><span class="register_label">Username:</span><br><input type="text" class="register_field" name="username" placeholder="Username"></div><br>
-    <div class="field_container"><span class="register_label">Email address:</span><br><input type="text" class="register_field" name="email" placeholder="Email address"></div><br>
-    <div class="field_container"><span class="register_label">Password:</span><br><input type="password" class="register_field" name="password" placeholder="Password"></div><br>
-    <input type="submit" class="register_button" value="Register">
+    <div class="input_field">Username:<br><input type="text" name="username" placeholder="Username"></div>
+    <div class="input_field">Email:<br><input type="email" name="email" placeholder="Email address"></div>
+    <div class="input_field">Password:<br><input type="password" name="password" placeholder="Password"></div>
+    <div class="input_field"><input type="checkbox">I have accepted the Terms and services<br>
+    <input type="checkbox">I want to subscribe to the newsletter</div>
+    <button class="register_button" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</button>
   </form>
 </div>
 {% endblock %}

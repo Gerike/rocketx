@@ -35,6 +35,7 @@ header a {
 header #logo {
   cursor: pointer;
   float: left;
+  margin-top: 4px;
 }
 
 header #logo:hover a{
