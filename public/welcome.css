@@ -16,7 +16,7 @@
 
 .article h2 {
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 0px;
 }
 
@@ -26,22 +26,12 @@
   float: left;
 }
 
-.article2 {
+.article2, .article3 {
   width: 47%;
   float: right;
 }
 
-.article2:hover {
-  color: #090a71;
-  background-color: #00fcff;
-}
-
-.article3 {
-  width: 47%;
-  float: right;
-}
-
-.article3:hover {
+.article2:hover, .article3:hover {
   color: #090a71;
   background-color: #00fcff;
 }
@@ -73,37 +63,12 @@
 
 /* Media Queries */
 @media (max-width: 703px) {
-  .article1 {
+  .welcome_article, .article1, .article2, .article3, .article4 {
     text-align: center;
-    margin: auto;
     width: 90%;
-    float: none;
     border-bottom: 1px solid #1e90ff;
-  }
-
-  .article2 {
-    text-align: center;
     margin: auto;
-    width: 90%;
     float: none;
-    border-bottom: 1px solid #1e90ff;
-  }
-
-  .article3 {
-    text-align: center;
-    margin: auto;
-    width: 90%;
-    float: none;
-    border-bottom: 1px solid #1e90ff;
-  }
-
-  .article4 {
-    text-align: center;
-    margin: auto;
-    width: 100%;
-    float: none;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 }
-
-

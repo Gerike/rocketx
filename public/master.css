@@ -2,10 +2,11 @@
 body {
   font: 15px/1.5 Arial, Helvetice, sans-serif;
   color: #ffffff;
-  padding: 0;
   margin: 0;
   background-image: url("/assets/background.jpg");
   overflow-x: hidden;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 /* Header **/
@@ -16,9 +17,9 @@ body {
 }
 
 header {
-  /*position: absolute;
+  position: fixed;
   top: 0px;
-  width: 100%;*/
+  width: 100%;
   background: #003687;
   color: #ffffff;
   padding: 5px;
@@ -105,7 +106,15 @@ footer li {
   body {
     background-image: none;
     background-color: #090a71;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
+
+  header {
+    position: static;
+    width: auto;
+  }  
+
   header #logo {
     float: none;
     text-align: center;
@@ -123,6 +132,11 @@ footer li {
     margin: auto;
     display: block;
     margin-bottom: 10px;
+  }
+
+  footer{
+    position: static;
+    width: auto;
   }
 }
 
