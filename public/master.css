@@ -75,6 +75,10 @@ header button:hover {
   color: #003687;
 }
 
+header .__navigation_bar{
+  float: right;
+}
+
 /* Footer **/
 footer {
   position: fixed;
@@ -84,7 +88,7 @@ footer {
   color: #ffffff;
   padding: 5px;
   min-height: 20px;
-  border-bottom: 1px solid #1e90ff;
+  border-top: 1px solid #1e90ff;
   text-align: center;
 }
 
@@ -114,7 +118,7 @@ footer li {
   header {
     position: static;
     width: auto;
-  }  
+  }
 
   header #logo {
     float: none;
@@ -139,7 +143,29 @@ footer li {
     position: static;
     width: auto;
   }
+
+  header .__navigation_bar{
+    float: none;
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+  .navButton{
+    width: 24%;
+  }
 }
+
+@media(max-width: 450px){
+
+  header .__navigation_bar{
+    width: 50%;
+  }
+
+  .navButton{
+    width: 20%;
+  }
+}
+
 
 
 

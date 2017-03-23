@@ -5,7 +5,7 @@
 const TOP_SCORE_ROW = 6;
 
 function loadHighScores(count, time){
-  $.ajax({
+ /* $.ajax({
       url: '/rest/scores/' + count,
       method: 'GET'
   }).done( (data) => {
@@ -21,7 +21,7 @@ function loadHighScores(count, time){
           }
         }
     }
-  );
+  );*/
 }
 
 function loadLatestNews(){

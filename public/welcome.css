@@ -71,4 +71,11 @@
     float: none;
     margin-bottom: 30px;
   }
+
+  #changes tr td{
+    text-align: left;
+  }
+  #changes tr td:nth-child(2){
+    padding-left: 10px;
+  }
 }
