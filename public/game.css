@@ -46,3 +46,33 @@ canvas {
 .menu ul li:hover{
   background-color: #0037f7;
 }
+
+/*Media Queries */
+@media(max-height: 520px){
+  header{
+    display: none;
+  }
+
+  footer{
+    display: none;
+  }
+
+  .game_field{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media(max-height: 400px){
+  .game_field{
+    height: 100vh;
+  }
+}
+
+@media(max-width: 800px){
+  .game_field{
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
