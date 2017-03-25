@@ -1,17 +1,17 @@
 .welcome_article {
   width: 100%;
-  padding: 20px;
+  padding-left: 40px !important;
 }
 
 .article {
-  padding: 5px;
+  padding: 10px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
 
 .article h1 {
   margin-bottom: 0px;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .article h2 {
@@ -37,24 +37,30 @@
 }
 
 .article4 {
+  padding-left: 40px;
   float: left;
   width: 100%;
 }
 
 #highscores {
   margin: auto;
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
+  padding-top: 15px;
 }
 
 .highscore_row_first {
-  font-size: 22px;
+  font-size: 28px;
   color: #ffd700;
 }
 
 .highscore_row_second {
-  font-size: 18px;
+  font-size: 24px;
   color: #c0c0c0;
+}
+
+.highscore_row_third {
+  color: #cd7f32;
 }
 
 #changes {
@@ -62,7 +68,21 @@
 }
 
 /* Media Queries */
-@media (max-width: 703px) {
+@media (max-width: 1224px) {
+  .article h1 {
+    font-size: 30px;
+  }
+
+  .welcome_article {
+    padding-left: 20px !important;
+  }
+
+  .article4 {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
   .welcome_article, .article1, .article2, .article3, .article4 {
     text-align: center;
     width: 90%;
@@ -72,10 +92,15 @@
     margin-bottom: 30px;
   }
 
-  #changes tr td{
+  .article4 {
+    border-bottom: none;
+  }
+
+  #changes tr td {
     text-align: left;
   }
-  #changes tr td:nth-child(2){
+
+  #changes tr td:nth-child(2) {
     padding-left: 10px;
   }
 }
