@@ -38,36 +38,37 @@
     {% endif %}
   </div>
 </header>
+<div id="_notification_wrapper"></div>
 {% if currentUser %}
 <div id="_sidebar">
   <nav>
     <span class="_sidebar_title _no_select">Menu</span>
     <div class="_sidebar_subtitle _no_select">Account</div>
-    <div id="_sidebar_news" class="_sidebar_link _no_select"><i class="fa fa-newspaper-o" aria-hidden="true"></i> News
-    </div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> My profile</div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Messages</div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Settings</div>
+    <a href="/" class="_sidebar_link _no_select"><i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a>
+    <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> My profile</a>
+    <a href="/" class="_sidebar_link _no_select"><i class="fa fa-envelope-o" aria-hidden="true"></i></i> Messages</a>
+    <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Settings</a>
+    <a href="/logout" class="_sidebar_link _no_select"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
     <div class="_sidebar_subtitle _no_select">Game</div>
-    <div id="_sidebar_play" class="_sidebar_link _no_select"><i class="fa fa-play" aria-hidden="true"></i> Play</div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Manage ships</div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Auction house</div>
-    <div class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Toplists</div>
+    <a href="/play" class="_sidebar_link _no_select"><i class="fa fa-play" aria-hidden="true"></i> Play</a>
+    <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Manage ships</a>
+    <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Auction house</a>
+    <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Toplists</a>
   </nav>
-</div>
-{% endif %}
-{% block content %}{% endblock %}
-{% block footer %}
-<footer>
-  <nav>
-    <ul>
-      <li><a href="/about"><i class="fa fa-user-circle" aria-hidden="true"></i>Author</a> |</li>
-      <li><a href="https://github.com/Gerike/jatekfejlesztes_bead/" target="_blank"><i class="fa fa-github"
-                                                                                       aria-hidden="true"></i>Github</a>
-      </li>
-    </ul>
-  </nav>
-</footer>
-{% endblock %}
+  </div>
+  {% endif %}
+  {% block content %}{% endblock %}
+  {% block footer %}
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="/about"><i class="fa fa-user-circle" aria-hidden="true"></i>Author</a> |</li>
+        <li><a href="https://github.com/Gerike/jatekfejlesztes_bead/" target="_blank"><i class="fa fa-github"
+                                                                                         aria-hidden="true"></i>Github</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+  {% endblock %}
 </body>
 </html>

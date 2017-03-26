@@ -21,6 +21,55 @@ body {
                                    supported by Chrome and Opera */
 }
 
+#_notification_wrapper {
+  position: fixed;
+  width: 100%;
+  top: 7%;
+}
+
+._notification {
+  max-width: 70%;
+  min-width: 30%;
+  border: 1px solid white;
+  display: none;
+  padding: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  box-shadow: inset 2px 2px 2px #000000;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+._notification_error {
+  background-color: red;
+  border: 1px solid darkred;
+}
+
+._notification_info {
+  background-color: #00b2ff;
+  border: 1px solid #00008b;
+}
+
+._notification_warning {
+  background-color: #ffd100;
+  border: 1px solid #8b7900;
+  color: black;
+}
+
+._notification_icon {
+  text-align: center;
+  display: inline-block;
+  width: 8%;
+  border-right: 1px solid white;
+}
+
+._notification_text {
+  display: inline-block;
+  width: 90%;
+}
+
 /* Header **/
 .__header_container {
   width: 100%;
@@ -150,6 +199,7 @@ header .__navigation_bar {
   background-color: #003687;
   margin: auto;
   cursor: pointer;
+  text-decoration: none;
 }
 
 ._sidebar_link:hover {
@@ -269,6 +319,17 @@ footer li {
 
   ._sidebar_subtitle {
     text-align: center;
+  }
+
+  ._notification_icon {
+    display: none;
+  }
+
+  ._notification_text {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
   }
 }
 
