@@ -46,20 +46,20 @@ function _createNotification(type, text) {
   let icon;
   switch (type) {
     case 'error':
-      icon = '<i class="fa fa-times-circle" aria-hidden="true"></i>';
+      icon = '<i class="fa fa-2x fa-times" aria-hidden="true"></i>';
       break;
     case 'info':
-      icon = '<i class="fa fa-info-circle" aria-hidden="true"></i>';
+      icon = '<i class="fa fa-2x fa-info" aria-hidden="true"></i>';
       break;
     case 'warning':
-      icon = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>';
+      icon = '<i class="fa fa-2x fa fa-exclamation" aria-hidden="true"></i>';
       break;
   }
 
   const notificationWrapper = $('#_notification_wrapper');
-  const notification = $('<div class="_notification _notification_' + type + '">' + '</div>');
-  notification.append($('<div class="_notification_icon">' + icon + '</div>'));
-  notification.append($('<div class="_notification_text">' + text + '</div>'));
+  const notification = $(`<div class="_notification _notification_${type} _no_select"></div>`);
+  notification.append($(`<div class="_notification_icon _no_select">${icon}</div>`));
+  notification.append($(`<div class="_notification_text _no_select">${text}</div>`));
   notificationWrapper.append(notification);
   notification.fadeIn();
   setTimeout(() => {

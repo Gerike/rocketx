@@ -28,13 +28,12 @@ body {
 }
 
 ._notification {
-  max-width: 70%;
-  min-width: 30%;
+  max-width: 30%;
+  min-width: 10%;
   border: 1px solid white;
   display: none;
-  padding: 15px;
+  padding: 10px;
   margin: auto;
-  margin-bottom: 15px;
   box-shadow: inset 2px 2px 2px #000000;
   text-align: center;
   color: white;
@@ -61,13 +60,14 @@ body {
 ._notification_icon {
   text-align: center;
   display: inline-block;
+  padding-right: 10px;
   width: 8%;
   border-right: 1px solid white;
 }
 
 ._notification_text {
   display: inline-block;
-  width: 90%;
+  width: 86%;
 }
 
 ._transparent_after:after {
