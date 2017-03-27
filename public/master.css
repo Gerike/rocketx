@@ -70,6 +70,10 @@ body {
   width: 90%;
 }
 
+._transparent_after:after {
+  opacity: 0;
+}
+
 /* Header **/
 .__header_container {
   width: 100%;
@@ -85,6 +89,7 @@ header {
   color: #ffffff;
   min-height: 30px;
   border-bottom: 1px solid #1e90ff;
+  z-index: 1001;
 }
 
 header button {
@@ -149,6 +154,30 @@ header input:focus {
   color: #003687;
 }
 
+#_open_sidebar_button[data-notifications]:after {
+  transition: all .5s linear;
+  content: attr(data-notifications);
+  position: absolute;
+  top: 18px;
+  right: 35px;
+  font-size: 20px;
+  background: #00fcff;
+  color: white;
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  line-height: 27px;
+  border-radius: 50%;
+  border: 3px solid #003687;
+  color: #003687;
+  font-weight: bold;
+  box-shadow: inset 3px 3px 3px #1e90ff;
+}
+
+#_open_sidebar_button[data-notifications="0"]:after {
+  content: none !important;
+}
+
 header button:hover {
   background-color: #00fcff;
   color: #003687;
@@ -169,10 +198,11 @@ header .__navigation_bar {
   right: 0px;
   width: 15%;
   height: 100vh;
-  border-left: 1px solid #1e90ff;
+    border-left: 1px solid #1e90ff;
   background-color: #003687;
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: 1000;
 }
 
 ._sidebar_title {
@@ -206,6 +236,14 @@ header .__navigation_bar {
   color: #00fcff;
 }
 
+._sidebar_link_important {
+  color: #ff4500 !important;
+}
+
+._sidebar_link_important:hover {
+  color: #ffce00 !important;
+}
+
 ._sidebar_separator {
   display: block;
   width: 90%;
@@ -230,6 +268,7 @@ header .__navigation_bar {
 
 /* Footer **/
 footer {
+  z-index: 1001;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -256,6 +295,12 @@ footer li {
 }
 
 /* Media Queries */
+@media(max-width: 1500px){
+  body{
+    background-image: url("/assets/background_small.jpg");
+  }
+}
+
 @media (max-width: 768px) {
   body {
     background-image: none;
@@ -330,6 +375,10 @@ footer li {
     width: 100%;
     text-align: center;
     margin: auto;
+  }
+
+  #_open_sidebar_button[data-notifications]:after {
+    content: none !important;
   }
 }
 

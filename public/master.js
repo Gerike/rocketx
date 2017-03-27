@@ -17,6 +17,11 @@ $(document).ready(() => {
   $('#_sidebar_news').on('click', () => window.location.href = '/');
   $('#_sidebar_logout').on('click', () => window.location.href = '/logout');
   $('#_open_sidebar_button').on('click', () => _toggleSidebar());
+
+  _updateUnreadMessageCounter();
+  setInterval(() => {
+    _updateUnreadMessageCounter();
+  }, 10000);
 });
 
 
@@ -28,10 +33,12 @@ function _toggleSidebar() {
   if (sideBar.is(':visible')) {
     sideBar.hide('slide', {direction: slideDirection}, 600);
     toggleButton.html('<i class="fa fa-bars" aria-hidden="true"></i>');
+    toggleButton.removeClass('_transparent_after');
   }
   else {
     sideBar.show('slide', {direction: slideDirection}, 600);
     toggleButton.html('<i class="fa fa-times" aria-hidden="true"></i>');
+    toggleButton.addClass('_transparent_after');
   }
 }
 
@@ -60,4 +67,28 @@ function _createNotification(type, text) {
       notification.remove();
     });
   }, 4000);
+}
+
+function _writeUnreadMesssageCounter(count) {
+  const messageCounter = $('#_sidebar_unread_message_count');
+  const sidebarButton = $('#_open_sidebar_button');
+
+  if (parseInt(count) > 0) {
+    messageCounter.html('(' + count + ')');
+    messageCounter.parent().addClass('_sidebar_link_important');
+  }
+  else {
+    messageCounter.html('');
+    messageCounter.parent().removeClass('_sidebar_link_important');
+  }
+
+  sidebarButton.attr('data-notifications', count);
+}
+
+function _updateUnreadMessageCounter() {
+  $.ajax({
+    url: '/messages/unread_count',
+    method: 'GET',
+    success: data => _writeUnreadMesssageCounter(data.count)
+  });
 }
