@@ -29,9 +29,9 @@ class UserController {
       const username = request.input('username');
       const password = request.input('password');
       const errors = yield this.validateRegistrationData(email, username, password);
-      console.log(errors);
       if (!errors.length) {
-        yield this.createUser(email, username, password);
+        const user = yield this.createUser(email, username, password);
+        yield this.sendWelcomeMail(user);
         yield request.auth.attempt(email, password);
         response.redirect('/');
       }
@@ -48,6 +48,7 @@ class UserController {
     user.email = email;
     user.password = yield Hash.make(password);
     yield user.save();
+    return user;
   }
 
   * validateRegistrationData(email, username, password) {
@@ -83,6 +84,11 @@ class UserController {
   * isUsernameAlreadyExist(username) {
     return (yield Database.from('users').where('username', username)).length > 0;
   }
+
+  * sendWelcomeMail(user){
+    const root = yield User.findBy('id', 1);
+    yield root.sendMessage(user, 'Welcome to RocketX', 'Hey,<br>I am happy to see you there.<br> RocketX is in alpha version, which means, you will encounter bugged or not working features. In this stage of development, I would like to hear ideas from you, so if you have some great ideas please share with us or if you want to help do not hesitate to contact us.<br>Bye,<br>Gergo');
+   }
 }
 
 module.exports = UserController;
