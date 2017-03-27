@@ -13,6 +13,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="/master.js"></script>
+
+  {% if currentUser %}
+  <script src="/authenticated_scripts/messaging.js"></script>
+  <script src="/authenticated_scripts/sidebar.js"></script>
+  {% endif %}
 </head>
 <body>
 <header>
@@ -46,7 +51,8 @@
     <div class="_sidebar_subtitle _no_select">Account</div>
     <a href="/" class="_sidebar_link _no_select"><i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a>
     <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> My profile</a>
-    <a href="/messages" class="_sidebar_link _no_select"><i class="fa fa-envelope-o" aria-hidden="true"></i></i> Messages <span id="_sidebar_unread_message_count"></span></a>
+    <a href="/messages" class="_sidebar_link _no_select"><i class="fa fa-envelope-o" aria-hidden="true"></i></i>
+      Messages <span id="_sidebar_unread_message_count"></span></a>
     <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Settings</a>
     <a href="/logout" class="_sidebar_link _no_select"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
     <div class="_sidebar_subtitle _no_select">Game</div>
@@ -55,20 +61,20 @@
     <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Auction house</a>
     <a class="_sidebar_link _no_select"><i class="fa fa-lock" aria-hidden="true"></i> Toplists</a>
   </nav>
-  </div>
-  {% endif %}
-  {% block content %}{% endblock %}
-  {% block footer %}
-  <footer>
-    <nav>
-      <ul>
-        <li><a href="/about"><i class="fa fa-user-circle" aria-hidden="true"></i>Author</a> |</li>
-        <li><a href="https://github.com/Gerike/jatekfejlesztes_bead/" target="_blank"><i class="fa fa-github"
-                                                                                         aria-hidden="true"></i>Github</a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
-  {% endblock %}
+</div>
+{% endif %}
+{% block content %}{% endblock %}
+{% block footer %}
+<footer>
+  <nav>
+    <ul>
+      <li><a href="/about"><i class="fa fa-user-circle" aria-hidden="true"></i>Author</a> |</li>
+      <li><a href="https://github.com/Gerike/jatekfejlesztes_bead/" target="_blank"><i class="fa fa-github"
+                                                                                       aria-hidden="true"></i>Github</a>
+      </li>
+    </ul>
+  </nav>
+</footer>
+{% endblock %}
 </body>
 </html>
