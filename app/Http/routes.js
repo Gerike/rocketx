@@ -22,6 +22,7 @@ Route.on('/').render('welcome');
 Route.post('/register', 'UserController.register');
 Route.get('/register', 'UserController.register');
 Route.get('/play', 'GameController.startGame').middleware('auth');
-Route.get('/messages', 'UserController.showMessages').middleware('auth');
+Route.get('/messages', 'MessageController.showMessages').middleware('auth');
+Route.get('/messages/unread_count', 'MessageController.getUnreadMessageCount').middleware('auth');
 Route.get('/logout', 'UserController.logout').middleware('auth');
 

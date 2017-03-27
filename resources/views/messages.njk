@@ -1,18 +1,7 @@
 {% extends 'master' %}
 {% block content %}
 {{ csrfField }}
-<link rel="stylesheet" type="text/css" href="/messages.css">
-<div id="message">
-  <button class="close_button" onclick="$('#message').hide()">X</button>
-  <div id="message_content"></div>
-</div>
-<div id="mails">
-  <h1>Messages <a class="new_message_link" href="/messages/new">(New)</a></h1>
-  <div id="message_switch">
-    <button class="message_chooser" onclick="getMessages('in')">Inbox</button>
-    <button class="message_chooser" onclick="getMessages('out')">Outbox</button>
-  </div>
-  <table id="messages"></table>
-</div>
+<link rel="stylesheet" type="text/css" href="/messages/messages.css">
+
 
 {% endblock %}

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const Lucid = use('Lucid')
+const Lucid = use('Lucid');
 
 class Message extends Lucid {
 }
 
-module.exports = Message
+module.exports = Message;
