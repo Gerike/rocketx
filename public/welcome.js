@@ -1,34 +1,15 @@
-/**
- * Created by Win10 on 2017. 01. 01..
- */
 'use strict';
-const TOP_SCORE_ROW = 6;
 
 function loadHighScores(count, time) {
-  /* $.ajax({
-   url: '/rest/scores/' + count,
-   method: 'GET'
-   }).done( (data) => {
-   data = JSON.parse(data);
-   for(let i = 0; i < data.length; i++){
-   document.getElementById('toplist' + i).innerHTML = data[i].username;
-   document.getElementById('toplist_score' + i).innerHTML = data[i].points;
-   }
-   if (data.length < TOP_SCORE_ROW - 1){
-   for(let i = data.length; i < TOP_SCORE_ROW; i++){
-   document.getElementById('toplist' + i).innerHTML = "";
-   document.getElementById('toplist_score' + i).innerHTML = "";
-   }
-   }
-   }
-   );*/
+  //TODO: LOAD HIGH SCORES
 }
 
 function loadLatestNews() {
   $.ajax({
-    url: 'https://api.github.com/repos/gerike/rocketx/commits',
+    url: 'https://api.github.com/repos/gerike/rocketx/commits?sha=visual_update',
     method: 'GET'
   }).done((data) => {
+    console.log(data)
     for (let i = 0; i < 5; i++) {
       let date = new Date(data[i].commit.committer.date)
       document.getElementById('ln_date' + i).innerHTML = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDay();
