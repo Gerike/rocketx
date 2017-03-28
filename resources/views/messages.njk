@@ -2,6 +2,11 @@
 {% block content %}
 {{ csrfField }}
 <link rel="stylesheet" type="text/css" href="/messages/messages.css">
+<script src="/messages/messages.js"></script>
 
-
+<div id="messages">
+  <h1>Messages</h1>
+  <div id="messages_selector" class="_no_select"></div>
+  <div id="message_content" class="_no_select"></div>
+</div>
 {% endblock %}
