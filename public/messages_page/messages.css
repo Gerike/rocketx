@@ -1,0 +1,140 @@
+#messages {
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 60%;
+  height: 600px;
+  padding: 5px;
+  padding-bottom: 20px;
+  background-color: #090a71;
+  border: 1px solid #00b2ff;
+  overflow: hidden;
+}
+
+#messages h1 {
+  text-align: center;
+}
+
+#message_content {
+  float: right;
+  margin: auto;
+  height: 97%;
+  padding: 10px;
+  width: 57%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#messages_selector {
+  float: left;
+  border-right: 1px solid #00b2ff;
+  width: 38%;
+  text-align: center;
+  height: 80%;
+  cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+.message_selector {
+  margin: auto;
+  width: 90%;
+  border-bottom: 1px solid #00b2ff;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.message_selector:last-child {
+  border-bottom: none;
+}
+
+.message_selector:hover {
+  color: #090a71;
+  background-color: #00fcff;
+}
+
+.message_selector_title {
+  text-align: left;
+  float: left;
+  display: inline-block;
+  width: 59%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message_selector_date {
+  text-align: right;
+  width: 39%;
+  float: right;
+  display: block;
+  font-size: 16px;
+}
+
+.message_selector_preview {
+  float: left;
+  text-align: left;
+  display: block;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.unread {
+  color: #ff4500 !important;
+}
+
+.selected_message {
+  background-color: #00fcff !important;
+  color: #090a71 !important;
+}
+
+/* Medie Queries */
+
+@media (max-width: 1200px){
+  .message_selector_title {
+    font-size: 16px;
+  }
+
+  .message_selector_date {
+    font-size: 10px;
+  }
+
+  .message_selector_preview {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px){
+  #messages {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  #message_content {
+    float: none;
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    height: auto;
+  }
+
+  #messages_selector {
+    float: none;
+    width: 90%;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+    height: auto;
+  }
+
+  .message_selector {
+    margin: auto;
+    width: 90%;
+    border-bottom: 1px solid #00b2ff;
+    padding: 5px;
+    overflow: hidden;
+  }
+}

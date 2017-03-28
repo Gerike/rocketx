@@ -1,82 +1,12 @@
 {% extends 'master' %}
 {% block content %}
 {{ csrfField }}
-<link rel="stylesheet" type="text/css" href="/messages.css">
-<div id="message">
-  <button class="close_button" onclick="$('#message').hide()">X</button>
-  <div id="message_content"></div>
+<link rel="stylesheet" type="text/css" href="/messages_page/messages.css">
+<script src="/messages_page/messages.js"></script>
+
+<div id="messages">
+  <h1>Messages</h1>
+  <div id="messages_selector" class="_no_select"></div>
+  <div id="message_content" class="_no_select"></div>
 </div>
-<div id="mails">
-  <h1>Messages <a class="new_message_link" href="/messages/new">(New)</a></h1>
-  <div id="message_switch">
-    <button class="message_chooser" onclick="getMessages('in')">Inbox</button>
-    <button class="message_chooser" onclick="getMessages('out')">Outbox</button>
-  </div>
-  <table id="messages"></table>
-</div>
-
-<script>
-  'use strict';
-  var csrfToken = '{{ csrfToken }}'
-  function showContent(id){
-    $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
-      jqXHR.setRequestHeader('csrf-token', csrfToken);
-    });
-    $.ajax({
-      url: '/message',
-      method: "POST",
-      data: { id : id },
-
-    }).done( (data) => {
-      document.getElementById('message_content').innerHTML = data;
-      $('#message').show();
-    })
-  }
-  function drawMessages(data) {
-    let messages = JSON.parse(data);
-    let message_table = $('#messages')
-    message_table[0].innerHTML = '';
-    if (messages.length > 0) {
-      message_table.append(`<tr>
-        <th class="sent">Sent</th>
-        <th clas="recipient">Recipient</th>
-        <th class="sender">Sender</th>
-        <th class="title">Title</th>
-        </tr>`);
-
-      for (let i = 0; i < messages.length; i++) {
-        message_table.append($('' +
-          '<tr class="message_row" data-message="' + messages[i]['id'] + '">' +
-          '<td>' + messages[i]['sent'] + '</td>' +
-          '<td>' + messages[i]['recipient'] + '</td>' +
-          '<td>' + messages[i]['sender'] + '</td>' +
-          '<td>' + messages[i]['title'] + '</td>' +
-          '<tr>'));
-      }
-      $('.message_row').click((e) => {
-        showContent(e.delegateTarget.dataset.message)
-      })
-    }
-    else {
-      message_table[0].innerHTML = 'Sorry, no messages to be shown :(';
-    }
-  }
-  function getMessages(type) {
-    $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
-      jqXHR.setRequestHeader('csrf-token', csrfToken);
-    });
-    $.ajax({
-      url: '/messages',
-      method: "POST",
-      data: { type : type },
-
-    }).done( (data) => {
-        drawMessages(data);
-    })
-  }
-
-  $(document).ready( () => {
-    getMessages('in');
-  });
-</script>
 {% endblock %}

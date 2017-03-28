@@ -1,0 +1,57 @@
+.register_form{
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  border: 1px solid #1e90ff;
+  width: 400px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.61)
+}
+
+.input_field{
+  margin-bottom: 30px;
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
+  border: none;
+  outline: none;
+  padding: 6px;
+  border-bottom: 3px solid #1e90ff;
+}
+
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
+  border-bottom: 3px solid #00b2ff;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus{
+  border-bottom: 3px solid #00fcff;
+}
+
+.register_button{
+  height: 40px;
+  width: 100px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.register_button:hover{
+  background-color: #00fcff;
+  color: #003687;
+}
+
+@media (max-width: 768px){
+  .register_form{
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 0px;
+  }
+
+  header .__login_container {
+    display: none;
+  }
+}

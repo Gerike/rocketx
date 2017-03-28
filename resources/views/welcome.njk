@@ -1,61 +1,68 @@
 {% extends 'master' %}
 
 {% block content %}
- <link rel="stylesheet" type="text/css" href="welcome.css">
- <div class="welcome_page_container">
-  <div class="welcome_box">
-    <h1>Welcome to RocketX, a new and innovative game homepage</h1>
-    <h2>We hope that you will enjoy yourself here</h2>
-  </div>
-   <div class="toplist_box">
-     <h1>TOPLISTS</h1>
-     <div>
-       <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores(6, 'Daily')">Daily</a> |
-       <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores(6, 'Monthly')">Monthly</a> |
-       <a href="javascript:void(0)" class="toplist_tablink" onclick="loadHighScores(6, 'Ever')">Ever</a>
-     </div>
-     <div id="main_page_toplist">
-       <p><span id="toplist0" class="toplist_name_first">PLAYER1</span><span id="toplist_score0" class="toplist_score_first">1000</span></p>
-       <p><span id="toplist1" class="toplist_name_second">PLAYER2</span><span id="toplist_score1" class="toplist_score_second">900</span></p>
-       <p><span id="toplist2" class="toplist_name">PLAYER3</span><span id="toplist_score2" class="toplist_score">800</span></p>
-       <p><span id="toplist3" class="toplist_name">PLAYER4</span><span id="toplist_score3" class="toplist_score">700</span></p>
-       <p><span id="toplist4" class="toplist_name">PLAYER5</span><span id="toplist_score4" class="toplist_score">600</span></p>
-       <p><span id="toplist5" class="toplist_name">PLAYER6</span><span id="toplist_score5" class="toplist_score">500</span></p>
-     </div>
-   </div>
-  <div class="registernow_box" onclick="location.href = '/register';">
-      <h1>Not registered yet?</h1>
-      <h2>Most of the features becomes available after you signed up for FREE</h2>
-  </div>
-   <div class="forum_box">
-     <h1>Make your voice heard today</h1>
-     <h2>Share your opinions and recommendations with us at our forum</h2>
-   </div>
-   <div class="latest_news">
-     <h1 class="link" onclick="window.location='/full_dev_log'">Latest changes</h1>
-     <table>
-       <tr>
-         <td id="ln_date0"></td>
-         <td id="ln_message0"></td>
-       </tr>
-       <tr>
-         <td id="ln_date1"></td>
-         <td id="ln_message1"></td>
-       </tr>
-       <tr>
-         <td id="ln_date2"></td>
-         <td id="ln_message2"></td>
-       </tr>
-       <tr>
-         <td id="ln_date3"></td>
-         <td id="ln_message3"></td>
-       </tr>
-       <tr>
-         <td id="ln_date4"></td>
-         <td id="ln_message4"></td>
-       </tr>
-     </table>
-   </div>
-   </div>
-<script src="welcome.js"></script>
+<link rel="stylesheet" type="text/css" href="/welcome_page/welcome.css">
+<article class="article welcome_article">
+  <h1>Welcome at RocketX, a new arcade shooter's home</h1>
+  <h2>We hope you will enjoy yourself here</h2>
+</article>
+<article class="article article1">
+  <h1>TOP SCORES</h1>
+  <table id="highscores">
+    <tr class="highscore_row highscore_row_first">
+      <td class="name">PLAYER1</td>
+      <td class="point">1000</td>
+    </tr>
+    <tr class="highscore_row highscore_row_second">
+      <td class="name">PLAYER2</td>
+      <td class="point">900</td>
+    </tr>
+    <tr class="highscore_row highscore_row_third">
+      <td class="name">PLAYER3</td>
+      <td class="point">800</td>
+    </tr>
+    <tr class="highscore_row">
+      <td class="name">PLAYER4</td>
+      <td class="point">700</td>
+    </tr>
+    <tr class="highscore_row">
+      <td class="name">PLAYER5</td>
+      <td class="point">600</td>
+    </tr>
+  </table>
+</article>
+<article class="article article2" onclick="location.href = '/register';">
+  <h1>Not registered yet?</h1>
+  <h2>Most of the features becomes available after you signed up for FREE</h2>
+</article>
+<article class="article article3" onclick='_createNotification("warning", "That feature unfortunately does not work yet")'>
+  <h1>Make your voice heard today</h1>
+  <h2>Share your opinions and recommendations with us at our forum</h2>
+</article>
+<article class="article article4">
+  <h1 class="link">Latest changes</h1>
+  <table id="changes">
+    <tr>
+      <td id="ln_date0"></td>
+      <td id="ln_message0"></td>
+    </tr>
+    <tr>
+      <td id="ln_date1"></td>
+      <td id="ln_message1"></td>
+    </tr>
+    <tr>
+      <td id="ln_date2"></td>
+      <td id="ln_message2"></td>
+    </tr>
+    <tr>
+      <td id="ln_date3"></td>
+      <td id="ln_message3"></td>
+    </tr>
+    <tr>
+      <td id="ln_date4"></td>
+      <td id="ln_message4"></td>
+    </tr>
+  </table>
+</article>
+<script src="/welcome_page/welcome.js"></script>
 {% endblock %}

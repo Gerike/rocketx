@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +22,10 @@ Route.on('/').render('welcome');
 Route.post('/register', 'UserController.register');
 Route.get('/register', 'UserController.register');
 Route.get('/play', 'GameController.startGame').middleware('auth');
-Route.get('/messages', 'UserController.showMessages').middleware('auth');
-Route.get('/messages/new', 'UserController.newMessage').middleware('auth');
-Route.post('/messages/new', 'UserController.createMessage').middleware('auth');
-Route.post('message', 'UserController.getMessage').middleware('auth');
-Route.post('messages', 'UserController.getMessageHeaders').middleware('auth');
-Route.get('/rest/scores/:count', 'ToplistController.getTopScores');
+Route.get('/messages', 'MessageController.showMessages').middleware('auth');
+Route.get('/messages/unread_count', 'MessageController.getUnreadMessageCount').middleware('auth');
 Route.get('/logout', 'UserController.logout').middleware('auth');
+Route.get('/messages/sent_messages', 'MessageController.getSentMessages').middleware('auth');
+Route.get('/messages/received_messages', 'MessageController.getReceivedMessages').middleware('auth');
+Route.post('/messages/mark_as_read', 'MessageController.markAsRead').middleware('auth');
 
