@@ -6,7 +6,7 @@ function loadHighScores(count, time) {
 
 function loadLatestNews() {
   $.ajax({
-    url: 'https://api.github.com/repos/gerike/rocketx/commits?sha=visual_update',
+    url: 'https://api.github.com/repos/gerike/rocketx/commits',
     method: 'GET'
   }).done((data) => {
     for (let i = 0; i < 5; i++) {
