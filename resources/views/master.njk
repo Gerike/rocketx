@@ -17,6 +17,9 @@
   {% if currentUser %}
   <script src="/authenticated_scripts/messaging.js"></script>
   <script src="/authenticated_scripts/sidebar.js"></script>
+  <script>
+    let csrfToken = '{{ csrfToken }}';
+  </script>
   {% endif %}
 </head>
 <body>
