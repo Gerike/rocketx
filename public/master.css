@@ -75,6 +75,49 @@ body {
   opacity: 0;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0000ff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000080;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ff0000;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 /* Header **/
 .__header_container {
   width: 100%;
@@ -199,7 +242,7 @@ header .__navigation_bar {
   right: 0px;
   width: 15%;
   height: 100vh;
-    border-left: 1px solid #1e90ff;
+  border-left: 1px solid #1e90ff;
   background-color: #003687;
   overflow-x: hidden;
   overflow-y: auto;
@@ -296,8 +339,8 @@ footer li {
 }
 
 /* Media Queries */
-@media(max-width: 1500px){
-  body{
+@media (max-width: 1500px) {
+  body {
     background-image: url("/assets/background_small.jpg");
   }
 }
