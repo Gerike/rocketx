@@ -1,7 +1,6 @@
 'use strict';
 
 const Lucid = use('Lucid');
-const User = use('App/Model/User');
 
 class Message extends Lucid {
 
