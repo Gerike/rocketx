@@ -11,7 +11,7 @@ function loadLatestNews() {
   }).done((data) => {
     for (let i = 0; i < 5; i++) {
       let date = new Date(data[i].commit.committer.date);
-      document.getElementById('ln_date' + i).innerHTML = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDay();
+      document.getElementById('ln_date' + i).innerHTML = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
       document.getElementById('ln_message' + i).innerHTML = data[i].commit.message;
     }
   });
