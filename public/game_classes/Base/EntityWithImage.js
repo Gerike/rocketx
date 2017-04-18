@@ -11,4 +11,12 @@ class EntityWithImage extends Entity {
   getImage(){
     return this._image;
   }
+
+  getWidth(){
+    return this._image.width;
+  }
+
+  getHeight(){
+    return this._image.height;
+  }
 }

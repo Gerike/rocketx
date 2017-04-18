@@ -5,8 +5,7 @@ class Framework {
     this.CONSTANTS = {
       CANVAS_HEIGHT: canvasHeight,
       CANVAS_WIDTH: canvasWidth,
-      CANVAS: canvas,
-      CANVAS_CTX: canvas.getContext('2d')
+      CANVAS: canvas
     };
 
     this._pressedKeys = {};
@@ -23,7 +22,7 @@ class Framework {
   _setup() {
     if (!this._ready) {
       let resourceLoader = new ResourceLoader();
-      let loadingViewer = new LoadingViewer(this.CONSTANTS.CANVAS_CTX);
+      let loadingViewer = new LoadingViewer(this.CONSTANTS.CANVAS.getContext('2d'));
 
       let loader = resourceLoader.startLoad(this._levelPack.neededResources);
       loadingViewer.showProgressBarForPromises(loader);
@@ -61,9 +60,10 @@ class Framework {
   }
 
   _render() {
-    this.CONSTANTS.CANVAS_CTX.clearRect(0, 0, this.CONSTANTS.CANVAS_WIDTH, this.CONSTANTS.CANVAS_HEIGHT);
-    for (const entity of this.entityHandler.getEntities())
-      entity.draw(this.CONSTANTS.CANVAS_CTX);
+    this.CONSTANTS.CANVAS.getContext('2d').clearRect(0, 0, this.CONSTANTS.CANVAS_WIDTH, this.CONSTANTS.CANVAS_HEIGHT);
+    for (const entity of this.entityHandler.getEntities()){
+      entity.draw(this.CONSTANTS.CANVAS.getContext('2d'));
+    }
   }
 
   _frame() {
@@ -123,5 +123,9 @@ class Framework {
 
   getFirstCollideEntity(entity) {
     return this.entityHandler.getFirstCollideEntity(entity);
+  }
+
+  attachEntity(entity, attachedTo){
+    this.entityHandler.attachEntity(entity, attachedTo);
   }
 }

@@ -14,7 +14,7 @@ class EntityHandler {
     return this._entities;
   }
 
-  _manageEntities(){
+  _manageEntities() {
     this._sanityDeleteEntities();
     this._collisionHandler.handleCollisions(this._entities);
   }
@@ -33,25 +33,24 @@ class EntityHandler {
     return entity;
   }
 
-  attachEntity(entity, attachedTo){
+  attachEntity(entity, attachedTo) {
     entity = this.registerEntity(entity);
 
-    if (Object.keys(this._attachedEntities).includes(attachedTo._entityID))
+    if (Object.keys(this._attachedEntities).includes(attachedTo._entityID.toString()))
       this._attachedEntities[attachedTo._entityID].push(entity);
     else
       this._attachedEntities[attachedTo._entityID] = [entity];
     return entity;
   }
 
-  destroyAttachedEntities(entity, reason){
-    if (Object.keys(this._attachedEntities).includes(entity._entityID))
-      for (const e of this._attachedEntities[entity._entityID]) {
-        this.requestDestroy(e);
-      }
+  destroyAttachedEntities(entity, reason) {
+    if (Object.keys(this._attachedEntities).includes(entity._entityID.toString()))
+      for (const e of this._attachedEntities[entity._entityID])
+        this.requestDestroy(e, reason);
   }
 
   outOfCanvas(entity) {
-    if ((entity.getPosition().getX() < 0 - entity.getImage().width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.getImage().width) || (entity.getPosition().getY() < 0 - entity.getImage().height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.getImage().height))
+    if (entity.getImage() && (entity.getPosition().getX() < 0 - entity.getImage().width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.getImage().width) || (entity.getPosition().getY() < 0 - entity.getImage().height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.getImage().height))
       return true;
     return false;
   }
@@ -92,7 +91,8 @@ class EntityHandler {
     return minX;
   }
 
-  resetEntities(){
+  resetEntities() {
     this._entities = [];
+    this._attachedEntities = [];
   }
 }

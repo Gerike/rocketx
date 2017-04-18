@@ -7,7 +7,6 @@ class MaskHandler {
 
     this._masksData = {'static': {}, 'dynamic': {}};
     this._helperCanvas = document.createElement('canvas');
-    this._helperCanvasCTX = this._helperCanvas.getContext('2d');
     MaskHandler.prototype._singletonInstance = this;
   }
 
@@ -22,17 +21,17 @@ class MaskHandler {
 
   _getImageData(image) {
     this._resizeHelperCanvas(image.height, image.width);
-    this._helperCanvasCTX.drawImage(image, 0, 0);
-    return this._helperCanvasCTX.getImageData(0, 0, image.width, image.height);
+    this._helperCanvas.getContext('2d').drawImage(image, 0, 0);
+    return this._helperCanvas.getContext('2d').getImageData(0, 0, image.width, image.height);
   }
 
   createMask(entity) {
     this._resizeHelperCanvas(entity.getImage().height, entity.getImage().width);
     if (entity.hasDynamicMask)
-      entity.draw(this._helperCanvasCTX, new Position(0, 0));
+      entity.draw(this._helperCanvas.getContext('2d'), new Position(0, 0));
     else
-      this._helperCanvasCTX.drawImage(entity.getImage(), 0, 0);
-    return this._helperCanvasCTX.getImageData(0, 0, entity.getImage().width, entity.getImage().height);
+      this._helperCanvas.getContext('2d').drawImage(entity.getImage(), 0, 0);
+    return this._helperCanvas.getContext('2d').getImageData(0, 0, entity.getImage().width, entity.getImage().height);
   }
 
   createStaticMasks(images) {
@@ -49,7 +48,7 @@ class MaskHandler {
 
   refreshDynamicMasks(entities) { //TODO: Maybe some event like approach? The entity alert if its mask change
     for (const entity of entities) {
-      if (entity.hasDynamicMask)
+      if (entity.hasDynamicMask && entity.isCollidable())
         this._refreshDynamicMask(entity);
     }
   }

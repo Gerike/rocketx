@@ -28,4 +28,16 @@ class Entity {
 
   collided(object) {
   }
+
+  getImage(){
+    return false;
+  }
+
+  getWidth(){
+    return 0;
+  }
+
+  getHeight(){
+    return 0;
+  }
 }
