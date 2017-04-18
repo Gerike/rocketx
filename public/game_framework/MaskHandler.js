@@ -26,12 +26,12 @@ class MaskHandler {
   }
 
   createMask(entity) {
-    this._resizeHelperCanvas(entity.getImage().height, entity.getImage().width);
+    this._resizeHelperCanvas(entity.getHeight(), entity.getWidth());
     if (entity.hasDynamicMask)
       entity.draw(this._helperCanvas.getContext('2d'), new Position(0, 0));
     else
       this._helperCanvas.getContext('2d').drawImage(entity.getImage(), 0, 0);
-    return this._helperCanvas.getContext('2d').getImageData(0, 0, entity.getImage().width, entity.getImage().height);
+    return this._helperCanvas.getContext('2d').getImageData(0, 0, entity.getWidth(), entity.getHeight());
   }
 
   createStaticMasks(images) {
@@ -54,11 +54,11 @@ class MaskHandler {
   }
 
   _refreshDynamicMask(entity) {
-    this._masksData.dynamic[entity._entityID] = this.createMask(entity);
+    this._createDynamicMask(entity);
   }
 
   _createDynamicMask(entity) {
-    this._masksData.dynamic[entity._entityID] = this._getImageData(entity.getImage());
+    this._masksData.dynamic[entity._entityID] = this.createMask(entity);
   }
 
   deleteMask(entity) {

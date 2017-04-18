@@ -145,7 +145,7 @@ class ContextMenu {
     let entities = [];
 
     for (const entity of framework.getEntities()) {
-      if (entity.getPosition().getX() <= x && entity.getPosition().getY() <= y && entity.getPosition().getX() + entity.getImage().width >= x && entity.getPosition().getY() + entity.getImage().height >= y)
+      if (entity.getPosition().getX() <= x && entity.getPosition().getY() <= y && entity.getPosition().getX() + entity.getWidth() >= x && entity.getPosition().getY() + entity.getHeight() >= y)
         entities.push(entity);
     }
 
