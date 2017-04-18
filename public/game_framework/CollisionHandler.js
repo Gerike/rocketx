@@ -33,7 +33,7 @@ class CollisionHandler {
   }
 
   shouldCheckCollision(entity1, entity2) {
-    return entity1.constructor.name !== entity2.constructor.name; //Object from the same type can't collide (projectiles wont kill each other) TODO: Should depend upen if the object is care about the other one
+    return entity1.isCollidable() && entity2.isCollidable() && entity1.constructor.name !== entity2.constructor.name; //Object from the same type can't collide (projectiles wont kill each other) TODO: Should depend upen if the object is care about the other one
   }
 
   isPixelCollision(entity1ImageData, entity1Position, entity2ImageData, entity2Position) {
