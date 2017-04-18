@@ -3,6 +3,7 @@
 class EntityHandler {
   constructor() {
     this._entities = [];
+    this._attackedEntities = {};
     this._registeredEntities = 0;
     this._maskHandler = MaskHandler.getInstance();
     this._eventHandler = EventHandler.getInstance();
@@ -32,6 +33,23 @@ class EntityHandler {
     return entity;
   }
 
+  attachEntity(entity, attachedTo){
+    entity = this.registerEntity(entity);
+
+    if (Object.keys(this._attachedEntities).contains(attachedTo._entityID))
+      this._attachedEntities[attachedTo._entityID].push(entity);
+    else
+      this._attachedEntities[attachedTo._entityID] = [entity];
+    return entity;
+  }
+
+  destroyAttachedEntities(entity, reason){
+    if (Object.keys(this._attachedEntities).contains(entity._entityID))
+      for (const e of this._attachedEntities[entity._entityID]) {
+        this.requestDestroy(e);
+      }
+  }
+
   outOfCanvas(entity) {
     if ((entity.getPosition().getX() < 0 - entity.getImage().width) || (entity.getPosition().getX() > framework.getConstants().CANVAS_WIDTH + entity.getImage().width) || (entity.getPosition().getY() < 0 - entity.getImage().height) || (entity.getPosition().getY() > framework.getConstants().CANVAS_HEIGHT + entity.getImage().height))
       return true;
@@ -46,6 +64,7 @@ class EntityHandler {
   }
 
   requestDestroy(entity, reason) {
+    this.destroyAttachedEntities(entity, 'Parent entity destroyed');
     this._eventHandler.registerEvent('destroy', entity, reason);
     this._maskHandler.deleteMask(entity);
     this._entities.splice(this._entities.indexOf(entity), 1);
