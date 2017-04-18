@@ -3,7 +3,7 @@
 class EntityHandler {
   constructor() {
     this._entities = [];
-    this._attackedEntities = {};
+    this._attachedEntities = {};
     this._registeredEntities = 0;
     this._maskHandler = MaskHandler.getInstance();
     this._eventHandler = EventHandler.getInstance();
@@ -36,7 +36,7 @@ class EntityHandler {
   attachEntity(entity, attachedTo){
     entity = this.registerEntity(entity);
 
-    if (Object.keys(this._attachedEntities).contains(attachedTo._entityID))
+    if (Object.keys(this._attachedEntities).includes(attachedTo._entityID))
       this._attachedEntities[attachedTo._entityID].push(entity);
     else
       this._attachedEntities[attachedTo._entityID] = [entity];
@@ -44,7 +44,7 @@ class EntityHandler {
   }
 
   destroyAttachedEntities(entity, reason){
-    if (Object.keys(this._attachedEntities).contains(entity._entityID))
+    if (Object.keys(this._attachedEntities).includes(entity._entityID))
       for (const e of this._attachedEntities[entity._entityID]) {
         this.requestDestroy(e);
       }
